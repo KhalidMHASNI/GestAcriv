@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
-            prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.gestacriv.HelloController"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.gestacriv.SignInUpContr"
             xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="800.0" prefWidth="653.0" style="-fx-background-color: #007FA4;" BorderPane.alignment="CENTER">
