@@ -85,17 +85,17 @@
          <children>
             <ImageView fitHeight="158.0" fitWidth="344.0" layoutX="37.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../OneDrive/umi.png" />
+                  <Image url="@../img/umi.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="158.0" fitWidth="344.0" layoutX="37.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../OneDrive/umi.png" />
+                  <Image url="@../img/umi.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../OneDrive/fs.png" />
+                  <Image url="@../img/fs.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
