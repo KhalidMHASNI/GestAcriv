@@ -21,7 +21,7 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
     @FXML
-    protected void open_cnx(ActionEvent event) throws IOException {
+    protected void open_cnx() throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("connexion.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1180, 800);
@@ -29,6 +29,7 @@ public class HelloController {
             stage.setTitle("connexion");
             stage.setScene(scene);
             stage.show();
+
         } catch(Exception e) {
 
         }
@@ -46,10 +47,6 @@ public class HelloController {
         } catch(Exception e) {
 
         }
-    }
-    @FXML
-    protected void drop(ActionEvent event) {
-
     }
 
 
