@@ -46,17 +46,17 @@
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <MenuButton layoutX="210.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" onContextMenuRequested="#DropDown" onMouseClicked="#DropDown" onMouseDragged="#DropDown" onMouseEntered="#DropDown" onTouchMoved="#DropDown" onTouchPressed="#DropDown" prefHeight="26.0" prefWidth="168.0" text="Profile">
+            <MenuButton layoutX="210.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true"  prefHeight="26.0" prefWidth="168.0" text="Profile">
               <items>
                   <MenuItem mnemonicParsing="false" text="Docteur" />
-                <MenuItem fx:id="DropDown" mnemonicParsing="false" onAction="#DropDown" text="Enseignant" />
+                <MenuItem fx:id="DropDown" mnemonicParsing="false" text="Enseignant" />
                 <MenuItem mnemonicParsing="false" text="Doctorant" />
               </items>
             </MenuButton>
-            <MenuButton layoutX="453.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" onContextMenuRequested="#DropDown" prefHeight="26.0" prefWidth="168.0" text="Grade">
+            <MenuButton layoutX="453.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="26.0" prefWidth="168.0" text="Grade">
                <items>
                   <MenuItem mnemonicParsing="false" text="PES" />
-                  <MenuItem fx:id="DropDown1" mnemonicParsing="false" onAction="#DropDown" text="PH" />
+                  <MenuItem fx:id="DropDown1" mnemonicParsing="false" text="PH" />
                   <MenuItem mnemonicParsing="false" text="PA" />
                </items>
             </MenuButton>
@@ -85,17 +85,17 @@
          <children>
             <ImageView fitHeight="158.0" fitWidth="344.0" layoutX="37.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../OneDrive/Bureau/umi.png" />
+                  <Image url="@../OneDrive/umi.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="158.0" fitWidth="344.0" layoutX="37.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@umi.png" />
+                  <Image url="@../OneDrive/umi.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@fs.png" />
+                  <Image url="@../OneDrive/fs.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
