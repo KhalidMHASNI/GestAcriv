@@ -50,7 +50,7 @@
             <MenuButton fx:id="profile" alignment="CENTER" layoutX="210.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Profile" textFill="WHITE">
               <items>
                  <MenuItem text="Docteur" />
-                 <MenuItem fx:id="Enseignant" text="Enseignant" />
+                 <MenuItem fx:id="En" text="Enseignant" />
                  <MenuItem text="Doctorant" />
               </items>
                <font>
@@ -91,7 +91,7 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button layoutX="351.0" layoutY="696.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button layoutX="351.0" layoutY="696.0" mnemonicParsing="false" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -117,7 +117,7 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Button layoutX="252.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button layoutX="252.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
