@@ -1,5 +1,6 @@
 package com.example.gestacriv;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SignInUpContr {
+
+
     @FXML
     protected void open_cnx() throws IOException {
         try {
@@ -53,4 +56,12 @@ public class SignInUpContr {
     private TextField tel;
     @FXML
     private TextField password;
+    @FXML
+    private  TextField cpassword;
+    public void testData(ActionEvent actionEvent){
+        System.out.println("nom : "+nom.getText());
+        System.out.println("pnom : "+pnom.getText());
+        System.out.println("email : "+email.getText());
+        System.out.println("password : "+password.getText());
+    }
 }

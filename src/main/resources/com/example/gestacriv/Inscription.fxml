@@ -91,7 +91,7 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button layoutX="351.0" layoutY="696.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button layoutX="351.0" layoutY="696.0" mnemonicParsing="false" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE" onAction="#testData">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
