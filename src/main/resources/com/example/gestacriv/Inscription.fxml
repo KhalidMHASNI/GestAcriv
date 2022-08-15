@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
@@ -116,11 +117,21 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Button layoutX="144.0" layoutY="573.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button layoutX="252.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
             </Button>
+            <Label layoutX="37.0" layoutY="459.0" text="SI vous possedez déja un compte">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="510.0" text="Veuillez se connecter">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </left>
 </BorderPane>
