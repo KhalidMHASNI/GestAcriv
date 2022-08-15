@@ -11,7 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.gestacriv.HelloController"
+            xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="800.0" prefWidth="653.0" style="-fx-background-color: #007FA4;" BorderPane.alignment="CENTER">
          <children>
@@ -50,17 +52,17 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Label layoutX="37.0" layoutY="444.0" text="SI vous ne possedez pas un compte">
+            <Label layoutX="67.0" layoutY="509.0" text="SI vous ne possedez pas un compte">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="37.0" layoutY="503.0" text="Veuillez s'isncrire">
+            <Label layoutX="141.0" layoutY="546.0" text="Veuillez s'isncrire">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="223.0" layoutY="497.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4">
+            <Button layoutX="160.0" layoutY="615.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4" onAction="#open_inscrip">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
