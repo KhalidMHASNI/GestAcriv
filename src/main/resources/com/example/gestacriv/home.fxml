@@ -24,7 +24,7 @@
                </font>
             </Button>
             <AnchorPane layoutX="1557.0" layoutY="2.0" prefHeight="114.0" prefWidth="364.0" style="-fx-background-color: black;" />
-            <ImageView fitHeight="114.0" fitWidth="200.0" layoutX="32.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="32.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/umi.png" />
                </image>
@@ -32,6 +32,11 @@
             <Label layoutX="378.0" layoutY="37.0" text="Gestion Doctorant,Enseigant,Chercheur" textFill="#007fa4">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="91.0" text="Application Bureau" textFill="DARKORANGE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
          </children>
