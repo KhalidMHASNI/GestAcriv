@@ -3,6 +3,7 @@ package com.example.gestacriv;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class SignInUpContr {
             stage.show();
 
         } catch(Exception e) {
-
+            System.out.println("Error");
         }
     }
 
@@ -37,4 +38,19 @@ public class SignInUpContr {
         }
     }
 
+
+    @FXML
+    private TextField pnom;
+    @FXML
+    private TextField nom;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField etab;
+    @FXML
+    private TextField cni;
+    @FXML
+    private TextField tel;
+    @FXML
+    private TextField password;
 }
