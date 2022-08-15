@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/hh.html" afterDir="false" />
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Testing">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -28,18 +31,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2DJURwPlobUOA2TBI4Ab7ftzkzg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/kmhas/IdeaProjects/GestAcriv/lib/mysql-connector-java-8.0.30.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -47,6 +48,26 @@
     "settings.editor.selected.configurable": "CodeWithMe"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.gestacriv.HelloApplication" />
+      <module name="GestAcriv" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.gestacriv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,12 +98,12 @@
       <option name="project" value="LOCAL" />
       <updated>1660416969457</updated>
     </task>
-    <task id="LOCAL-00004" summary=".">
-      <created>1660523506405</created>
+    <task id="LOCAL-00004" summary="Testing">
+      <created>1660496380666</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1660523506405</updated>
+      <updated>1660496380666</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -100,8 +121,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First push" />
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
