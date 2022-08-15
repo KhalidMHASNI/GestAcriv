@@ -117,7 +117,7 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Button layoutX="252.0" layoutY="504.0" mnemonicParsing="false" mouseTransparent="true" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
