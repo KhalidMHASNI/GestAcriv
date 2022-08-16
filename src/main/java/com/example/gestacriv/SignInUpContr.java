@@ -1,20 +1,26 @@
 package com.example.gestacriv;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class SignInUpContr {
+    protected Stage stage;
+    protected Scene scene;
+    protected Parent root;
     @FXML
-    protected void open_cnx() throws IOException {
+    protected void open_cnx(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("connexion.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1180, 800);
-            Stage stage = new Stage();
-            stage.setTitle("connexion");
+            Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
 
@@ -24,12 +30,11 @@ public class SignInUpContr {
     }
 
     @FXML
-    protected void open_inscrip() throws IOException {
+    protected void open_inscrip(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Inscription.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1280, 800);
-            Stage stage = new Stage();
-            stage.setTitle("inscription");
+            Parent root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch(Exception e) {
