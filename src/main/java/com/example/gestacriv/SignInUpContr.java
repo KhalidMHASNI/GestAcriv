@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,6 +42,18 @@ public class SignInUpContr {
         } catch(Exception e) {
 
         }
+    }
+
+    @FXML
+    TextField pnom,nom,cni,email,etab,tel,password,cpassword;
+
+    public void getData(ActionEvent actionEvent){
+        System.out.println("nom : "+nom.getText());
+        System.out.println("prenom : "+pnom.getText());
+        System.out.println("cni : "+cni.getText());
+        System.out.println("etab : "+etab.getText());
+        System.out.println("tel : "+tel.getText());
+        System.out.println("password : "+password.getText());
     }
 
 }

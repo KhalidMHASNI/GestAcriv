@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,40 +24,30 @@
                   <Font name="Arial" size="28.0" />
                </font>
             </Text>
-            <TextField alignment="CENTER" layoutX="495.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px;">
+            <TextField fx:id="nom" alignment="CENTER" layoutX="495.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField alignment="CENTER" layoutX="171.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <TextField fx:id="pnom" alignment="CENTER" layoutX="171.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField alignment="CENTER" layoutX="210.0" layoutY="192.0" prefHeight="35.0" prefWidth="411.0" promptText="CNI" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="cni" alignment="CENTER" layoutX="210.0" layoutY="192.0" prefHeight="35.0" prefWidth="411.0" promptText="CNI" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="email" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+            <TextField fx:id="tel" alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField alignment="CENTER" layoutX="210.0" layoutY="320.0" prefHeight="35.0" prefWidth="411.0" promptText="Etablissement" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="etab" alignment="CENTER" layoutX="210.0" layoutY="320.0" prefHeight="35.0" prefWidth="411.0" promptText="Etablissement" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <MenuButton alignment="CENTER" layoutX="210.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Profile" textFill="WHITE">
-              <items>
-                 <MenuItem text="Docteur" />
-                 <MenuItem fx:id="Enseignant" text="Enseignant" />
-                 <MenuItem text="Doctorant" />
-              </items>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </MenuButton>
             <MenuButton alignment="CENTER" layoutX="453.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Grade" textFill="WHITE">
                <items>
                   <MenuItem mnemonicParsing="false" text="PES" />
@@ -83,20 +74,27 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Text>
-            <PasswordField alignment="CENTER" layoutX="220.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="220.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField alignment="CENTER" layoutX="220.0" layoutY="600.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="600.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button layoutX="351.0" layoutY="696.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#getData" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <ImageView fitHeight="800.0" fitWidth="155.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+            <SplitMenuButton fx:id="profile" alignment="CENTER" layoutX="230.0" layoutY="449.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" style="-fx-border-color: #ff8c00; -fx-border-width: 3px;" text="Profile" textFill="WHITE">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Enseignant" />
+                <MenuItem mnemonicParsing="false" text="Doctorant" />
+                  <MenuItem mnemonicParsing="false" text="Docteur" />
+              </items>
+            </SplitMenuButton>
          </children>
       </AnchorPane>
    </center>
