@@ -18,7 +18,7 @@
                   <Font name="Consolas" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="1400.0" layoutY="39.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4">
+            <Button layoutX="1400.0" layoutY="39.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
