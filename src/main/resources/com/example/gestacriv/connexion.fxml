@@ -29,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button layoutX="336.0" layoutY="528.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="WHITE">
+            <Button layoutX="336.0" layoutY="528.0" mnemonicParsing="false" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
@@ -60,7 +60,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4">
+            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="S'inscrire" textFill="#007fa4">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>

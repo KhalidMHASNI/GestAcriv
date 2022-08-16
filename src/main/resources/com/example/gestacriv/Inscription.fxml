@@ -47,21 +47,21 @@
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <MenuButton fx:id="profile" contentDisplay="CENTER" layoutX="226.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Profile" textFill="WHITE">
+            <MenuButton fx:id="profile" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Profile" textFill="WHITE">
               <items>
-                <MenuItem fx:id="enseignant" mnemonicParsing="false" text="Enseignant" />
-                  <MenuItem fx:id="docteur" mnemonicParsing="false" text="Docteur" />
-                <MenuItem fx:id="doctorant" mnemonicParsing="false" text="Doctorant" />
+                <MenuItem fx:id="enseignant" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Enseignant" />
+                  <MenuItem fx:id="docteur" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Docteur" />
+                <MenuItem fx:id="doctorant" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Doctorant" />
               </items>
                <font>
                   <Font size="14.0" />
                </font>
             </MenuButton>
-            <MenuButton fx:id="grade" contentDisplay="CENTER" layoutX="430.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Grade" textFill="WHITE">
+            <MenuButton fx:id="grade" alignment="CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Grade" textFill="WHITE">
                <items>
-                  <MenuItem fx:id="pes" mnemonicParsing="false" text="PES" />
-                  <MenuItem fx:id="ph" mnemonicParsing="false" text="PH" />
-                  <MenuItem fx:id="pa" mnemonicParsing="false" text="PA" />
+                  <MenuItem fx:id="pes" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="PES" />
+                  <MenuItem fx:id="ph" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="PH" />
+                  <MenuItem fx:id="pa" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="PA" />
                </items>
                <font>
                   <Font size="14.0" />
@@ -87,11 +87,11 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="600.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#getData" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#getData" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -118,7 +118,7 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>

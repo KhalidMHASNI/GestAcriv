@@ -60,7 +60,6 @@ public class SignInUpContr {
         System.out.println("tel : "+tel.getText());
         System.out.println("password : "+password.getText());
         System.out.println("specialité : "+specialite());
-        if (docteur.getText()) System.out.println("DOCTEUR");
 
 
     }
