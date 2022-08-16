@@ -6,7 +6,6 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -40,33 +39,43 @@
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="tel" alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
-               <font>
-                  <Font size="18.0" />
-               </font></TextField>
             <TextField fx:id="etab" alignment="CENTER" layoutX="210.0" layoutY="320.0" prefHeight="35.0" prefWidth="411.0" promptText="Etablissement" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <MenuButton alignment="CENTER" layoutX="453.0" layoutY="445.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Grade" textFill="WHITE">
+            <TextField fx:id="tel" alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <MenuButton fx:id="profile" contentDisplay="CENTER" layoutX="226.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Profile" textFill="WHITE">
+              <items>
+                <MenuItem fx:id="enseignant" mnemonicParsing="false" text="Enseignant" />
+                  <MenuItem fx:id="docteur" mnemonicParsing="false" text="Docteur" />
+                <MenuItem fx:id="doctorant" mnemonicParsing="false" text="Doctorant" />
+              </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </MenuButton>
+            <MenuButton fx:id="grade" contentDisplay="CENTER" layoutX="430.0" layoutY="445.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="172.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Grade" textFill="WHITE">
                <items>
-                  <MenuItem mnemonicParsing="false" text="PES" />
-                  <MenuItem fx:id="DropDown1" mnemonicParsing="false" text="PH" />
-                  <MenuItem mnemonicParsing="false" text="PA" />
+                  <MenuItem fx:id="pes" mnemonicParsing="false" text="PES" />
+                  <MenuItem fx:id="ph" mnemonicParsing="false" text="PH" />
+                  <MenuItem fx:id="pa" mnemonicParsing="false" text="PA" />
                </items>
                <font>
                   <Font size="14.0" />
                </font>
             </MenuButton>
-            <CheckBox layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
+            <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
-            <CheckBox layoutX="416.0" layoutY="520.0" mnemonicParsing="false" text="Mathématiques" textFill="WHITE">
+            <CheckBox fx:id="math" layoutX="416.0" layoutY="520.0" mnemonicParsing="false" text="Mathématiques" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
-            <CheckBox layoutX="550.0" layoutY="520.0" mnemonicParsing="false" text="Contrôle opt" textFill="WHITE">
+            <CheckBox fx:id="contr" layoutX="550.0" layoutY="520.0" mnemonicParsing="false" text="Contrôle opt" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
@@ -88,13 +97,6 @@
                </font>
             </Button>
             <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-            <SplitMenuButton fx:id="profile" alignment="CENTER" layoutX="230.0" layoutY="449.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" style="-fx-border-color: #ff8c00; -fx-border-width: 3px;" text="Profile" textFill="WHITE">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Enseignant" />
-                <MenuItem mnemonicParsing="false" text="Doctorant" />
-                  <MenuItem mnemonicParsing="false" text="Docteur" />
-              </items>
-            </SplitMenuButton>
          </children>
       </AnchorPane>
    </center>
