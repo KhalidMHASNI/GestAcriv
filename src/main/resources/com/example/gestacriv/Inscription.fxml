@@ -47,6 +47,7 @@
                   <Font size="18.0" />
                </font></TextField>
             <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="30.0" prefWidth="202.0" />
+            <ChoiceBox fx:id="grade" layoutX="438.0" layoutY="466.0" prefHeight="30.0" prefWidth="199.0" />
             <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -77,7 +78,6 @@
                </font>
             </Button>
             <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-            <ChoiceBox fx:id="grade" layoutX="438.0" layoutY="466.0" prefHeight="30.0" prefWidth="199.0" />
             <Text fill="DARKORANGE" layoutX="196.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="92.3671875">
                <font>
                   <Font name="System Bold" size="14.0" />
