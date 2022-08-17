@@ -46,8 +46,8 @@
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="30.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 30px; -fx-border-width: 3px;" />
-            <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false"  text="Informatique" textFill="WHITE">
+            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;" />
+            <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
@@ -59,7 +59,7 @@
                <font>
                   <Font size="14.0" />
                </font></CheckBox>
-            <Text fill="DARKORANGE" layoutX="509.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" wrappingWidth="92.3671875">
+            <Text fill="DARKORANGE" layoutX="492.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" textAlignment="CENTER" wrappingWidth="92.3671875">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Text>
@@ -77,8 +77,8 @@
                </font>
             </Button>
             <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-            <ChoiceBox fx:id="grade" layoutX="438.0" layoutY="466.0" prefHeight="30.0" prefWidth="199.0" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 30px; -fx-border-color: #ff8c00;" />
-            <Text fill="DARKORANGE" layoutX="286.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="92.3671875">
+            <ChoiceBox fx:id="grade" layoutX="458.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: #ff8c00;" />
+            <Text fill="DARKORANGE" layoutX="243.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" textAlignment="CENTER" wrappingWidth="92.3671875">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 
 
-public class SignInUpContr implements Initializable {
+public class SignInUpContr implements Initializable{
     protected Stage stage;
     protected Scene scene;
     protected Parent root;

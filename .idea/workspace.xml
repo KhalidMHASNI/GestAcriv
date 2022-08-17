@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="test test">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_08_2022_21_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_08_2022_21_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_17_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_17_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_20_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_20_49__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_20_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_20_57__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_21_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_08_2022_21_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_11_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_08_2022_11_40__Changes_.xml" afterDir="false" />
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660658253533</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=".">
+      <created>1660753001923</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660753001923</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,10 +179,10 @@
     <MESSAGE value="First push" />
     <MESSAGE value="Testing" />
     <MESSAGE value="fx:id s update" />
-    <MESSAGE value="." />
     <MESSAGE value="fixing fx ids&#10;getData function&#10;dropDown temporarly fix" />
     <MESSAGE value="test test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test test" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

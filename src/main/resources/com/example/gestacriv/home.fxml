@@ -26,7 +26,7 @@
             <AnchorPane layoutX="1557.0" layoutY="2.0" prefHeight="114.0" prefWidth="364.0" style="-fx-background-color: black;" />
             <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="82.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/fs.png" />
+                  <Image url="@../img/logo.png" />
                </image>
             </ImageView>
             <Label layoutX="301.0" layoutY="38.0" text="Gestion d'activité Doctorant,Enseigant,Chercheur" textFill="#007fa4">
