@@ -1,8 +1,11 @@
 package com.example.gestacriv;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,9 +13,14 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
 
-public class SignInUpContr {
+
+public class SignInUpContr implements Initializable {
     protected Stage stage;
     protected Scene scene;
     protected Parent root;
@@ -48,9 +56,6 @@ public class SignInUpContr {
     @FXML
     CheckBox info,math,contr;
 
-    @FXML
-    MenuItem docteur;
-
 
     public void getData(ActionEvent actionEvent){
         System.out.println("nom : "+nom.getText());
@@ -60,7 +65,8 @@ public class SignInUpContr {
         System.out.println("tel : "+tel.getText());
         System.out.println("password : "+password.getText());
         System.out.println("specialité : "+specialite());
-
+        System.out.println("Grade : "+grade.getValue());
+        System.out.println("Profile :"+profile.getValue());
 
     }
     public String specialite(){
@@ -81,4 +87,16 @@ public class SignInUpContr {
         }else return null;
     }
 
+
+    @FXML
+    ChoiceBox<String> profile;
+    @FXML
+    ChoiceBox<String> grade;
+    String[] prf = {"Enseignant","Doctorant","Docteur"};
+    String[] grd = {"PES","PH","PA"};
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        profile.getItems().addAll(prf);
+        grade.getItems().addAll(grd);
+    }
 }
