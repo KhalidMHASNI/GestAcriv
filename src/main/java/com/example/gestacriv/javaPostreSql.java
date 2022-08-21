@@ -36,7 +36,7 @@ public class javaPostreSql {
 
         } catch (SQLException ex) {
 
-            Logger lgr = Logger.getLogger(JavaPostgreSql.class.getName());
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
     }

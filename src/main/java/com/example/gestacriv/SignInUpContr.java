@@ -69,7 +69,7 @@ public class SignInUpContr implements Initializable{
         System.out.println("specialité : "+spec);
         System.out.println("Grade : "+grade.getValue());
         System.out.println("Profile :"+profile.getValue());
-        JavaPostgreSql.writeToDatabase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+        javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
                 .getText());
 
     }
