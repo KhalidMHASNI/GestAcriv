@@ -46,6 +46,7 @@ public class SignInUpContr implements Initializable{
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
         } catch(Exception e) {
 
         }
@@ -64,9 +65,12 @@ public class SignInUpContr implements Initializable{
         System.out.println("etab : "+etab.getText());
         System.out.println("tel : "+tel.getText());
         System.out.println("password : "+password.getText());
-        System.out.println("specialité : "+specialite());
+        String spec = specialite();
+        System.out.println("specialité : "+spec);
         System.out.println("Grade : "+grade.getValue());
         System.out.println("Profile :"+profile.getValue());
+        JavaPostgreSql.writeToDatabase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                .getText());
 
     }
     public String specialite(){
@@ -89,14 +93,17 @@ public class SignInUpContr implements Initializable{
 
 
     @FXML
-    ChoiceBox<String> profile;
+    ChoiceBox<String> profile = new ChoiceBox<>();
     @FXML
-    ChoiceBox<String> grade;
+    ChoiceBox<String> grade = new ChoiceBox<>();
     String[] prf = {"Enseignant","Doctorant","Docteur"};
     String[] grd = {"PES","PH","PA"};
-    @Override
+
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
         profile.getItems().addAll(prf);
         grade.getItems().addAll(grd);
+
     }
+
 }

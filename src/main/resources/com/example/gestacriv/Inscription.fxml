@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -46,7 +47,7 @@
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;" />
+            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;" />
             <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -71,13 +72,13 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#getData" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#getData" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
             <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-            <ChoiceBox fx:id="grade" layoutX="458.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: #ff8c00;" />
+            <ChoiceBox fx:id="grade" layoutX="458.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: #ff8c00;" />
             <Text fill="DARKORANGE" layoutX="243.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" textAlignment="CENTER" wrappingWidth="92.3671875">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -109,7 +110,7 @@
                   <Image url="@../img/fs.png" />
                </image>
             </ImageView>
-            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
