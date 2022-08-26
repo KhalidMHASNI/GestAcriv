@@ -38,7 +38,7 @@
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: #6EC1E4;">
          <children>
-            <Label alignment="CENTER" layoutX="351.0" layoutY="43.0" prefHeight="42.0" prefWidth="535.0" text="Gestion d'activité Enseignent" textAlignment="CENTER" textFill="DARKORANGE">
+            <Label alignment="CENTER" layoutX="351.0" layoutY="43.0" prefHeight="42.0" prefWidth="535.0" text="Gestion d'activité Enseignant" textAlignment="CENTER" textFill="DARKORANGE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>

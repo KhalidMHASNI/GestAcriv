@@ -145,15 +145,15 @@ public class SignInUpContr implements Initializable{
         grade.getItems().addAll(grd);
 
     }
-    @FXML
-    private Label label;
+
     @FXML
     private Button btnform;
+    @FXML
+    private  Button btnhome;
 
     @FXML
     private Button btnsettings;
-    @FXML
-    private Pane back;
+
     @FXML
     private GridPane formgrid;
 
@@ -165,18 +165,17 @@ public class SignInUpContr implements Initializable{
     @FXML
     private  void hh(ActionEvent event){
         if (event.getSource() == btnform){
-            label.setText("FORM");
-            back.setBackground(Background.fill(Color.CYAN));
+
             homegrid.toBack();
             settingsgrid.toBack();
 
 
     }
-        else {
-            if (event.getSource() == btnsettings){
-            label.setText("SETTINGS");
-            back.setBackground(Background.fill(Color.GOLD));
-            settingsgrid.toFront();}
+        else  if (event.getSource() == btnsettings){
+            settingsgrid.toFront();
+        }else  if (event.getSource() == btnhome){
+                homegrid.toFront();
+
         }
 
     }
