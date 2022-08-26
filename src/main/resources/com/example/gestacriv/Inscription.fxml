@@ -68,7 +68,7 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="615.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="615.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
@@ -105,11 +105,6 @@
                   <Image url="@../img/umi.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/fs.png" />
-               </image>
-            </ImageView>
             <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
@@ -125,6 +120,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/fs.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </left>
 </BorderPane>

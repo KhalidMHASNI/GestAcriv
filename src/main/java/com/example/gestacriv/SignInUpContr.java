@@ -10,6 +10,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -105,5 +109,41 @@ public class SignInUpContr implements Initializable{
         grade.getItems().addAll(grd);
 
     }
+    @FXML
+    private Label label;
+    @FXML
+    private Button btnform;
+
+    @FXML
+    private Button btnsettings;
+    @FXML
+    private Pane back;
+    @FXML
+    private GridPane formgrid;
+
+    @FXML
+    private GridPane homegrid;
+    @FXML
+    private GridPane settingsgrid;
+
+    @FXML
+    private  void hh(ActionEvent event){
+        if (event.getSource() == btnform){
+            label.setText("FORM");
+            back.setBackground(Background.fill(Color.CYAN));
+            homegrid.toBack();
+            settingsgrid.toBack();
+
+
+    }
+        else {
+            if (event.getSource() == btnsettings){
+            label.setText("SETTINGS");
+            back.setBackground(Background.fill(Color.GOLD));
+            settingsgrid.toFront();}
+        }
+
+    }
+
 
 }
