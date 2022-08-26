@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -37,7 +38,7 @@
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: #6EC1E4;">
          <children>
-            <Label alignment="CENTER" layoutX="351.0" layoutY="43.0" prefHeight="42.0" prefWidth="474.0" text="Gestion d'activité Docteur" textAlignment="CENTER" textFill="DARKORANGE">
+            <Label alignment="CENTER" layoutX="351.0" layoutY="43.0" prefHeight="42.0" prefWidth="576.0" text="Gestion d'activité Doctorant" textAlignment="CENTER" textFill="DARKORANGE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>
@@ -85,7 +86,15 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="861.0" prefWidth="1387.0" />
+                        <AnchorPane prefHeight="861.0" prefWidth="1387.0">
+                           <children>
+                              <TextField fx:id="pnom" alignment="CENTER" layoutX="86.0" layoutY="89.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </GridPane>
                   <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0" style="-fx-background-color: red;">

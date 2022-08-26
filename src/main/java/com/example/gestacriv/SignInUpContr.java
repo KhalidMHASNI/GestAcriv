@@ -72,7 +72,7 @@ public class SignInUpContr implements Initializable{
                 String spec = specialite();
                 javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
                         .getText());
-                Parent root = FXMLLoader.load(getClass().getResource("drd.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("drt.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
