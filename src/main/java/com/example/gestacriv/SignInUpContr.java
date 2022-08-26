@@ -57,6 +57,43 @@ public class SignInUpContr implements Initializable{
     }
 
     @FXML
+    protected void open_panel(ActionEvent event) throws IOException {
+        try {
+            if (profile.getValue()=="Docteur"){
+                String spec = specialite();
+                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                        .getText());
+                Parent root = FXMLLoader.load(getClass().getResource("dr.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else if (profile.getValue()=="Doctorant"){
+                String spec = specialite();
+                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                        .getText());
+                Parent root = FXMLLoader.load(getClass().getResource("drd.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else if (profile.getValue() == "Enseignant"){
+                String spec = specialite();
+                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                        .getText());
+                Parent root = FXMLLoader.load(getClass().getResource("ens.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
+        } catch(Exception e) {
+
+        }
+    }
+
+    @FXML
     TextField pnom,nom,cni,email,etab,tel,password,cpassword;
     @FXML
     CheckBox info,math,contr;
@@ -73,8 +110,7 @@ public class SignInUpContr implements Initializable{
         System.out.println("specialité : "+spec);
         System.out.println("Grade : "+grade.getValue());
         System.out.println("Profile :"+profile.getValue());
-        javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                .getText());
+
 
     }
     public String specialite(){
