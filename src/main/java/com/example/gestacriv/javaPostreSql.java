@@ -2,6 +2,7 @@ package com.example.gestacriv;
 
 
 import java.sql.*;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,5 +40,58 @@ public class javaPostreSql {
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
+    }
+
+
+    public static HashMap readFromDataBase(String usremail,String usrpassword){
+        String url = "jdbc:postgresql://localhost:5432/GestActiv";
+        String user = "postgres";
+        String password = "Mhasni10@";
+
+
+        String query = "SELECT nom, prenom, cni, etab, tel, spec, grade, profile, passwd, email " +
+                "FROM public.users WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
+
+        String nom=null,prenom=null,cni=null,etab=null,tel=null,grade=null,profile=null,passwd=null,email=null;
+
+        HashMap<String, String> usrInf = new HashMap<String, String>();
+
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+
+            ResultSet s = pst.executeQuery();
+           /* if (s.isBeforeFirst()) System.out.println("user existed");
+            else System.out.println("appah");*/
+
+            while (s.next()){
+                nom = s.getString("nom");
+                prenom = s.getString("prenom");
+                cni = s.getString("cni");
+                etab = s.getString("etab");
+                tel = s.getString("tel");
+                grade=s.getString("grade");
+                profile=s.getString("profile");
+                passwd=s.getString("passwd");
+                email=s.getString("email");
+            }
+            usrInf.put("NOM",nom);
+            usrInf.put("PRENOM",prenom);
+            usrInf.put("CNI",cni);
+            usrInf.put("ETAB",etab);
+            usrInf.put("TEL",tel);
+            usrInf.put("GRADE",grade);
+            usrInf.put("PROFILE",profile);
+            usrInf.put("PASSWORD",passwd);
+            usrInf.put("EMAIL",email);
+
+            /*System.out.println(usrInf.get("NOM")+" "+usrInf.get("PRENOM")+" ");
+            System.out.println(usrInf);*/
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+        return usrInf;
     }
 }

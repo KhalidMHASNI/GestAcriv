@@ -72,7 +72,7 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0"  mnemonicParsing="false" onAction="#open_panel" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0"  mnemonicParsing="false" onAction="#open_alert" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>

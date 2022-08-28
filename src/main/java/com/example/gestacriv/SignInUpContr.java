@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -57,30 +58,35 @@ public class SignInUpContr implements Initializable{
     }
 
     @FXML
+    TextField pnom,nom,cni,email,etab,tel,password,cpassword;
+    @FXML
+    CheckBox info,math,contr;
+
+    @FXML
+    TextField cnxemail,cnxpassword;
+
+    @FXML
     protected void open_panel(ActionEvent event) throws IOException {
+        HashMap<String,String> userInfo = new HashMap<String,String>();
         try {
-            if (profile.getValue()=="Docteur"){
-                String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                        .getText());
+            userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
+
+            System.out.println(userInfo.get("PROFILE"));
+            if (userInfo.get("PROFILE").equals("Docteur")){
                 Parent root = FXMLLoader.load(getClass().getResource("dr.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }else if (profile.getValue()=="Doctorant"){
-                String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                        .getText());
+            }else if (userInfo.get("PROFILE").trim().equals("Doctorant")){
+
                 Parent root = FXMLLoader.load(getClass().getResource("drt.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }else if (profile.getValue() == "Enseignant"){
-                String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                        .getText());
+            }else if (userInfo.get("PROFILE").trim().equals("Enseignant")){
+
                 Parent root = FXMLLoader.load(getClass().getResource("ens.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
@@ -89,29 +95,27 @@ public class SignInUpContr implements Initializable{
             }
 
         } catch(Exception e) {
-
+            System.out.println("érreur"+e);
         }
     }
+    public void open_alert(ActionEvent event) throws IOException{
+        try {
+            String spec = specialite();
+            javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                    .getText());
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmer l'inscription");
+            alert.setHeaderText("Inscription");
+            alert.showAndWait();
 
-    @FXML
-    TextField pnom,nom,cni,email,etab,tel,password,cpassword;
-    @FXML
-    CheckBox info,math,contr;
-
-
-    public void getData(ActionEvent actionEvent){
-        System.out.println("nom : "+nom.getText());
-        System.out.println("prenom : "+pnom.getText());
-        System.out.println("cni : "+cni.getText());
-        System.out.println("etab : "+etab.getText());
-        System.out.println("tel : "+tel.getText());
-        System.out.println("password : "+password.getText());
-        String spec = specialite();
-        System.out.println("specialité : "+spec);
-        System.out.println("Grade : "+grade.getValue());
-        System.out.println("Profile :"+profile.getValue());
-
-
+            Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e){
+            System.out.println("erreur");
+        }
     }
     public String specialite(){
         if (info.isSelected() && math.isSelected() && contr.isSelected()){
