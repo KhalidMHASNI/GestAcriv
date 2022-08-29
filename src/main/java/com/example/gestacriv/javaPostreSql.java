@@ -74,18 +74,18 @@ public class javaPostreSql {
                 passwd=s.getString("passwd");
                 email=s.getString("email");
             }
-            usrInf.put("NOM",nom);
-            usrInf.put("PRENOM",prenom);
-            usrInf.put("CNI",cni);
-            usrInf.put("ETAB",etab);
-            usrInf.put("TEL",tel);
-            usrInf.put("GRADE",grade);
-            usrInf.put("PROFILE",profile);
-            usrInf.put("PASSWORD",passwd);
-            usrInf.put("EMAIL",email);
+            usrInf.put("NOM",nom.trim());
+            usrInf.put("PRENOM",prenom.trim());
+            usrInf.put("CNI",cni.trim());
+            usrInf.put("ETAB",etab.trim());
+            usrInf.put("TEL",tel.trim());
+            usrInf.put("GRADE",grade.trim());
+            usrInf.put("PROFILE",profile.trim());
+            usrInf.put("PASSWORD",passwd.trim());
+            usrInf.put("EMAIL",email.trim());
 
-            /*System.out.println(usrInf.get("NOM")+" "+usrInf.get("PRENOM")+" ");
-            System.out.println(usrInf);*/
+            System.out.println(usrInf.get("NOM")+" "+usrInf.get("PRENOM")+" ");
+            System.out.println(usrInf);
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());

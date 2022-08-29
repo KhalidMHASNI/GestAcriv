@@ -66,32 +66,40 @@ public class SignInUpContr implements Initializable{
     TextField cnxemail,cnxpassword;
 
     @FXML
+    private Label npname ;
+
+
+    @FXML
     protected void open_panel(ActionEvent event) throws IOException {
         HashMap<String,String> userInfo = new HashMap<String,String>();
         try {
             userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
 
-            System.out.println(userInfo.get("PROFILE"));
+            /*String p=userInfo.get("PRENOM"),n=userInfo.get("NOM");
+            System.out.println(userInfo.get("PROFILE"));*/
+
             if (userInfo.get("PROFILE").equals("Docteur")){
+                
                 Parent root = FXMLLoader.load(getClass().getResource("dr.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }else if (userInfo.get("PROFILE").trim().equals("Doctorant")){
+            }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
-                Parent root = FXMLLoader.load(getClass().getResource("drt.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("drt.fxml"));//A.bekri@edu.umi.ac.ma
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            }else if (userInfo.get("PROFILE").trim().equals("Enseignant")){
+            }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
                 Parent root = FXMLLoader.load(getClass().getResource("ens.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+            }else {
             }
 
         } catch(Exception e) {
@@ -104,8 +112,9 @@ public class SignInUpContr implements Initializable{
             javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
                     .getText());
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmer l'inscription");
+            alert.setTitle("Inscription");
             alert.setHeaderText("Inscription");
+            alert.setContentText("Inscription avec succès");
             alert.showAndWait();
 
             Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
@@ -147,7 +156,6 @@ public class SignInUpContr implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         profile.getItems().addAll(prf);
         grade.getItems().addAll(grd);
-
     }
 
     @FXML
