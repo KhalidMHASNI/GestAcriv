@@ -78,7 +78,7 @@ public class javaPostreSql {
             usrInf.put("PRENOM",prenom.trim());
             usrInf.put("CNI",cni.trim());
             usrInf.put("ETAB",etab.trim());
-            usrInf.put("TEL",tel.trim());
+            usrInf.put("TEL","0"+tel.trim());
             usrInf.put("GRADE",grade.trim());
             usrInf.put("PROFILE",profile.trim());
             usrInf.put("PASSWORD",passwd.trim());

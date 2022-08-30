@@ -108,20 +108,29 @@ public class SignInUpContr implements Initializable{
     }
     public void open_alert(ActionEvent event) throws IOException{
         try {
-            String spec = specialite();
-            javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                    .getText());
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Inscription");
-            alert.setHeaderText("Inscription");
-            alert.setContentText("Inscription avec succès");
-            alert.showAndWait();
+            if (pnom.getText().trim().isEmpty() || nom.getText().trim().isEmpty() ||cni.getText().trim().isEmpty()||etab.getText().trim().isEmpty()||tel.getText().trim().isEmpty()||password.getText().trim().isEmpty()||cpassword.getText().trim().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Field vide");
+                alert.setContentText("Veillez entrer tous les champs du formulaire!");
+                alert.showAndWait();
+            }else {
+                String spec = specialite();
+                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
+                        .getText());
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Inscription");
+                alert.setHeaderText("Inscription");
+                alert.setContentText("Inscription avec succès");
+                alert.showAndWait();
 
-            Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+                Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
+
         }catch (IOException e){
             System.out.println("erreur");
         }
