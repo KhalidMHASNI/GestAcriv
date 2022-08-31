@@ -2,12 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -15,11 +20,10 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.SignInUpContr">
    <children>
-      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1080.0" prefWidth="162.0" style="-fx-background-color: white;">
+      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: #007FA4;">
          <children>
             <Pane prefHeight="120.0" prefWidth="160.0" style="-fx-background-color: white;">
                <children>
@@ -40,35 +44,47 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="btnhome" mnemonicParsing="false" onAction="#hh" prefHeight="44.0" prefWidth="160.0" text="HOME">
+            <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" style="-fx-cursor: hand; -fx-background-color: #6EC1E4; -fx-border-color: #fff; -fx-border-width: 0px 0px 4px 0px;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+              <items>
+                <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
+                <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
+                  <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
+              </items>
                <VBox.margin>
-                  <Insets top="150.0" />
-               </VBox.margin></Button>
-            <Button fx:id="btnform" mnemonicParsing="false" onAction="#hh" prefHeight="82.0" prefWidth="160.0" text="form">
-               <VBox.margin>
-                  <Insets top="30.0" />
+                  <Insets top="80.0" />
                </VBox.margin>
-            </Button>
-            <Button fx:id="btnsettings" mnemonicParsing="false" onAction="#hh" prefHeight="83.0" prefWidth="160.0" text="Settings" />
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="btnsettings" mnemonicParsing="false" onAction="#hh" prefHeight="83.0" prefWidth="160.0" style="-fx-cursor: hand;" text="Settings">
+               <VBox.margin>
+                  <Insets top="200.0" />
+               </VBox.margin></Button>
          </children>
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: #6EC1E4;">
          <children>
-            <Label alignment="CENTER" layoutX="351.0" layoutY="43.0" prefHeight="42.0" prefWidth="474.0" text="Gestion d'activité Docteur" textAlignment="CENTER" textFill="DARKORANGE">
+            <Label alignment="CENTER" layoutX="239.0" layoutY="43.0" prefHeight="42.0" prefWidth="668.0" text="Gestion des activités Docteur" textAlignment="CENTER" textFill="DARKORANGE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>
             </Label>
-            <Button layoutX="1180.0" layoutY="44.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="Se deconnecter" textFill="#007fa4">
+            <Button layoutX="1200.0" layoutY="79.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 0px 8px 0px;" text="Se deconnecter" textFill="#007fa4">
                <font>
-                  <Font name="Consolas" size="18.0" />
+                  <Font name="Segoe UI Symbol" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnhome" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 0px 0px 8px 0px;" text="Acceuil" textFill="#007fa4">
+               <font>
+                  <Font name="Segoe UI Symbol" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <VBox layoutX="160.0" layoutY="126.0" prefHeight="955.0" prefWidth="1396.0">
+      <VBox layoutX="160.0" layoutY="126.0" prefHeight="1036.0" prefWidth="1396.0">
          <children>
-            <StackPane>
+            <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
                   <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
                     <columnConstraints>
@@ -85,22 +101,7 @@
                         </Label>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0" style="-fx-background-color: red;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Label text="home">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="formgird" style="-fx-background-color: white;">
+                  <GridPane fx:id="soutgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
@@ -108,49 +109,234 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="861.0" prefWidth="1387.0">
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
                            <children>
-                              <TextField fx:id="cni" alignment="CENTER" layoutX="58.0" layoutY="420.0" prefHeight="35.0" prefWidth="411.0" promptText="CNI" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField alignment="CENTER" layoutX="435.0" layoutY="34.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="40.0" text="Nom et Prénom du Lauréat">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="115.0" text="Soutenance">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="sout" layoutX="433.0" layoutY="114.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-border-color: #007FA4; -fx-border-width: 3px; -fx-background-color: transparent;" />
+                                          <Label layoutX="32.0" layoutY="334.0" text="Date">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="211.0" text="Intitule de soutenance:">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea layoutX="431.0" layoutY="166.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField alignment="CENTER" layoutX="429.0" layoutY="412.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="418.0" text="Lieu de soutenance">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker layoutX="429.0" layoutY="334.0" prefHeight="30.0" prefWidth="325.0" style="-fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;" />
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter soutenance" textFill="#007fa4">
                                  <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </TextField>
-                              <TextField fx:id="email" alignment="CENTER" layoutX="63.0" layoutY="292.0" prefHeight="46.0" prefWidth="401.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </TextField>
-                              <TextField fx:id="etab" alignment="CENTER" layoutX="92.0" layoutY="161.0" prefHeight="0.0" prefWidth="314.0" promptText="Etablissement" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </TextField>
-                              <TextField fx:id="tel" alignment="CENTER" layoutX="1013.0" layoutY="255.0" prefHeight="0.0" prefWidth="327.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </TextField>
-                              <PasswordField fx:id="password" alignment="CENTER" layoutX="999.0" layoutY="116.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </PasswordField>
-                              <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="547.0" layoutY="116.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </PasswordField>
-                              <Text fx:id="txt" layoutX="50.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonjour" wrappingWidth="76.79999999999995">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Text>
-                              <Label fx:id="npname" layoutX="172.0" layoutY="32.0" prefHeight="18.0" prefWidth="327.0" text="tt">
-                                 <font>
-                                    <Font size="19.0" />
+                                    <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                           </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="respgrid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="32.0" layoutY="122.0" text="Responsabilité">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="resp" layoutX="437.0" layoutY="121.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="284.0" text="Description sur responsabilité">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="431.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button layoutX="160.0" layoutY="423.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter responsabilité" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField alignment="CENTER" layoutX="435.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="63.0" text="Nom et Prénom du Lauréat">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="165.0" text="Encadrement">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="encad" layoutX="435.0" layoutY="167.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="389.0" text="Type encadrement">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="type_encad" layoutX="435.0" layoutY="391.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="284.0" text="Intitule:">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="478.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf" layoutX="152.0" layoutY="470.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter encadrement" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label layoutX="382.0" layoutY="197.0" prefHeight="137.0" prefWidth="208.0" text="HOME">
+                                 <font>
+                                    <Font size="45.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </GridPane>
                </children>
