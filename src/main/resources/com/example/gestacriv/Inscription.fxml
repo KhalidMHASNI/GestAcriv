@@ -63,11 +63,11 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Text>
-            <PasswordField fx:id="password" alignment="CENTER" layoutX="220.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="238.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="220.0" layoutY="615.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="227.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
