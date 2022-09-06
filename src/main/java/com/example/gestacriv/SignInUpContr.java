@@ -1,7 +1,5 @@
 package com.example.gestacriv;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,52 +8,31 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.ResourceBundle;
-
+import java.util.regex.Pattern;
 
 
 public class SignInUpContr implements Initializable{
-    protected Stage stage;
-    protected Scene scene;
-    protected Parent root;
+     Stage stage;
+     Scene scene;
+     Parent root;
+
     @FXML
-    protected void open_cnx(ActionEvent event) throws IOException {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-
-        }
+    public void open_cnx(ActionEvent event) throws IOException {
+        changeScene.toCnx(event,stage,scene,root);
     }
 
     @FXML
-    protected void open_inscrip(ActionEvent event) throws IOException {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch(Exception e) {
-
-        }
+    public void open_inscrip(ActionEvent event) throws IOException {
+        changeScene.toInsc(event,stage,scene,root);
     }
+
 
     @FXML
     TextField pnom,nom,cni,email,etab,tel,password,cpassword;
@@ -66,11 +43,9 @@ public class SignInUpContr implements Initializable{
     TextField cnxemail,cnxpassword;
 
     @FXML
-    private Label npname ;
-
-
+    Label npname ;
     @FXML
-    protected void open_panel(ActionEvent event) throws IOException {
+    public void open_panel(ActionEvent event) throws IOException {
         HashMap<String,String> userInfo = new HashMap<String,String>();
         try {
             userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
@@ -79,61 +54,72 @@ public class SignInUpContr implements Initializable{
             System.out.println(userInfo.get("PROFILE"));*/
 
             if (userInfo.get("PROFILE").equals("Docteur")){
-                
-                Parent root = FXMLLoader.load(getClass().getResource("dr.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
+                changeScene.toDr(event,stage,scene,root);
+
             }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
-                Parent root = FXMLLoader.load(getClass().getResource("drt.fxml"));//A.bekri@edu.umi.ac.ma
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
+                changeScene.toDrt(event,stage,scene,root);
             }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
-                Parent root = FXMLLoader.load(getClass().getResource("ens.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            }else {
+                changeScene.toEns(event,stage,scene,root);
             }
 
         } catch(Exception e) {
             System.out.println("érreur"+e);
         }
     }
+
     public void open_alert(ActionEvent event) throws IOException{
         try {
-            if (pnom.getText().trim().isEmpty() || nom.getText().trim().isEmpty() ||cni.getText().trim().isEmpty()||etab.getText().trim().isEmpty()||tel.getText().trim().isEmpty()||password.getText().trim().isEmpty()||cpassword.getText().trim().isEmpty()){
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Field vide");
-                alert.setContentText("Veillez entrer tous les champs du formulaire!");
+            int telnum = Integer.parseInt(tel.getText());
+            if(!password.getText().equals(cpassword.getText())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Mot de passe");
+                alert.setHeaderText("Le mot de passe doit être identique à sa confirmation");
                 alert.showAndWait();
-            }else {
-                String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),tel.getText(),spec,profile.getValue(),grade.getValue(),password.getText(),email
-                        .getText());
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Inscription");
-                alert.setHeaderText("Inscription");
-                alert.setContentText("Inscription avec succès");
+            }/* else if (pnom.getText().trim().isEmpty() || nom.getText().trim().isEmpty() ||cni.getText().trim().isEmpty()||etab.getText().trim().isEmpty()||tel.getText().trim().isEmpty()||password.getText().trim().isEmpty()||cpassword.getText().trim().isEmpty()||email.getText().trim().isEmpty()||specialite().isEmpty()||profile.getValue().isEmpty()||grade.getValue().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Field vide");
+            alert.setContentText("Veillez entrer tous les champs du formulaire!");
+            alert.showAndWait();
+        }*/ else if (!Pattern.matches("^[a-zA-Z]\\.[a-zA-z]+(@edu.umi.ac.ma|@edu.umi.ma)$", email.getText())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("E-mail");
+                alert.setHeaderText("L'email doit être sous la forme \"p.nom@umi.ac.ma\" pour les enseignants et le staff administratif, et \"p.nom@edu.umi.ac.ma\" pour les étudiants et les doctorants.");
                 alert.showAndWait();
+            } else if (!Pattern.matches("^[a-zA-Z][a-zA-Z]?[a-zA-Z]?[0-9]{6,}+", cni.getText())) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("CNI");
+                alert.setHeaderText("Le CNI doite être sous la forme D123456 ou DA123456");
+                alert.showAndWait();
+            } else if (javaPostreSql.checkexists(email.getText())) {
+                System.out.println("Well this is awkward, alerady exists");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("E-mail existe déjà");
+                alert.setHeaderText("L'e-mail académique que vous avez entrer est déjà existé");
+                alert.showAndWait();
+            } else {
+            String spec = specialite();
+            javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),telnum,spec,profile.getValue(),grade.getValue(),password.getText(),email
+                    .getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Inscription");
+            alert.setHeaderText("Inscription");
+            alert.setContentText("Inscription avec succès");
+            alert.showAndWait();
 
-                Parent root = FXMLLoader.load(getClass().getResource("connexion.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            }
-
-
-        }catch (IOException e){
-            System.out.println("erreur");
+            changeScene.toCnx(event,stage,scene,root);
         }
+
+        }catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Format Incorrecte");
+            alert.setHeaderText("Le champs du nom/prenom ou e-mail a un format incorrecte");
+            alert.showAndWait();
+            System.out.println(e);
+        }
+
+
     }
     public String specialite(){
         if (info.isSelected() && math.isSelected() && contr.isSelected()){

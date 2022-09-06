@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class javaPostreSql {
-    public static void writeToDataBase(String usrnom,String usrpnom,String usrcni,String usretab,String usrtel,String usrspec,String usrprof,String usrgrade,String usrpassword,String usremail){
+    public static void writeToDataBase(String usrnom,String usrpnom,String usrcni,String usretab,int usrtel,String usrspec,String usrprof,String usrgrade,String usrpassword,String usremail){
 
         String url = "jdbc:postgresql://localhost:5432/GestActiv";
         String user = "postgres";
@@ -15,7 +15,7 @@ public class javaPostreSql {
 
         String nom = usrnom,prenom = usrpnom,cni = usrcni, etab = usretab,
                 spec = usrspec, grade = usrgrade, profile = usrprof, email = usremail, passwd = usrpassword;
-        int  tel = Integer.parseInt(usrtel);
+        int  tel = usrtel;
 
         String query = "INSERT INTO users(nom,prenom,cni,email,etab,tel,profile,grade,spec,passwd) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
@@ -78,7 +78,7 @@ public class javaPostreSql {
             usrInf.put("PRENOM",prenom.trim());
             usrInf.put("CNI",cni.trim());
             usrInf.put("ETAB",etab.trim());
-            usrInf.put("TEL","0"+tel.trim());
+            usrInf.put("TEL",tel.trim());
             usrInf.put("GRADE",grade.trim());
             usrInf.put("PROFILE",profile.trim());
             usrInf.put("PASSWORD",passwd.trim());
@@ -93,5 +93,29 @@ public class javaPostreSql {
             System.out.println("erreur be"+ex);
         }
         return usrInf;
+    }
+
+    public static boolean checkexists(String usremail){
+        String url = "jdbc:postgresql://localhost:5432/GestActiv";
+        String user = "postgres";
+        String password = "Mhasni10@";
+
+
+        String query = "SELECT * FROM public.users WHERE email='"+usremail+"';";
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+
+            ResultSet s = pst.executeQuery();
+
+           if (s.isBeforeFirst())
+               return true;
+
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+        return false;
     }
 }
