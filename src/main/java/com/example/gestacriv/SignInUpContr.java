@@ -3,9 +3,11 @@ package com.example.gestacriv;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -173,6 +175,19 @@ public class SignInUpContr implements Initializable{
     @FXML
     private Button btnsettings;
     @FXML
+    private Button btnpdf;
+    @FXML
+    private Button btnpdf2;
+
+    @FXML
+    private Button btnpdf3;
+    @FXML
+    private Label labelpdf;
+    @FXML
+    private Label labelpdf2;
+    @FXML
+    private Label labelpdf3;
+    @FXML
     private MenuItem btnencad;
     @FXML
     private MenuItem btnsout;
@@ -212,16 +227,22 @@ public class SignInUpContr implements Initializable{
     @FXML
     void choisir_fichier(ActionEvent event){
         FileChooser fc =new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Pdf Files","*.pdf"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichier PDF","*.pdf"));
         List<File> f = fc.showOpenMultipleDialog(null);
-        for (File file: f){
+        /*for (File file: f){
             System.out.println(file.getAbsolutePath());
 
+        }*/
+        if (event.getSource() == btnpdf) {
+            labelpdf.setText("Fichier ajouté");
+        } else if (event.getSource() == btnpdf2) {
+            labelpdf2.setText("Fichier ajouté");
+        } else if (event.getSource() == btnpdf3) {
+            labelpdf3.setText("Fichier ajouté");
         }
 
     }
 
 
-
-
 }
+
