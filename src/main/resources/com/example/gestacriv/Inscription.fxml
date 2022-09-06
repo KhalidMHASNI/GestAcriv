@@ -67,7 +67,7 @@
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="227.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="238.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
@@ -119,7 +119,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="800.0" fitWidth="38.0" layoutX="440.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/fs.png" />
                </image>
