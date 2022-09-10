@@ -16,13 +16,19 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class dr_controller implements Initializable{
+public class dr_controller implements Initializable {
     Stage stage;
     Scene scene;
     Parent root;
     @FXML
     public void open_cnx(ActionEvent event) throws IOException {
         changeScene.toCnx(event,stage,scene,root);
+    }
+    @FXML
+    TextField npl_enc;
+    @FXML
+    public void  getData(ActionEvent event) {
+        System.out.println("nom et prenom laureat " +npl_enc.getText());
     }
     @FXML
     ChoiceBox<String> encad = new ChoiceBox<>();
@@ -56,7 +62,7 @@ public class dr_controller implements Initializable{
     private Label labelpdf,labelpdf2,labelpdf3;
 
     @FXML
-    private GridPane homegrid,settingsgrid,respgrid,encadgrid,soutgrid;
+    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -64,7 +70,7 @@ public class dr_controller implements Initializable{
             encadgrid.toFront();
         }
         else  if (event.getSource() == btnR || event.getSource() == btnL){
-            settingsgrid.toFront();
+            home2grid.toFront();
         }else  if (event.getSource() == btnhome || event.getSource() == btnR1 || event.getSource() == btnL1){
             homegrid.toFront();
 

@@ -3,7 +3,6 @@ package com.example.gestacriv;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ public class HelloApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dr.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1540, 800);
-        stage.setTitle("Home");
+        stage.setTitle("Bonjour");
         stage.setScene(scene);
         stage.show();
     }
