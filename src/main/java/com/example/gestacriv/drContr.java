@@ -119,7 +119,7 @@ public class drContr {
     }
     
 
-    public void insertEnc(){
+    /*public void insertEnc(){
         String url = "jdbc:postgresql://localhost:5432/GestActiv";
         String user = "postgres";
         String password = "Mhasni10@";
@@ -144,5 +144,5 @@ public class drContr {
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
         }
-    }
+    }*/
 }
