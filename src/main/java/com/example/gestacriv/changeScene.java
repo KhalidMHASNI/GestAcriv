@@ -14,6 +14,7 @@ public class changeScene {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Connexion");
             stage.show();
         }catch (IOException e){
             System.out.println("Cnx "+e);
@@ -25,6 +26,7 @@ public class changeScene {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Inscription");
             stage.show();
 
         } catch(Exception e) {
@@ -38,6 +40,7 @@ public class changeScene {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Docteur Page");
             stage.show();
         }catch (IOException e){
             System.out.println("Dr "+e);

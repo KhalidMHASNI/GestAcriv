@@ -104,17 +104,17 @@
                   <Image url="@../img/umi.png" />
                </image>
             </ImageView>
-            <Button layoutX="223.0" layoutY="506.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="#007fa4">
+            <Button alignment="CENTER" layoutX="209.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="40.0" prefWidth="146.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 0px 0px 5px 0px; -fx-border-color: #ff8c00;" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="37.0" layoutY="459.0" text="SI vous possedez déja un compte">
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="459.0" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: transparent;" text="SI vous possedez déja un compte" textAlignment="CENTER" textFill="#007fa4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="37.0" layoutY="510.0" text="Veuillez se connecter">
+            <Label layoutX="120.0" layoutY="510.0" text="Veuillez " textFill="#007fa4">
                <font>
                   <Font size="18.0" />
                </font>
