@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.SignInUpContr">
    <children>
       <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: #007FA4;">
          <children>
@@ -57,6 +57,10 @@
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </MenuButton>
+            <Button fx:id="btnsettings" mnemonicParsing="false" onAction="#hh" prefHeight="83.0" prefWidth="160.0" style="-fx-cursor: hand;" text="Settings">
+               <VBox.margin>
+                  <Insets top="200.0" />
+               </VBox.margin></Button>
          </children>
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: #6EC1E4;">
@@ -82,23 +86,21 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                            <children>
-                              <Label layoutX="106.0" layoutY="98.0" prefHeight="106.0" prefWidth="279.0" text="hhn't">
+                              <Label layoutX="382.0" layoutY="197.0" prefHeight="137.0" prefWidth="208.0" text="HOME">
                                  <font>
-                                    <Font size="26.0" />
+                                    <Font size="45.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnL1" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Left 1" />
-                              <Button fx:id="btnR1" layoutX="801.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Right 1" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -138,7 +140,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="desc_resp" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <TextArea layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
                                           <Label layoutX="32.0" layoutY="431.0" text="Justification">
                                              <font>
                                                 <Font size="20.0" />
@@ -167,92 +169,17 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="soutgrid" style="-fx-background-color: white;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
-                                 <center>
-                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: snow; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="npl_sout" layoutX="435.0" layoutY="34.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="40.0" text="Nom et Prénom du Lauréat">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="115.0" text="Soutenance">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <ChoiceBox fx:id="sout" layoutX="433.0" layoutY="114.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-border-color: #007FA4; -fx-border-width: 3px; -fx-background-color: transparent;" />
-                                          <Label layoutX="32.0" layoutY="334.0" text="Date">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="211.0" text="Intitule de soutenance:">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <TextArea fx:id="intitule_sout" layoutX="431.0" layoutY="166.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
-                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="btnpdf2" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="lieu_sout" layoutX="429.0" layoutY="412.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="418.0" text="Lieu de soutenance">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <DatePicker fx:id="date_sout" layoutX="429.0" layoutY="334.0" prefHeight="30.0" prefWidth="325.0" style="-fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;" />
-                                          <Label fx:id="labelpdf2" alignment="CENTER" layoutX="300.0" layoutY="500.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter soutenance" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
+                              <Button layoutX="167.0" layoutY="246.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="174.0" text="Button" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -281,7 +208,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <TextField fx:id="npl_enc" layoutX="435.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                          <TextField layoutX="435.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -308,7 +235,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="intitule_encad" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;">
+                                          <TextArea layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;">
                                              <font>
                                                 <Font size="14.0" />
                                              </font></TextArea>
@@ -345,28 +272,92 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
+                  <GridPane fx:id="soutgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
                            <children>
-                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="367.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/fac.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="51.0" layoutY="64.0" prefHeight="112.0" prefWidth="235.0" text="hh">
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: snow; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField layoutX="435.0" layoutY="34.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="40.0" text="Nom et Prénom du Lauréat">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="115.0" text="Soutenance">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="sout" layoutX="433.0" layoutY="114.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-border-color: #007FA4; -fx-border-width: 3px; -fx-background-color: transparent;" />
+                                          <Label layoutX="32.0" layoutY="334.0" text="Date">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="211.0" text="Intitule de soutenance:">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea layoutX="431.0" layoutY="166.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf2" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField layoutX="429.0" layoutY="412.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="418.0" text="Lieu de soutenance">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker layoutX="429.0" layoutY="334.0" prefHeight="30.0" prefWidth="325.0" style="-fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;" />
+                                          <Label fx:id="labelpdf2" alignment="CENTER" layoutX="148.0" layoutY="540.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter soutenance" textFill="#007fa4">
                                  <font>
-                                    <Font size="26.0" />
+                                    <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnL" layoutX="129.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
-                              <Button fx:id="btnR" layoutX="948.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" text="Right" />
                            </children>
                         </AnchorPane>
                      </children>
