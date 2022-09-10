@@ -25,10 +25,29 @@ public class dr_controller implements Initializable {
         changeScene.toCnx(event,stage,scene,root);
     }
     @FXML
-    TextField npl_enc;
+    TextField npl_enc,npl_sout,lieu_sout;
+    @FXML
+    private TextArea intitule_encad,intitule_sout,desc_resp;
+    @FXML
+    private DatePicker date_sout;
+
+
     @FXML
     public void  getData(ActionEvent event) {
-        System.out.println("nom et prenom laureat " +npl_enc.getText());
+        System.out.println("nom et prenom laureat: " +npl_enc.getText());
+        System.out.println("Encadrement: "+encad.getValue());
+        System.out.println("Intitule: "+intitule_encad.getText());
+        System.out.println("Type encadrement: "+type_encad.getValue());
+
+        System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        System.out.println("Soutenance: "+sout.getValue());
+        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
+        System.out.println("Date: "+date_sout.getValue());
+        System.out.println("Lieu: " +lieu_sout.getText());
+
+        System.out.println("Responsabilite: "+resp.getValue());
+        System.out.println("Description sur responsabilite: "+desc_resp.getText());
+
     }
     @FXML
     ChoiceBox<String> encad = new ChoiceBox<>();
