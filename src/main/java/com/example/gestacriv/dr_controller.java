@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -20,6 +21,17 @@ import java.util.logging.Logger;
 
 
 public class dr_controller implements Initializable {
+
+    @FXML
+    Label npn = new Label(),prof = new Label();
+    public void displaynpn(HashMap<String, String> usrinf){
+        //System.out.println("aaaaaa "+usrinf.get("NOM"));
+        prof.setText(""+usrinf.get("PROFILE"));
+        npn.setText(usrinf.get("NOM")+" "+usrinf.get("PRENOM"));
+    }
+
+
+
     Stage stage;
     Scene scene;
     Parent root;
@@ -98,6 +110,7 @@ public class dr_controller implements Initializable {
         type_encad.getItems().addAll(type_encadr);
         sout.getItems().addAll(souten);
         resp.getItems().addAll(respo);
+
 
     }
 

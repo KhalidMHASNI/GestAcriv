@@ -45,6 +45,20 @@
                   </Label>
                </children>
             </Pane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="prof" layoutX="14.0" layoutY="54.0" text="prf">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="npn" layoutX="15.0" layoutY="69.0" prefHeight="82.0" prefWidth="126.0" text="npn">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" style="-fx-cursor: hand; -fx-background-color: #6EC1E4; -fx-border-color: #fff; -fx-border-width: 0px 0px 4px 0px;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
               <items>
                 <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
@@ -52,7 +66,7 @@
                   <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
               </items>
                <VBox.margin>
-                  <Insets top="250.0" />
+                  <Insets top="80.0" />
                </VBox.margin>
                <font>
                   <Font name="Arial Bold" size="12.0" />
@@ -187,7 +201,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false"  style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
