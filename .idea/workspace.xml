@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="!">
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="BackEnd Done 1.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/Inscription.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/connexion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +51,6 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.gestacriv" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.gestacriv.HelloApplication" />
@@ -183,14 +178,28 @@
       <option name="project" value="LOCAL" />
       <updated>1661534730395</updated>
     </task>
-    <task id="LOCAL-00015" summary="!">
-      <created>1661536743332</created>
+    <task id="LOCAL-00015" summary="cnx is working now gg">
+      <created>1661725520661</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1661536743332</updated>
+      <updated>1661725520661</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="...">
+      <created>1661780704818</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661780704818</updated>
+    </task>
+    <task id="LOCAL-00017" summary="...">
+      <created>1661879958055</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1661879958055</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,10 +220,10 @@
     <MESSAGE value="fx:id s update" />
     <MESSAGE value="fixing fx ids&#10;getData function&#10;dropDown temporarly fix" />
     <MESSAGE value="test test" />
-    <MESSAGE value="..." />
     <MESSAGE value="." />
-    <MESSAGE value="!" />
-    <option name="LAST_COMMIT_MESSAGE" value="!" />
+    <MESSAGE value="cnx is working now gg" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -223,19 +232,6 @@
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalAccessException" package="java.lang" />
-          <option name="timeStamp" value="4" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java</url>
-          <line>157</line>
-          <properties class="com.example.gestacriv.SignInUpContr" method="initialize">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

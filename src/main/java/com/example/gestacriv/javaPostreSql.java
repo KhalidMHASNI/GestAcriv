@@ -119,5 +119,29 @@ public class javaPostreSql {
         return false;
     }
 
+    public static String checkpasswd(String usremail){
+        String url = "jdbc:postgresql://localhost:5432/GestActiv";
+        String user = "postgres";
+        String password = "Mhasni10@";
 
+
+        String query = "SELECT * FROM public.users WHERE email='"+usremail+"';";
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+
+            ResultSet s = pst.executeQuery();
+            String psw=null;
+            while (s.next()){
+                psw = s.getString("passwd");
+            }
+            return psw;
+
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+        return null;
+    }
 }

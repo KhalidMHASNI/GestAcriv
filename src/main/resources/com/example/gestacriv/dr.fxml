@@ -186,7 +186,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false"  style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -276,7 +276,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getData" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>

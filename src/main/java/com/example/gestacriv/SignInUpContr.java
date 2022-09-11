@@ -47,25 +47,44 @@ public class SignInUpContr implements Initializable{
 
     @FXML
     Label npname ;
+
     @FXML
     public void open_panel(ActionEvent event) throws IOException {
-        HashMap<String,String> userInfo = new HashMap<String,String>();
+        HashMap<String,String> userInfo;
         try {
-            userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
+
+            String psw = javaPostreSql.checkpasswd(cnxemail.getText());
+
+            if (!javaPostreSql.checkexists(cnxemail.getText())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("E-mail ");
+                alert.setHeaderText("L'e-mail académique que vous avez entrer n'existe pas  .");
+                alert.showAndWait();
+            }else if (!psw.trim().equals(cnxpassword.getText().trim())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Mot de passe");
+                alert.setHeaderText("Le mot de passe que vous avez entrer est incorrecte .");
+                alert.showAndWait();
+            }else {
+                userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
 
             /*String p=userInfo.get("PRENOM"),n=userInfo.get("NOM");
             System.out.println(userInfo.get("PROFILE"));*/
 
-            if (userInfo.get("PROFILE").equals("Docteur")){
-                changeScene.toDr(event,stage,scene,root);
+                if (userInfo.get("PROFILE").equals("Docteur")){
+                    changeScene.toDr(event,stage,scene,root);
 
-            }else if (userInfo.get("PROFILE").equals("Doctorant")){
+                }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
-                changeScene.toDrt(event,stage,scene,root);
-            }else if (userInfo.get("PROFILE").equals("Enseignant")){
+                    changeScene.toDrt(event,stage,scene,root);
+                }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
-                changeScene.toEns(event,stage,scene,root);
+                    changeScene.toEns(event,stage,scene,root);
+                }
             }
+
+
+
 
         } catch(Exception e) {
             System.out.println("érreur"+e);
