@@ -1,10 +1,36 @@
 .btn{
 -fx-background-color: transparent;
 -fx-cursor: hand;
--fx-border-radius:30px;
 -fx-border-color: #ff8c00;
+-fx-border-width:5px 0px 0px 0px;
+
 
 }
-.btn:hover{
--fx-background-color: grey;
+
+.btn:hover {
+-fx-border-color: #007FA4;
+-fx-border-width:0px 0px 5px 0px;
+
 }
+.btn_dr{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+-fx-border-color: #6ec1e4;
+-fx-border-width:0px 0px 3px 0px;
+
+
+}
+
+.btn_dr:hover {
+-fx-border-color: #ff8c00;
+-fx-border-width:0px 0px 5px 0px;
+
+}
+
+.box {
+-fx-border-color:  linear-gradient(from 25% 25% to 100% 100%,#007FA4 ,#ff8c00);
+-fx-border-radius:  10px 100px / 120px;
+-fx-border-width:5px;
+
+}
+

@@ -20,16 +20,16 @@
                   <Font name="Arial" size="28.0" />
                </font>
             </Text>
-            <TextField fx:id="cnxemail" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: #ff8c00;">
+            <TextField fx:id="cnxemail" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4);">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <PasswordField fx:id="cnxpassword" alignment="CENTER" layoutX="210.0" layoutY="375.0" prefHeight="35.0" prefWidth="411.0" promptText="Mot de passe" style="-fx-border-color: #ff8c00; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <PasswordField fx:id="cnxpassword" alignment="CENTER" layoutX="210.0" layoutY="375.0" prefHeight="35.0" prefWidth="411.0" promptText="Mot de passe" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button layoutX="336.0" layoutY="528.0" mnemonicParsing="false" onAction="#open_panel" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" text="Se connecter" textFill="WHITE">
+            <Button layoutX="336.0" layoutY="528.0" mnemonicParsing="false" onAction="#open_panel" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 30px;" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>

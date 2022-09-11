@@ -27,18 +27,18 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <BorderPane layoutX="393.0" layoutY="293.0" prefHeight="297.0" prefWidth="454.0" style="-fx-border-color: #007fa4; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 4px;">
+            <BorderPane layoutX="339.0" layoutY="276.0" prefHeight="386.0" prefWidth="601.0" styleClass="box" stylesheets="@../css/style.css">
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button layoutX="46.0" layoutY="125.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-border-color: #ff8c00; -fx-border-radius: 40px;" styleClass="btn" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">
+                        <Button layoutX="103.0" layoutY="169.0" mnemonicParsing="false" onAction="#open_cnx" snapToPixel="false" styleClass="btn" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">
                            <font>
-                              <Font name="Consolas" size="18.0" />
+                              <Font name="Verdana" size="18.0" />
                            </font>
                         </Button>
-                        <Button layoutX="271.0" layoutY="125.0" mnemonicParsing="false" onAction="#open_inscrip" style="-fx-cursor: hand; -fx-border-color: #ff8c00; -fx-border-radius: 30px;" styleClass="btn" stylesheets="@../css/style.css" text="S'inscrire" textFill="#007fa4">
+                        <Button layoutX="355.0" layoutY="169.0" mnemonicParsing="false" onAction="#open_inscrip" styleClass="btn" stylesheets="@../css/style.css" text="S'inscrire" textFill="#007fa4">
                            <font>
-                              <Font name="Calibri" size="18.0" />
+                              <Font name="Verdana" size="18.0" />
                            </font>
                         </Button>
                      </children>

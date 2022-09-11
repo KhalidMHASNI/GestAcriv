@@ -22,31 +22,31 @@
                   <Font name="Arial" size="28.0" />
                </font>
             </Text>
-            <TextField fx:id="nom" alignment="CENTER" layoutX="495.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px;">
+            <TextField fx:id="nom" alignment="CENTER" layoutX="495.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="pnom" alignment="CENTER" layoutX="171.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <TextField fx:id="pnom" alignment="CENTER" layoutX="171.0" layoutY="127.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="cni" alignment="CENTER" layoutX="210.0" layoutY="192.0" prefHeight="35.0" prefWidth="411.0" promptText="CNI" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="cni" alignment="CENTER" layoutX="210.0" layoutY="192.0" prefHeight="35.0" prefWidth="411.0" promptText="CNI" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="email" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="email" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="etab" alignment="CENTER" layoutX="210.0" layoutY="320.0" prefHeight="35.0" prefWidth="411.0" promptText="Etablissement (FS-Meknès)" style="-fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
+            <TextField fx:id="etab" alignment="CENTER" layoutX="210.0" layoutY="320.0" prefHeight="35.0" prefWidth="411.0" promptText="Etablissement (FS-Meknès)" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <TextField fx:id="tel" alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00;">
+            <TextField fx:id="tel" alignment="CENTER" layoutX="210.0" layoutY="382.0" prefHeight="35.0" prefWidth="411.0" promptText="Num Télephone" style="-fx-background-color: transparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4);">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;" />
+            <ChoiceBox fx:id="profile" layoutX="210.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px;" />
             <CheckBox fx:id="info" layoutX="280.0" layoutY="520.0" mnemonicParsing="false" text="Informatique" textFill="WHITE">
                <font>
                   <Font size="14.0" />
@@ -63,21 +63,21 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Text>
-            <PasswordField fx:id="password" alignment="CENTER" layoutX="238.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="238.0" layoutY="556.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe" style="-fx-background-color: tranparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="238.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: #ff8c00; -fx-effect: 2px;">
+            <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="238.0" layoutY="613.0" prefHeight="26.0" prefWidth="356.0" promptText="Confirmer mot de passe" style="-fx-background-color: trasparent; -fx-border-radius: 10px 100px / 120px; -fx-border-width: 3px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-effect: 2px;">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#open_alert" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
+            <Button fx:id="subButton" layoutX="351.0" layoutY="696.0" mnemonicParsing="false" onAction="#open_alert" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-width: 3px; -fx-border-radius: 30px;" text="S'inscrire" textFill="WHITE">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
             <ImageView fitHeight="800.0" fitWidth="123.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-            <ChoiceBox fx:id="grade" layoutX="458.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: #ff8c00;" />
+            <ChoiceBox fx:id="grade" layoutX="458.0" layoutY="466.0" prefHeight="32.0" prefWidth="160.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4);" />
             <Text fill="DARKORANGE" layoutX="243.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" textAlignment="CENTER" wrappingWidth="92.3671875">
                <font>
                   <Font name="System Bold" size="14.0" />
