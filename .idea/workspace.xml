@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="getData fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/inscricnx.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/inscricnx.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="...." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -249,7 +246,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java</url>
-          <line>157</line>
+          <line>188</line>
           <properties class="com.example.gestacriv.SignInUpContr" method="initialize">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
