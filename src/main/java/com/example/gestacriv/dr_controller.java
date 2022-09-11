@@ -96,7 +96,6 @@ public class dr_controller implements Initializable {
     ChoiceBox<String> sout = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> resp = new ChoiceBox<>();
-
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
     String[] encadr = {"Encadrement_thèse","..","..."};
@@ -115,7 +114,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnsettings,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1;
+    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1;
     @FXML
     private MenuItem btnencad,btnsout,btnresp;
 
