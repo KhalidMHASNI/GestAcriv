@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class changeScene {
 
@@ -34,40 +35,27 @@ public class changeScene {
         }
     }
 
-    public static void toDr(ActionEvent event,Stage stage,Scene scene,Parent root){
-        try {
-            root = FXMLLoader.load(changeScene.class.getResource("dr.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            scene.getStylesheets().add(changeScene.class.getResource("style.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Docteur Page");
-            stage.show();
-        }catch (IOException e){
-            System.out.println("Dr "+e);
-        }
+    public static void toDr(ActionEvent event, Stage stage, Scene scene, Parent root){
+        //root = FXMLLoader.load(changeScene.class.getResource("dr.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Docteur Page");
+        stage.show();
     }
     public static void toDrt(ActionEvent event,Stage stage,Scene scene,Parent root){
-        try {
-            root = FXMLLoader.load(changeScene.class.getResource("drt.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e){
-            System.out.println("Drt "+e);
-        }
+        //root = FXMLLoader.load(changeScene.class.getResource("drt.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     public static void toEns(ActionEvent event,Stage stage,Scene scene,Parent root){
-        try {
-            root = FXMLLoader.load(changeScene.class.getResource("ens.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e){
-            System.out.println("Dr "+e);
-        }
+        //root = FXMLLoader.load(changeScene.class.getResource("ens.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void toHome(ActionEvent event,Stage stage,Scene scene,Parent root){

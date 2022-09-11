@@ -67,18 +67,29 @@ public class SignInUpContr implements Initializable{
                 alert.showAndWait();
             }else {
                 userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
-
-            /*String p=userInfo.get("PRENOM"),n=userInfo.get("NOM");
-            System.out.println(userInfo.get("PROFILE"));*/
+                System.out.println(userInfo.get("PROFILE"));
 
                 if (userInfo.get("PROFILE").equals("Docteur")){
-                    changeScene.toDr(event,stage,scene,root);
 
+                    FXMLLoader loadr = new FXMLLoader(getClass().getResource("dr.fxml"));
+                    root = loadr.load();
+                    dr_controller c = loadr.getController();
+                    c.displaynpn(userInfo);
+
+                    changeScene.toDr(event,stage,scene,root);
                 }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
+                    FXMLLoader loadr = new FXMLLoader(getClass().getResource("drt.fxml"));
+                    root = loadr.load();
+                    dr_controller c = loadr.getController();
+                    c.displaynpn(userInfo);
                     changeScene.toDrt(event,stage,scene,root);
                 }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
+                    FXMLLoader loadr = new FXMLLoader(getClass().getResource("ens.fxml"));
+                    root = loadr.load();
+                    dr_controller c = loadr.getController();
+                    c.displaynpn(userInfo);
                     changeScene.toEns(event,stage,scene,root);
                 }
             }
@@ -87,24 +98,24 @@ public class SignInUpContr implements Initializable{
 
 
         } catch(Exception e) {
-            System.out.println("érreur"+e);
+            System.out.println("érreur "+e);
         }
     }
 
     public void open_alert(ActionEvent event) throws IOException{
         try {
             int telnum = Integer.parseInt(tel.getText());
-            System.out.println("hmm");
+
             if(!password.getText().equals(cpassword.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Mot de passe");
                 alert.setHeaderText("Le mot de passe doit être identique à sa confirmation");
                 alert.showAndWait();
             } else if (pnom.getText().trim().isEmpty() || nom.getText().trim().isEmpty() ||cni.getText().trim().isEmpty()||etab.getText().trim().isEmpty()||tel.getText().trim().isEmpty()||password.getText().trim().isEmpty()||cpassword.getText().trim().isEmpty()||email.getText().trim().isEmpty()||specialite().isEmpty()||profile.getValue().isEmpty()||grade.getValue().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Field vide");
-            alert.setContentText("Veillez entrer tous les champs du formulaire!");
-            alert.showAndWait();
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Field vide");
+                alert.setContentText("Veillez entrer tous les champs du formulaire!");
+                alert.showAndWait();
             } else if (!Pattern.matches("^[a-zA-Z]\\.[a-zA-z]+(@edu.umi.ac.ma|@edu.umi.ma)$", email.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("E-mail");

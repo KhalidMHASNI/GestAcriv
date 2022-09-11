@@ -84,8 +84,7 @@ public class javaPostreSql {
             usrInf.put("PASSWORD",passwd.trim());
             usrInf.put("EMAIL",email.trim());
 
-            System.out.println(usrInf.get("NOM")+" "+usrInf.get("PRENOM")+" ");
-            System.out.println(usrInf);
+
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
