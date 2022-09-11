@@ -12,8 +12,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class dr_controller implements Initializable {
@@ -40,7 +43,31 @@ public class dr_controller implements Initializable {
         System.out.println("Intitule: "+intitule_encad.getText());
         System.out.println("Type encadrement: "+type_encad.getValue());
 
-        System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        String url = "jdbc:postgresql://localhost:5432/GestActiv";
+        String user = "postgres";
+        String password = "Mhasni10@";
+
+
+        String query = "INSERT INTO encadrement(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+
+            pst.setString(1, npl_enc.getText());
+            pst.setString(2, encad.getValue());
+            pst.setString(3, intitule_encad.getText());
+            pst.setString(4, type_encad.getValue());
+            pst.executeUpdate();
+
+
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+
+        /*
+        * System.out.println("nom et prenom laureat: " +npl_sout.getText());
         System.out.println("Soutenance: "+sout.getValue());
         System.out.println("Intitule Soutenance: "+intitule_sout.getText());
         System.out.println("Date: "+date_sout.getValue());
@@ -48,6 +75,7 @@ public class dr_controller implements Initializable {
 
         System.out.println("Responsabilite: "+resp.getValue());
         System.out.println("Description sur responsabilite: "+desc_resp.getText());
+        * */
 
     }
     @FXML

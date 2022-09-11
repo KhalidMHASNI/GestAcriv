@@ -47,25 +47,44 @@ public class SignInUpContr implements Initializable{
 
     @FXML
     Label npname ;
+
     @FXML
     public void open_panel(ActionEvent event) throws IOException {
-        HashMap<String,String> userInfo = new HashMap<String,String>();
+        HashMap<String,String> userInfo;
         try {
-            userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
+
+            String psw = javaPostreSql.checkpasswd(cnxemail.getText());
+
+            if (!javaPostreSql.checkexists(cnxemail.getText())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("E-mail ");
+                alert.setHeaderText("L'e-mail académique que vous avez entrer n'existe pas  .");
+                alert.showAndWait();
+            }else if (!psw.trim().equals(cnxpassword.getText().trim())){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Mot de passe");
+                alert.setHeaderText("Le mot de passe que vous avez entrer est incorrecte .");
+                alert.showAndWait();
+            }else {
+                userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
 
             /*String p=userInfo.get("PRENOM"),n=userInfo.get("NOM");
             System.out.println(userInfo.get("PROFILE"));*/
 
-            if (userInfo.get("PROFILE").equals("Docteur")){
-                changeScene.toDr(event,stage,scene,root);
+                if (userInfo.get("PROFILE").equals("Docteur")){
+                    changeScene.toDr(event,stage,scene,root);
 
-            }else if (userInfo.get("PROFILE").equals("Doctorant")){
+                }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
-                changeScene.toDrt(event,stage,scene,root);
-            }else if (userInfo.get("PROFILE").equals("Enseignant")){
+                    changeScene.toDrt(event,stage,scene,root);
+                }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
-                changeScene.toEns(event,stage,scene,root);
+                    changeScene.toEns(event,stage,scene,root);
+                }
             }
+
+
+
 
         } catch(Exception e) {
             System.out.println("érreur"+e);
@@ -82,10 +101,10 @@ public class SignInUpContr implements Initializable{
                 alert.setHeaderText("Le mot de passe doit être identique à sa confirmation");
                 alert.showAndWait();
             } else if (pnom.getText().trim().isEmpty() || nom.getText().trim().isEmpty() ||cni.getText().trim().isEmpty()||etab.getText().trim().isEmpty()||tel.getText().trim().isEmpty()||password.getText().trim().isEmpty()||cpassword.getText().trim().isEmpty()||email.getText().trim().isEmpty()||specialite().isEmpty()||profile.getValue().isEmpty()||grade.getValue().isEmpty()){
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Field vide");
-                alert.setContentText("Veillez entrer tous les champs du formulaire!");
-                alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Field vide");
+            alert.setContentText("Veillez entrer tous les champs du formulaire!");
+            alert.showAndWait();
             } else if (!Pattern.matches("^[a-zA-Z]\\.[a-zA-z]+(@edu.umi.ac.ma|@edu.umi.ma)$", email.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("E-mail");
@@ -148,21 +167,88 @@ public class SignInUpContr implements Initializable{
     @FXML
     ChoiceBox<String> profile = new ChoiceBox<>();
     @FXML
+    ChoiceBox<String> encad = new ChoiceBox<>();
+    @FXML
+    ChoiceBox<String> sout = new ChoiceBox<>();
+    @FXML
+    ChoiceBox<String> resp = new ChoiceBox<>();
+
+    @FXML
+    ChoiceBox<String> type_encad = new ChoiceBox<>();
+    @FXML
     ChoiceBox<String> grade = new ChoiceBox<>();
     String[] prf = {"Enseignant","Doctorant","Docteur"};
     String[] grd = {"PES","PH","PA"};
-
+    String[] encadr = {"Encadrement_thèse","..","..."};
+    String[] type_encadr = {"Directeur thèse","..","..."};
+    String[] souten = {"Soutenance_thèse","..","..."};
+    String[] respo = {"Responsable_Filière","..","..."};
 
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
         profile.getItems().addAll(prf);
         grade.getItems().addAll(grd);
-
+        encad.getItems().addAll(encadr);
+        type_encad.getItems().addAll(type_encadr);
+        sout.getItems().addAll(souten);
+        resp.getItems().addAll(respo);
 
     }
 
+    @FXML
+    private  Button btnhome;
 
+    @FXML
+    private Button btnsettings;
+    @FXML
+    private MenuItem btnencad;
+    @FXML
+    private MenuItem btnsout;
+    @FXML
+    private MenuItem btnresp;
+
+    @FXML
+    private GridPane encadgrid;
+    @FXML
+    private GridPane soutgrid;
+    @FXML
+    private GridPane respgrid;
+
+    @FXML
+    private GridPane homegrid;
+    @FXML
+    private GridPane settingsgrid;
+
+    @FXML
+    private  void hh(ActionEvent event){
+
+        if (event.getSource() == btnencad){
+            encadgrid.toFront();
+        }
+        else  if (event.getSource() == btnsettings){
+            settingsgrid.toFront();
+        }else  if (event.getSource() == btnhome){
+                homegrid.toFront();
+
+        }else  if (event.getSource() == btnresp){
+            respgrid.toFront();
+        }else if (event.getSource() == btnsout){
+            soutgrid.toFront();
+        }
+
+    }
+    @FXML
+    void choisir_fichier(ActionEvent event){
+        FileChooser fc =new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Pdf Files","*.pdf"));
+        List<File> f = fc.showOpenMultipleDialog(null);
+        for (File file: f){
+            System.out.println(file.getAbsolutePath());
+
+        }
+
+    }
 
 
 
