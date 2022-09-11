@@ -26,6 +26,24 @@
 -fx-border-width:0px 0px 5px 0px;
 
 }
+.btn_sub {
+-fx-background-color: linear-gradient(from 40% 40% to 100% 100%,#ff8c00,#6ec1e4);
+-fx-cursor: hand;
+-fx-border-width:3px;
+}
+.btn_sub:hover {
+-fx-background-color: linear-gradient(from 40% 40% to 100% 100%, #6ec1e4,#ff8c00);
+
+
+}
+.btn_annu {
+-fx-background-color:transparent;
+-fx-cursor: hand;
+-fx-border-width:3px;
+}
+.btn_annu:hover {
+-fx-background-color:grey;
+}
 
 .box {
 -fx-border-color:  linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
