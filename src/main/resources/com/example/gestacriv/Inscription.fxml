@@ -104,17 +104,17 @@
                   <Image url="@../img/umi.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER" layoutX="209.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="40.0" prefWidth="146.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 0px 0px 5px 0px; -fx-border-color: #ff8c00;" text="Se connecter" textFill="#007fa4">
+            <Button alignment="CENTER" layoutX="209.0" layoutY="497.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="40.0" prefWidth="146.0" styleClass="btn_dr" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">
                <font>
                   <Font name="Consolas" size="18.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="-1.0" layoutY="459.0" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: transparent;" text="SI vous possedez déja un compte" textAlignment="CENTER" textFill="#007fa4">
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="459.0" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: transparent;" text="SI vous possedez déja un compte" textAlignment="CENTER" textFill="DARKORANGE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="120.0" layoutY="510.0" text="Veuillez " textFill="#007fa4">
+            <Label layoutX="120.0" layoutY="510.0" text="Veuillez " textFill="DARKORANGE">
                <font>
                   <Font size="18.0" />
                </font>

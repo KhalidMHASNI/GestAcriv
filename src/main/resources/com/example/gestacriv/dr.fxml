@@ -83,7 +83,7 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
+                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
