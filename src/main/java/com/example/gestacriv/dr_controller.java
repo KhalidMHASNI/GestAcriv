@@ -34,6 +34,7 @@ public class dr_controller implements Initializable {
 
     @FXML
     public void  getData(ActionEvent event) {
+
         System.out.println("nom et prenom laureat: " +npl_enc.getText());
         System.out.println("Encadrement: "+encad.getValue());
         System.out.println("Intitule: "+intitule_encad.getText());
@@ -92,7 +93,6 @@ public class dr_controller implements Initializable {
             home2grid.toFront();
         }else  if (event.getSource() == btnhome || event.getSource() == btnR1 || event.getSource() == btnL1){
             homegrid.toFront();
-
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
         }else if (event.getSource() == btnsout){

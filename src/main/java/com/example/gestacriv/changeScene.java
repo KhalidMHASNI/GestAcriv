@@ -23,7 +23,6 @@ public class changeScene {
     public static void toInsc(ActionEvent event, Stage stage, Scene scene, Parent root) throws IOException {
         try {
             root = FXMLLoader.load(changeScene.class.getResource("Inscription.fxml"));
-
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -40,6 +39,7 @@ public class changeScene {
             root = FXMLLoader.load(changeScene.class.getResource("dr.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
+            scene.getStylesheets().add(changeScene.class.getResource("style.css").toExternalForm());
             stage.setScene(scene);
             stage.setTitle("Docteur Page");
             stage.show();
