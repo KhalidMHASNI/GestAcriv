@@ -28,7 +28,7 @@
 }
 
 .box {
--fx-border-color:  linear-gradient(from 25% 25% to 100% 100%,#007FA4 ,#ff8c00);
+-fx-border-color:  linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
 -fx-border-radius:  10px 100px / 120px;
 -fx-border-width:5px;
 

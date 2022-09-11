@@ -24,7 +24,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
 
    <children>
-      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: #007FA4;">
+      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
             <Pane prefHeight="120.0" prefWidth="160.0" style="-fx-background-color: white;">
                <children>
@@ -45,7 +45,7 @@
                   </Label>
                </children>
             </Pane>
-            <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" style="-fx-cursor: hand; -fx-background-color: #6EC1E4; -fx-border-color: #fff; -fx-border-width: 0px 0px 4px 0px;" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
+            <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" styleClass="btn" stylesheets="@../css/style.css" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
               <items>
                 <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
                 <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
@@ -60,19 +60,19 @@
             </MenuButton>
          </children>
       </VBox>
-      <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: #6EC1E4;">
+      <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
-            <Label alignment="CENTER" layoutX="239.0" layoutY="43.0" prefHeight="42.0" prefWidth="668.0" text="Gestion des activités Docteur" textAlignment="CENTER" textFill="DARKORANGE">
+            <Label alignment="CENTER" layoutX="239.0" layoutY="43.0" prefHeight="42.0" prefWidth="668.0" text="Gestion des activités Docteur" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>
             </Label>
-            <Button layoutX="1200.0" layoutY="79.0" mnemonicParsing="false" onAction="#open_cnx" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 0px 8px 0px;" text="Se deconnecter" textFill="#007fa4">
+            <Button layoutX="1200.0" layoutY="79.0" mnemonicParsing="false" onAction="#open_cnx" styleClass="btn_dr" stylesheets="@../css/style.css" text="Se deconnecter" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Symbol" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnhome" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #ff8c00; -fx-border-width: 0px 0px 8px 0px;" text="Acceuil" textFill="#007fa4">
+            <Button fx:id="btnhome" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" styleClass="btn_dr" stylesheets="@../css/style.css" text="Acceuil" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Symbol" size="18.0" />
                </font>
@@ -187,7 +187,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false"  style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
