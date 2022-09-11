@@ -83,53 +83,6 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Label layoutX="106.0" layoutY="98.0" prefHeight="106.0" prefWidth="279.0" text="hhn't">
-                                 <font>
-                                    <Font size="26.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="btnL1" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Left 1" />
-                              <Button fx:id="btnR1" layoutX="801.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Right 1" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-                           <children>
-                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="367.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/fac.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Label layoutX="51.0" layoutY="64.0" prefHeight="112.0" prefWidth="235.0" text="hh">
-                                 <font>
-                                    <Font size="26.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="btnL" layoutX="129.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
-                              <Button fx:id="btnR" layoutX="948.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" text="Right" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -144,7 +97,7 @@
                                  <center>
                                     <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                          <Button fx:id="btn_annuler" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -232,7 +185,7 @@
                                  <center>
                                     <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                          <Button fx:id="btn_annuler2" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -296,7 +249,7 @@
                                  <center>
                                     <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                          <Button fx:id="btn_annuler1" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -368,6 +321,53 @@
                                     <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="106.0" layoutY="98.0" prefHeight="106.0" prefWidth="279.0" text="hhn't">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnL1" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Left 1" />
+                              <Button fx:id="btnR1" layoutX="801.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Right 1" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="367.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/fac.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="51.0" layoutY="64.0" prefHeight="112.0" prefWidth="235.0" text="hh">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnL" layoutX="129.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
+                              <Button fx:id="btnR" layoutX="948.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" text="Right" />
                            </children>
                         </AnchorPane>
                      </children>

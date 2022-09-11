@@ -42,7 +42,8 @@
 -fx-border-width:3px;
 }
 .btn_annu:hover {
--fx-background-color:grey;
+-fx-border-color:#c1c1c1;
+-fx-border-width:0px 0px 4px 0px;
 }
 
 .box {

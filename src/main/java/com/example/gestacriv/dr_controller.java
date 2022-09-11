@@ -15,6 +15,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -114,7 +115,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1;
+    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1,btn_annuler,btn_annuler1,btn_annuler2;
     @FXML
     private MenuItem btnencad,btnsout,btnresp;
 
@@ -156,6 +157,27 @@ public class dr_controller implements Initializable {
             labelpdf2.setText("Fichier ajouté");
         }else if (event.getSource() == btnpdf3){
             labelpdf3.setText("Fichier ajouté");
+        }
+
+    }
+
+    @FXML
+    public void  annuler(ActionEvent event){
+        if (event.getSource() == btn_annuler || event.getSource() == btn_annuler1 || event.getSource() == btn_annuler2){
+            npl_enc.setText(null);
+            encad.setValue(null);
+            intitule_encad.setText(null);
+            type_encad.setValue(null);
+
+            npl_sout.setText(null);
+            sout.setValue(null);
+            intitule_sout.setText(null);
+            date_sout.setValue(null);
+            lieu_sout.setText(null);
+
+            resp.setValue(null);
+            desc_resp.setText(null);
+
         }
 
     }
