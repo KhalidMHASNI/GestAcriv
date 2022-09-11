@@ -16,13 +16,38 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class dr_controller implements Initializable{
+public class dr_controller implements Initializable {
     Stage stage;
     Scene scene;
     Parent root;
     @FXML
     public void open_cnx(ActionEvent event) throws IOException {
         changeScene.toCnx(event,stage,scene,root);
+    }
+    @FXML
+    TextField npl_enc,npl_sout,lieu_sout;
+    @FXML
+    private TextArea intitule_encad,intitule_sout,desc_resp;
+    @FXML
+    private DatePicker date_sout;
+
+
+    @FXML
+    public void  getData(ActionEvent event) {
+        System.out.println("nom et prenom laureat: " +npl_enc.getText());
+        System.out.println("Encadrement: "+encad.getValue());
+        System.out.println("Intitule: "+intitule_encad.getText());
+        System.out.println("Type encadrement: "+type_encad.getValue());
+
+        System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        System.out.println("Soutenance: "+sout.getValue());
+        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
+        System.out.println("Date: "+date_sout.getValue());
+        System.out.println("Lieu: " +lieu_sout.getText());
+
+        System.out.println("Responsabilite: "+resp.getValue());
+        System.out.println("Description sur responsabilite: "+desc_resp.getText());
+
     }
     @FXML
     ChoiceBox<String> encad = new ChoiceBox<>();
@@ -56,7 +81,7 @@ public class dr_controller implements Initializable{
     private Label labelpdf,labelpdf2,labelpdf3;
 
     @FXML
-    private GridPane homegrid,settingsgrid,respgrid,encadgrid,soutgrid;
+    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -64,7 +89,7 @@ public class dr_controller implements Initializable{
             encadgrid.toFront();
         }
         else  if (event.getSource() == btnR || event.getSource() == btnL){
-            settingsgrid.toFront();
+            home2grid.toFront();
         }else  if (event.getSource() == btnhome || event.getSource() == btnR1 || event.getSource() == btnL1){
             homegrid.toFront();
 
