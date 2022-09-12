@@ -27,12 +27,12 @@
 
 }
 .btn_sub {
--fx-background-color: linear-gradient(from 40% 40% to 100% 100%,#ff8c00,#6ec1e4);
+-fx-background-color: linear-gradient(from 40% 40% to 100% 100%,#007FA4,#6ec1e4);
 -fx-cursor: hand;
 -fx-border-width:3px;
 }
 .btn_sub:hover {
--fx-background-color: linear-gradient(from 40% 40% to 100% 100%, #6ec1e4,#ff8c00);
+-fx-background-color: linear-gradient(from 40% 40% to 100% 100%, #6ec1e4,#007FA4);
 
 
 }
