@@ -24,7 +24,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
 
    <children>
-      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
+      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
             <Pane prefHeight="120.0" prefWidth="160.0" style="-fx-background-color: white;">
                <children>
@@ -45,6 +45,25 @@
                   </Label>
                </children>
             </Pane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="prof" alignment="CENTER" layoutX="14.0" layoutY="98.0" text="prf" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="npn" alignment="CENTER" layoutY="113.0" prefHeight="86.0" prefWidth="147.0" text="np&#10;pn&#10;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/avatar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
             <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" styleClass="btn" stylesheets="@../css/style.css" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
               <items>
                 <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
@@ -52,7 +71,7 @@
                   <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
               </items>
                <VBox.margin>
-                  <Insets top="250.0" />
+                  <Insets top="80.0" />
                </VBox.margin>
                <font>
                   <Font name="Arial Bold" size="12.0" />
@@ -83,7 +102,7 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
+                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -361,7 +380,7 @@
                                     <Image url="@../img/fac.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="51.0" layoutY="64.0" prefHeight="112.0" prefWidth="235.0" text="hh">
+                              <Label layoutX="46.0" layoutY="38.0" prefHeight="112.0" prefWidth="235.0" text="hh">
                                  <font>
                                     <Font size="26.0" />
                                  </font>

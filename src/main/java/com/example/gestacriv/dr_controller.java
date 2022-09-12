@@ -25,7 +25,7 @@ public class dr_controller implements Initializable {
     @FXML
     Label npn = new Label(),prof = new Label();
     public void displaynpn(HashMap<String, String> usrinf){
-        //System.out.println("aaaaaa "+usrinf.get("NOM"));
+        System.out.println("aaaaaa "+usrinf.get("NOM"));
         prof.setText(""+usrinf.get("PROFILE"));
         npn.setText(usrinf.get("NOM")+" "+usrinf.get("PRENOM"));
     }
