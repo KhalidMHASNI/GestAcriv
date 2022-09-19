@@ -26,6 +26,16 @@
 -fx-border-width:0px 0px 5px 0px;
 
 }
+.btn_actu{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+}
+
+.btn_actu:hover {
+-fx-border-width:3px 0px 0px 0px;
+-fx-border-color: #6ec1e4;
+
+}
 .btn_sub {
 -fx-background-color: linear-gradient(from 40% 40% to 100% 100%,#007FA4,#6ec1e4);
 -fx-cursor: hand;
@@ -63,6 +73,13 @@
 .box {
 -fx-border-color:  linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
 -fx-border-radius:  10px 100px / 120px;
+-fx-border-width:5px;
+
+}
+
+.box_actu {
+-fx-border-color:  linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
+-fx-border-radius:  30px;
 -fx-border-width:5px;
 
 }

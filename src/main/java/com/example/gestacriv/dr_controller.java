@@ -99,10 +99,10 @@ public class dr_controller implements Initializable {
     ChoiceBox<String> resp = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
-    String[] encadr = {"Encadrement_thèse","..","..."};
-    String[] type_encadr = {"Directeur thèse","..","..."};
-    String[] souten = {"Soutenance_thèse","..","..."};
-    String[] respo = {"Responsable_Filière","..","..."};
+    String[] encadr = {"Encadrement_thèse","Encadrement_habiliation"};
+    String[] type_encadr = {"Directeur de thèse","Encadrant de thèse","Co-encadrant de thèse"};
+    String[] souten = {"Soutenance_thèse","Soutenance_Habilitation"};
+    String[] respo = {"Responsable filière","Responsable module","Chef_Laboratoire","Chef_Equipe"};
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -168,15 +168,19 @@ public class dr_controller implements Initializable {
             encad.setValue(null);
             intitule_encad.setText(null);
             type_encad.setValue(null);
+            btnpdf.cancelButtonProperty().setValue(null);
+            labelpdf.setText(null);
 
             npl_sout.setText(null);
             sout.setValue(null);
             intitule_sout.setText(null);
             date_sout.setValue(null);
             lieu_sout.setText(null);
+            labelpdf2.setText(null);
 
             resp.setValue(null);
             desc_resp.setText(null);
+            labelpdf3.setText(null);
 
         }
 
