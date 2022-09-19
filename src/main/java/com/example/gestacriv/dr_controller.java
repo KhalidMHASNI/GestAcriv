@@ -27,7 +27,7 @@ public class dr_controller implements Initializable {
     Label npn = new Label(),prof = new Label();
     HashMap<String,String> usrinfo;
     public void displaynpn(HashMap<String, String> usrinf){
-        System.out.println("aaaaaa "+usrinf.get("DR_ID"));
+        //System.out.println("aaaaaa "+usrinf.get("DR_ID"));
         usrinfo = usrinf;
     }
 
@@ -50,8 +50,6 @@ public class dr_controller implements Initializable {
 
     @FXML
     public void  getDataEncad(ActionEvent event) {
-
-
         System.out.println("nom et prenom laureat: " +npl_enc.getText());
         System.out.println("Encadrement: "+encad.getValue());
         System.out.println("Intitule: "+intitule_encad.getText());
@@ -71,7 +69,7 @@ public class dr_controller implements Initializable {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
-            System.out.println("erreur be"+ex);
+            System.out.println("erreur be "+ex);
         }
 
         /*
@@ -86,6 +84,63 @@ public class dr_controller implements Initializable {
         * */
 
     }
+
+    @FXML
+    public void  getDataSout(ActionEvent event) {
+        System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        System.out.println("Soutenance: "+sout.getValue());
+        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
+        System.out.println("Date: "+date_sout.getValue());
+        System.out.println("Lieu: " +lieu_sout.getText());
+
+               /* System.out.println("Responsabilite: "+resp.getValue());
+                System.out.println("Description sur responsabilite: "+desc_resp.getText());
+                * */
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+
+
+        String query = "INSERT INTO public.sout(\n" +
+                "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, dr_id_fk)\n" +
+                "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+intitule_sout.getText().trim()+"', '"+date_sout.getValue()+"', '"+lieu_sout.getText().trim()+"', "+usrinfo.get("DR_ID")+");";
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+            pst.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be "+ex);
+        }
+    }
+
+    @FXML
+    public void  getDataRespo(ActionEvent event) {
+
+        System.out.println("Responsabilite: "+resp.getValue());
+        System.out.println("Description sur responsabilite: "+desc_resp.getText());
+
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+
+        String query = "INSERT INTO public.respo(\n" +
+                "\tsout_id, respo, desc_respo, dr_id_fk)\n" +
+                "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+desc_resp.getText().trim()+"', '"+usrinfo.get("DR_ID")+"');";
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = con.prepareStatement(query)) {
+            pst.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be "+ex);
+        }
+    }
+
     @FXML
     ChoiceBox<String> encad = new ChoiceBox<>();
     @FXML
