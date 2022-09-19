@@ -26,7 +26,7 @@ public class dr_controller implements Initializable {
     @FXML
     Label npn = new Label(),prof = new Label();
     public void displaynpn(HashMap<String, String> usrinf){
-        //System.out.println("aaaaaa "+usrinf.get("NOM"));
+        System.out.println("aaaaaa "+usrinf.get("NOM"));
         prof.setText(""+usrinf.get("PROFILE"));
         npn.setText(usrinf.get("NOM")+" "+usrinf.get("PRENOM"));
     }
@@ -61,7 +61,7 @@ public class dr_controller implements Initializable {
         String password = "Mhasni10@";
 
 
-        String query = "INSERT INTO encadrement(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
+        String query = "INSERT INTO encad(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
 

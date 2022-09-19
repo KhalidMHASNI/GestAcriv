@@ -9,29 +9,20 @@ import java.util.logging.Logger;
 public class javaPostreSql {
     public static void writeToDataBase(String usrnom,String usrpnom,String usrcni,String usretab,int usrtel,String usrspec,String usrprof,String usrgrade,String usrpassword,String usremail){
 
-        String url = "jdbc:postgresql://localhost:5432/GestActiv";
-        String user = "postgres";
-        String password = "Mhasni10@";
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
-        String nom = usrnom,prenom = usrpnom,cni = usrcni, etab = usretab,
-                spec = usrspec, grade = usrgrade, profile = usrprof, email = usremail, passwd = usrpassword;
+        String nom = usrnom.trim(),prenom = usrpnom.trim(),cni = usrcni.trim(), etab = usretab.trim(),
+                spec = usrspec.trim(), grade = usrgrade.trim(), profile = usrprof.trim(), email = usremail.trim(), passwd = usrpassword.trim();
         int  tel = usrtel;
 
-        String query = "INSERT INTO users(nom,prenom,cni,email,etab,tel,profile,grade,spec,passwd) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO public.docteur(dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"');";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
 
-            pst.setString(1, nom);
-            pst.setString(2, prenom);
-            pst.setString(3, cni);
-            pst.setString(4, email);
-            pst.setString(5, etab);
-            pst.setInt(6, tel);
-            pst.setString(7, profile);
-            pst.setString(8, grade);
-            pst.setString(9, spec);
-            pst.setString(10, passwd);
+
             pst.executeUpdate();
             System.out.println("Sucessfully created.");
 
@@ -44,15 +35,14 @@ public class javaPostreSql {
 
 
     public static HashMap readFromDataBase(String usremail,String usrpassword){
-        String url = "jdbc:postgresql://localhost:5432/GestActiv";
-        String user = "postgres";
-        String password = "Mhasni10@";
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
+        String query = "SELECT dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.docteur WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
 
-        String query = "SELECT nom, prenom, cni, etab, tel, spec, grade, profile, passwd, email " +
-                "FROM public.users WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
-
-        String nom=null,prenom=null,cni=null,etab=null,tel=null,grade=null,profile=null,passwd=null,email=null;
+        String nom="",prenom="",cni="",etab="",tel="",grade="",profile="",passwd="",email="",spec="";
+        int dr=0;
 
         HashMap<String, String> usrInf = new HashMap<String, String>();
 
@@ -60,31 +50,34 @@ public class javaPostreSql {
              PreparedStatement pst = con.prepareStatement(query)) {
 
             ResultSet s = pst.executeQuery();
-           /* if (s.isBeforeFirst()) System.out.println("user existed");
-            else System.out.println("appah");*/
+           if (s.isBeforeFirst()) System.out.println("user existed");
+            else System.out.println("appah");
 
             while (s.next()){
+                dr = s.getInt("dr_id");
                 nom = s.getString("nom");
                 prenom = s.getString("prenom");
                 cni = s.getString("cni");
-                etab = s.getString("etab");
+                email=s.getString("email");
+                passwd=s.getString("passwd");
                 tel = s.getString("tel");
                 grade=s.getString("grade");
-                profile=s.getString("profile");
-                passwd=s.getString("passwd");
-                email=s.getString("email");
+                spec=s.getString("spec");
+                etab = s.getString("etab");
             }
+
+            usrInf.put("DR_ID",Integer.toString(dr));
             usrInf.put("NOM",nom.trim());
             usrInf.put("PRENOM",prenom.trim());
             usrInf.put("CNI",cni.trim());
             usrInf.put("ETAB",etab.trim());
-            usrInf.put("TEL",tel.trim());
+            usrInf.put("TEL","0"+tel.trim());
             usrInf.put("GRADE",grade.trim());
-            usrInf.put("PROFILE",profile.trim());
+            usrInf.put("PROFILE","Docteur");
             usrInf.put("PASSWORD",passwd.trim());
             usrInf.put("EMAIL",email.trim());
-
-
+            usrInf.put("SPEC",spec.trim());
+            System.out.println(usrInf);
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
@@ -95,12 +88,12 @@ public class javaPostreSql {
     }
 
     public static boolean checkexists(String usremail){
-        String url = "jdbc:postgresql://localhost:5432/GestActiv";
-        String user = "postgres";
-        String password = "Mhasni10@";
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
 
-        String query = "SELECT * FROM public.users WHERE email='"+usremail+"';";
+        String query = "SELECT * FROM public.docteur WHERE email='"+usremail+"';";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
 
@@ -119,12 +112,12 @@ public class javaPostreSql {
     }
 
     public static String checkpasswd(String usremail){
-        String url = "jdbc:postgresql://localhost:5432/GestActiv";
-        String user = "postgres";
-        String password = "Mhasni10@";
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
 
-        String query = "SELECT * FROM public.users WHERE email='"+usremail+"';";
+        String query = "SELECT * FROM public.docteur WHERE email='"+usremail+"';";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
 
