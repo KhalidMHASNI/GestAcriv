@@ -46,6 +46,20 @@
 -fx-border-width:0px 0px 4px 0px;
 }
 
+.btnpdf {
+-fx-background-color:transparent;
+-fx-cursor: hand;
+-fx-border-color:#007FA4;
+-fx-border-width:3px;
+}
+
+.btnpdf: focused{
+-fx-background-color:transparent;
+-fx-cursor: hand;
+-fx-border-color:darkorange;
+-fx-border-width:3px;
+}
+
 .box {
 -fx-border-color:  linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
 -fx-border-radius:  10px 100px / 120px;
@@ -53,12 +67,14 @@
 
 }
 
+
 .zone_txt {
 -fx-border-color:  #007FA4;
 -fx-border-width:0px 0px 3px 0px;
 
 }
 .zone_txt:focused{
+
 -fx-border-color: darkorange;
 -fx-border-width:0px 0px 3px 0px;
 }
