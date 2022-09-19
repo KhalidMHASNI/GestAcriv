@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="dr be">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSqlDr.java" afterDir="false" />
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="l'app ah SALINAHA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663604600215</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="l'app ah SALINAHA">
+      <created>1663611518560</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1663611518560</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +250,8 @@
     <MESSAGE value="." />
     <MESSAGE value="getData fixed" />
     <MESSAGE value="dr be" />
-    <option name="LAST_COMMIT_MESSAGE" value="dr be" />
+    <MESSAGE value="l'app ah SALINAHA" />
+    <option name="LAST_COMMIT_MESSAGE" value="l'app ah SALINAHA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
