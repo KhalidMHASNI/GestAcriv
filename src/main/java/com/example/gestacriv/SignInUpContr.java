@@ -104,9 +104,9 @@ public class SignInUpContr implements Initializable{
 
     public void open_alert(ActionEvent event) throws IOException{
         try {
-            int telnum = Integer.parseInt(tel.getText());
+            int telnum = Integer.parseInt("0"+tel.getText());
 
-            if(!password.getText().equals(cpassword.getText())){
+            /*if(!password.getText().equals(cpassword.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Mot de passe");
                 alert.setHeaderText("Le mot de passe doit être identique à sa confirmation");
@@ -132,7 +132,7 @@ public class SignInUpContr implements Initializable{
                 alert.setTitle("E-mail existe déjà");
                 alert.setHeaderText("L'e-mail académique que vous avez entrer est déjà existé");
                 alert.showAndWait();
-            } else {
+            } else {*/
                 String spec = specialite();
                 javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),telnum,spec,profile.getValue(),grade.getValue(),password.getText(),email
                         .getText());
@@ -143,7 +143,7 @@ public class SignInUpContr implements Initializable{
                 alert.showAndWait();
 
                 changeScene.toCnx(event,stage,scene,root);
-            }
+
 
         }catch (NumberFormatException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
