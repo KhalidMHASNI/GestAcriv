@@ -94,3 +94,16 @@
 -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00);
 -fx-border-width:3px;
 }
+.btnpdf {
+-fx-background-color:transparent;
+-fx-cursor: hand;
+-fx-border-color:#007FA4;
+-fx-border-width:3px;
+}
+
+.btnpdf: focused{
+-fx-background-color:transparent;
+-fx-cursor: hand;
+-fx-border-color:darkorange;
+-fx-border-width:3px;
+}

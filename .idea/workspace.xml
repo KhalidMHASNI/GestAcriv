@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="dr be">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_09_2022_17_37_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_09_2022_17_37__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSqlDr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/javaPostreSql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662849407179</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="dr be">
+      <created>1663604600214</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663604600215</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,7 +247,8 @@
     <MESSAGE value="...." />
     <MESSAGE value="." />
     <MESSAGE value="getData fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="getData fixed" />
+    <MESSAGE value="dr be" />
+    <option name="LAST_COMMIT_MESSAGE" value="dr be" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

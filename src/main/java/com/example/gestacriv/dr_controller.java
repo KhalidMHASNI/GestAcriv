@@ -25,10 +25,10 @@ public class dr_controller implements Initializable {
 
     @FXML
     Label npn = new Label(),prof = new Label();
+    HashMap<String,String> usrinfo;
     public void displaynpn(HashMap<String, String> usrinf){
-        System.out.println("aaaaaa "+usrinf.get("NOM"));
-        prof.setText(""+usrinf.get("PROFILE"));
-        npn.setText(usrinf.get("NOM")+" "+usrinf.get("PRENOM"));
+        System.out.println("aaaaaa "+usrinf.get("DR_ID"));
+        usrinfo = usrinf;
     }
 
 
@@ -49,28 +49,23 @@ public class dr_controller implements Initializable {
 
 
     @FXML
-    public void  getData(ActionEvent event) {
+    public void  getDataEncad(ActionEvent event) {
+
 
         System.out.println("nom et prenom laureat: " +npl_enc.getText());
         System.out.println("Encadrement: "+encad.getValue());
         System.out.println("Intitule: "+intitule_encad.getText());
         System.out.println("Type encadrement: "+type_encad.getValue());
 
-        String url = "jdbc:postgresql://localhost:5432/GestActiv";
-        String user = "postgres";
-        String password = "Mhasni10@";
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
 
-        String query = "INSERT INTO encad(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
+       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
-
-            pst.setString(1, npl_enc.getText());
-            pst.setString(2, encad.getValue());
-            pst.setString(3, intitule_encad.getText());
-            pst.setString(4, type_encad.getValue());
             pst.executeUpdate();
-
 
         } catch (SQLException ex) {
 
@@ -99,10 +94,11 @@ public class dr_controller implements Initializable {
     ChoiceBox<String> resp = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
-    String[] encadr = {"Encadrement_thèse","..","..."};
-    String[] type_encadr = {"Directeur thèse","..","..."};
-    String[] souten = {"Soutenance_thèse","..","..."};
-    String[] respo = {"Responsable_Filière","..","..."};
+    String[] encadr = {"Encadrement_thèse","Encadrement_habiliation"};
+    String[] type_encadr = {"Directeur de thèse","Encadrant de thèse","Co-encadrant de thèse"};
+    String[] souten = {"Soutenance_thèse","Soutenance_Habilitation"};
+    String[] respo = {"Responsable filière","Responsable module","Chef_Laboratoire","Chef_Equipe"};
+
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -168,15 +164,18 @@ public class dr_controller implements Initializable {
             encad.setValue(null);
             intitule_encad.setText(null);
             type_encad.setValue(null);
+            labelpdf.setText(null);
 
             npl_sout.setText(null);
             sout.setValue(null);
             intitule_sout.setText(null);
             date_sout.setValue(null);
             lieu_sout.setText(null);
+            labelpdf2.setText(null);
 
             resp.setValue(null);
             desc_resp.setText(null);
+            labelpdf3.setText(null);
 
         }
 

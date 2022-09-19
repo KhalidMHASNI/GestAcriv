@@ -54,6 +54,7 @@ public class SignInUpContr implements Initializable{
         try {
 
             String psw = javaPostreSql.checkpasswd(cnxemail.getText());
+            System.out.println("lalo");
 
             if (!javaPostreSql.checkexists(cnxemail.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -66,7 +67,10 @@ public class SignInUpContr implements Initializable{
                 alert.setHeaderText("Le mot de passe que vous avez entrer est incorrecte .");
                 alert.showAndWait();
             }else {
+                System.out.println("appah "+cnxemail.getText()+" "+cnxpassword.getText());
+
                 userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
+
                 System.out.println(userInfo.get("PROFILE"));
 
                 if (userInfo.get("PROFILE").equals("Docteur")){
@@ -104,9 +108,9 @@ public class SignInUpContr implements Initializable{
 
     public void open_alert(ActionEvent event) throws IOException{
         try {
-            int telnum = Integer.parseInt("0"+tel.getText());
+            int telnum = Integer.parseInt(tel.getText());
 
-            /*if(!password.getText().equals(cpassword.getText())){
+            if(!password.getText().equals(cpassword.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Mot de passe");
                 alert.setHeaderText("Le mot de passe doit être identique à sa confirmation");
@@ -132,9 +136,9 @@ public class SignInUpContr implements Initializable{
                 alert.setTitle("E-mail existe déjà");
                 alert.setHeaderText("L'e-mail académique que vous avez entrer est déjà existé");
                 alert.showAndWait();
-            } else {*/
+            } else {
                 String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(),telnum,spec,profile.getValue(),grade.getValue(),password.getText(),email
+                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(), telnum, spec, profile.getValue(), grade.getValue(), password.getText(), email
                         .getText());
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Inscription");
@@ -142,9 +146,9 @@ public class SignInUpContr implements Initializable{
                 alert.setContentText("Inscription avec succès");
                 alert.showAndWait();
 
-                changeScene.toCnx(event,stage,scene,root);
+                changeScene.toCnx(event, stage, scene, root);
 
-
+            }
         }catch (NumberFormatException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Format Incorrecte");
