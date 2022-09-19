@@ -45,12 +45,31 @@
                   </Label>
                </children>
             </Pane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="prof" alignment="CENTER" layoutX="14.0" layoutY="98.0" text="prf" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="npn" alignment="CENTER" layoutY="113.0" prefHeight="86.0" prefWidth="147.0" text="np&#10;pn&#10;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/avatar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
             <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" styleClass="btn" stylesheets="@../css/style.css" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
-              <items>
-                <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
-                <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
+               <items>
+                  <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
+                  <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
                   <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
-              </items>
+               </items>
                <VBox.margin>
                   <Insets top="250.0" />
                </VBox.margin>
@@ -83,23 +102,90 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="settingsgrid" style="-fx-background-color: snow;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
                            <children>
-                              <Label layoutX="106.0" layoutY="98.0" prefHeight="106.0" prefWidth="279.0" text="hhn't">
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btn_annuler" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getData" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="npl_enc" layoutX="435.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="63.0" text="Nom et Prénom du Lauréat">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="165.0" text="Encadrement">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="encad" layoutX="435.0" layoutY="167.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
+                                          <Label layoutX="32.0" layoutY="389.0" text="Type encadrement">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="type_encad" layoutX="435.0" layoutY="391.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
+                                          <Label layoutX="32.0" layoutY="284.0" text="Intitule:">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="intitule_encad" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" styleClass="zone_area" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></TextArea>
+                                          <Label layoutX="32.0" layoutY="478.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf" layoutX="152.0" layoutY="470.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="labelpdf31" alignment="CENTER" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelpdf" alignment="CENTER" layoutX="148.0" layoutY="519.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter encadrement" textFill="#007fa4">
                                  <font>
-                                    <Font size="26.0" />
+                                    <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnL1" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Left 1" />
-                              <Button fx:id="btnR1" layoutX="801.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Right 1" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -114,16 +200,16 @@
                      <children>
                         <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
                            <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;" stylesheets="@../css/style.css">
                                  <center>
                                     <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: snow; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                          <Button fx:id="btn_annuler2" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -133,13 +219,13 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <ChoiceBox fx:id="resp" layoutX="437.0" layoutY="121.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <ChoiceBox fx:id="resp" layoutX="437.0" layoutY="121.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
                                           <Label layoutX="32.0" layoutY="284.0" text="Description sur responsabilité">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="desc_resp" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <TextArea fx:id="desc_resp" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" styleClass="zone_area" stylesheets="@../css/style.css" />
                                           <Label layoutX="32.0" layoutY="431.0" text="Justification">
                                              <font>
                                                 <Font size="20.0" />
@@ -178,21 +264,21 @@
                      <children>
                         <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
                            <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
                                  <center>
                                     <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: snow; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                          <Button fx:id="btn_annuler1" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <TextField fx:id="npl_sout" layoutX="435.0" layoutY="34.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                          <TextField fx:id="npl_sout" layoutX="435.0" layoutY="34.0" prefHeight="0.0" prefWidth="314.0" styleClass="zone_txt" stylesheets="@../css/style.css">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -207,7 +293,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <ChoiceBox fx:id="sout" layoutX="433.0" layoutY="114.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-border-color: #007FA4; -fx-border-width: 3px; -fx-background-color: transparent;" />
+                                          <ChoiceBox fx:id="sout" layoutX="433.0" layoutY="114.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
                                           <Label layoutX="32.0" layoutY="334.0" text="Date">
                                              <font>
                                                 <Font size="20.0" />
@@ -218,7 +304,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <TextArea fx:id="intitule_sout" layoutX="431.0" layoutY="166.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;" />
+                                          <TextArea fx:id="intitule_sout" layoutX="431.0" layoutY="166.0" prefHeight="120.0" prefWidth="322.0" styleClass="zone_area" stylesheets="@../css/style.css" />
                                           <Label layoutX="32.0" layoutY="495.0" text="Justification">
                                              <font>
                                                 <Font size="20.0" />
@@ -229,7 +315,7 @@
                                                 <Font size="13.0" />
                                              </font>
                                           </Button>
-                                          <TextField fx:id="lieu_sout" layoutX="429.0" layoutY="412.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
+                                          <TextField fx:id="lieu_sout" layoutX="429.0" layoutY="412.0" prefHeight="0.0" prefWidth="314.0" styleClass="zone_txt" stylesheets="@../css/style.css">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -239,7 +325,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <DatePicker fx:id="date_sout" layoutX="429.0" layoutY="334.0" prefHeight="30.0" prefWidth="325.0" style="-fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;" />
+                                          <DatePicker fx:id="date_sout" layoutX="429.0" layoutY="334.0" prefHeight="30.0" prefWidth="325.0" styleClass="zone_date" stylesheets="@../css/style.css" />
                                           <Label fx:id="labelpdf2" alignment="CENTER" layoutX="300.0" layoutY="500.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
                                              <font>
                                                 <Font name="System Italic" size="14.0" />
@@ -258,7 +344,7 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
+                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
@@ -266,82 +352,15 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 3px 3px 3px;">
-                                 <center>
-                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button layoutX="983.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="94.0" style="-fx-background-color: snow; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getData" style="-fx-background-color: #007FA4; -fx-cursor: hand; -fx-border-color: transparent; -fx-border-width: 3px;" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="npl_enc" layoutX="435.0" layoutY="55.0" prefHeight="0.0" prefWidth="314.0" style="-fx-border-color: #007FA4; -fx-border-width: 0px 0px 3px 0px;">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="63.0" text="Nom et Prénom du Lauréat">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="165.0" text="Encadrement">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <ChoiceBox fx:id="encad" layoutX="435.0" layoutY="167.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
-                                          <Label layoutX="32.0" layoutY="389.0" text="Type encadrement">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <ChoiceBox fx:id="type_encad" layoutX="435.0" layoutY="391.0" prefHeight="32.0" prefWidth="318.0" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-color: #007FA4; -fx-border-width: 3px;" />
-                                          <Label layoutX="32.0" layoutY="284.0" text="Intitule:">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <TextArea fx:id="intitule_encad" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" style="-fx-border-color: #007FA4; -fx-border-width: 3px;">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></TextArea>
-                                          <Label layoutX="32.0" layoutY="478.0" text="Justification">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="btnpdf" layoutX="152.0" layoutY="470.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-border-color: #007FA4;" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Label fx:id="labelpdf31" alignment="CENTER" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="labelpdf" alignment="CENTER" layoutX="148.0" layoutY="519.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter encadrement" textFill="#007fa4">
+                              <Label layoutX="106.0" layoutY="98.0" prefHeight="106.0" prefWidth="279.0" text="hhn't">
                                  <font>
-                                    <Font name="Arial" size="30.0" />
+                                    <Font size="26.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="btnL1" layoutX="171.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Left 1" />
+                              <Button fx:id="btnR1" layoutX="801.0" layoutY="308.0" mnemonicParsing="false" onAction="#hh" text="Right 1" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -356,18 +375,13 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="367.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="467.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/fac.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="51.0" layoutY="64.0" prefHeight="112.0" prefWidth="235.0" text="hh">
-                                 <font>
-                                    <Font size="26.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="btnL" layoutX="129.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
-                              <Button fx:id="btnR" layoutX="948.0" layoutY="303.0" mnemonicParsing="false" onAction="#hh" text="Right" />
+                              <Button fx:id="btnL" layoutX="72.0" layoutY="302.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
+                              <Button fx:id="btnR" layoutX="1294.0" layoutY="316.0" mnemonicParsing="false" onAction="#hh" text="Right" />
                            </children>
                         </AnchorPane>
                      </children>

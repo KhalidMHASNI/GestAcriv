@@ -61,7 +61,7 @@ public class dr_controller implements Initializable {
         String password = "Mhasni10@";
 
 
-        String query = "INSERT INTO encadrement(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
+        String query = "INSERT INTO encad(npnom,encad,intitule,typeencad) VALUES (?,?,?,?)";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
 

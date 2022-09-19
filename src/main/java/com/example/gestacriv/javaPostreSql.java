@@ -106,8 +106,8 @@ public class javaPostreSql {
 
             ResultSet s = pst.executeQuery();
 
-           if (s.isBeforeFirst())
-               return true;
+            if (s.isBeforeFirst())
+                return true;
 
         } catch (SQLException ex) {
 
