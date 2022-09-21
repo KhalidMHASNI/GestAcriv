@@ -9,19 +9,22 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class dr_controller implements Initializable {
+public class ens_controller implements Initializable {
 
     @FXML
     Label npn = new Label(),prof = new Label();
@@ -41,11 +44,11 @@ public class dr_controller implements Initializable {
         changeScene.toCnx(event,stage,scene,root);
     }
     @FXML
-    TextField npl_enc,npl_sout,lieu_sout,nature_manif,lieu_conf;
+    TextField npl_enc,npl_sout,lieu_sout;
     @FXML
-    private TextArea intitule_encad,intitule_sout,desc_resp,nature_particip;
+    private TextArea intitule_encad,intitule_sout,desc_resp;
     @FXML
-    private DatePicker date_sout,date_manif;
+    private DatePicker date_sout;
 
 
     @FXML
@@ -166,29 +169,31 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1,btn_annuler,btn_annuler1,btn_annuler2;
     @FXML
-    private MenuItem btnencad,btnsout,btnresp,btnparticip;
+    private MenuItem btnencad,btnsout,btnresp,btnparticip,btnproj;
 
     @FXML
-    private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
+    private Label labelpdf,labelpdf2,labelpdf3;
 
     @FXML
-    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid;
+    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,newprojgrid,partcipgrid;
     @FXML
     private  void hh(ActionEvent event){
 
         if (event.getSource() == btnencad){
             encadgrid.toFront();
         }
-        else  if (event.getSource() == btnR){
+        else  if (event.getSource() == btnR || event.getSource() == btnL){
             home2grid.toFront();
-        }else  if (event.getSource() == btnhome || event.getSource() == btnL){
+        }else  if (event.getSource() == btnhome || event.getSource() == btnR1 || event.getSource() == btnL1){
             homegrid.toFront();
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
         }else if (event.getSource() == btnsout){
             soutgrid.toFront();
+        } else if (event.getSource() == btnproj ) {
+            newprojgrid.toFront();
         }else if (event.getSource() == btnparticip){
             partcipgrid.toFront();
         }
@@ -210,16 +215,13 @@ public class dr_controller implements Initializable {
             labelpdf2.setText("Fichier ajouté");
         }else if (event.getSource() == btnpdf3){
             labelpdf3.setText("Fichier ajouté");
-        } else if (event.getSource() == btnpdf4) {
-            labelpdf4.setText("Fichier ajouté");
-
         }
 
     }
 
     @FXML
     public void  annuler(ActionEvent event){
-        if (event.getSource() == btn_annuler || event.getSource() == btn_annuler1 || event.getSource() == btn_annuler2 || event.getSource() == btn_annuler3){
+        if (event.getSource() == btn_annuler || event.getSource() == btn_annuler1 || event.getSource() == btn_annuler2){
             npl_enc.setText(null);
             encad.setValue(null);
             intitule_encad.setText(null);
@@ -236,12 +238,6 @@ public class dr_controller implements Initializable {
             resp.setValue(null);
             desc_resp.setText(null);
             labelpdf3.setText(null);
-
-            nature_manif.setText(null);
-            lieu_conf.setText(null);
-            nature_particip.setText(null);
-            date_manif.setValue(null);
-            labelpdf4.setText(null);
 
         }
 

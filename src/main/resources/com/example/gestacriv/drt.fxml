@@ -19,9 +19,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
 
    <children>
       <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
@@ -69,6 +70,7 @@
                   <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
                   <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
                   <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
+                  <MenuItem fx:id="btnparticip" mnemonicParsing="false" onAction="#hh" text="Participation au manifestation" />
                </items>
                <VBox.margin>
                   <Insets top="100.0" />
@@ -81,7 +83,7 @@
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
-            <Label alignment="CENTER" layoutX="239.0" layoutY="43.0" prefHeight="42.0" prefWidth="668.0" text="Gestion des activités Doctorant" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="173.0" layoutY="43.0" prefHeight="42.0" prefWidth="734.0" text="Gestion des activités Doctorant" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>
@@ -102,73 +104,6 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
-                  <GridPane fx:id="respgrid" style="-fx-background-color: white;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
-                           <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button fx:id="btn_annuler2" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Label layoutX="32.0" layoutY="122.0" text="Responsabilité">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <ChoiceBox fx:id="resp" layoutX="437.0" layoutY="121.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
-                                          <Label layoutX="32.0" layoutY="284.0" text="Description sur responsabilité">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <TextArea fx:id="desc_resp" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" styleClass="zone_area" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></TextArea>
-                                          <Label layoutX="32.0" layoutY="431.0" text="Justification">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="btnpdf3" layoutX="160.0" layoutY="423.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <Label fx:id="labelpdf3" alignment="CENTER" layoutX="156.0" layoutY="475.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter responsabilité" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="soutgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -302,7 +237,7 @@
                                                 <Font size="18.0" />
                                              </font>
                                           </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getData" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getDataEncad" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
                                              <font>
                                                 <Font size="18.0" />
                                              </font>
@@ -371,6 +306,161 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
+                  <GridPane fx:id="respgrid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="562.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btn_annuler2" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="32.0" layoutY="122.0" text="Responsabilité">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ChoiceBox fx:id="resp" layoutX="437.0" layoutY="121.0" prefHeight="32.0" prefWidth="318.0" styleClass="zone_choice" stylesheets="@../css/style.css" />
+                                          <Label layoutX="32.0" layoutY="284.0" text="Description sur responsabilité">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="desc_resp" layoutX="435.0" layoutY="242.0" prefHeight="120.0" prefWidth="322.0" styleClass="zone_area" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></TextArea>
+                                          <Label layoutX="32.0" layoutY="431.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf3" layoutX="160.0" layoutY="423.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="labelpdf3" alignment="CENTER" layoutX="156.0" layoutY="475.0" prefHeight="10.0" prefWidth="147.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter responsabilité" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="partcipgrid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btn_annuler3" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="nature_manif" layoutX="435.0" layoutY="34.0" prefHeight="39.0" prefWidth="351.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="40.0" text="Nature de la manifestation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="115.0" text="Date">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="365.0" text="Nature de la participation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="nature_particip" layoutX="431.0" layoutY="320.0" prefHeight="120.0" prefWidth="358.0" styleClass="zone_area" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf4" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="lieu_conf" layoutX="428.0" layoutY="212.0" prefHeight="42.0" prefWidth="365.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="218.0" text="Lieu de la conference">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="date_manif" layoutX="430.0" layoutY="115.0" prefHeight="30.0" prefWidth="361.0" styleClass="zone_date" stylesheets="@../css/style.css" />
+                                          <Label fx:id="labelpdf4" alignment="CENTER" layoutX="159.0" layoutY="535.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter participation au manifestation" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
                   <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -381,13 +471,66 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fitHeight="347.0" fitWidth="555.0" layoutX="467.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/fac.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Button fx:id="btnL" layoutX="72.0" layoutY="302.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
-                              <Button fx:id="btnR" layoutX="1294.0" layoutY="316.0" mnemonicParsing="false" onAction="#hh" text="Right" />
+                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="177.0" text="Actualités:" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="-36.4000244140625" stroke="#0080a3" strokeWidth="3.0" />
+                              <BorderPane layoutX="61.0" layoutY="120.0" prefHeight="278.0" prefWidth="590.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="278.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="460.0" layoutY="246.0" mnemonicParsing="false" onAction="#hh" prefHeight="23.0" prefWidth="113.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Lire plus" textAlignment="CENTER" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="22.0" prefHeight="36.0" prefWidth="126.0" text="Encadrement :" textFill="#007fa4">
+                                             <font>
+                                                <Font name="Arial" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane layoutX="361.0" layoutY="422.0" prefHeight="214.0" prefWidth="633.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="496.0" layoutY="178.0" mnemonicParsing="false" onAction="#hh" prefHeight="23.0" prefWidth="113.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Lire plus" textAlignment="CENTER" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="24.0" layoutY="-4.0" prefHeight="36.0" prefWidth="135.0" text="Responsabilité :" textFill="#007fa4">
+                                             <font>
+                                                <Font name="Arial" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="764.0" layoutY="120.0" prefHeight="278.0" prefWidth="590.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button layoutX="453.0" layoutY="242.0" mnemonicParsing="false" onAction="#hh" prefHeight="23.0" prefWidth="113.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Lire plus" textAlignment="CENTER" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="21.0" prefHeight="36.0" prefWidth="126.0" text="Soutenance :" textFill="#007fa4">
+                                             <font>
+                                                <Font name="Arial" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <Button fx:id="btnR" layoutX="1301.0" layoutY="35.0" mnemonicParsing="false" onAction="#hh" text="Right" />
+                              <Button fx:id="btnL" layoutX="1226.0" layoutY="29.0" mnemonicParsing="false" onAction="#hh" style="-fx-background-color: transparent; -fx-border-color: black;" text="left" />
                            </children>
                         </AnchorPane>
                      </children>
