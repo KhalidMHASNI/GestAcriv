@@ -15,7 +15,6 @@ import java.net.URL;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,10 +24,24 @@ public class dr_controller implements Initializable {
 
     @FXML
     Label npn = new Label(),prof = new Label();
+    @FXML
+    Label npn1 = new Label(),prof1 = new Label();
     HashMap<String,String> usrinfo;
+    @FXML
+    Label encadLabel;
+    @FXML
+    Label typeEncadLabel;
+    @FXML
+    Label npl_enc_label;
     public void displaynpn(HashMap<String, String> usrinf){
-        System.out.println("aaaaaa "+usrinf.get("DR_ID"));
+        //System.out.println("aaaaaa "+usrinf.get("DR_ID"));
+        npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+        prof.setText(usrinf.get("PROFILE"));
+        npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+        prof1.setText(usrinf.get("PROFILE"));
         usrinfo = usrinf;
+        System.out.println(usrinf.get("DR_ID"));
+        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinf.get("DR_ID")));
     }
 
 
@@ -62,7 +75,7 @@ public class dr_controller implements Initializable {
         String password = "gestactiv2022";
 
 
-       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
+        String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
@@ -73,18 +86,7 @@ public class dr_controller implements Initializable {
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             System.out.println("erreur be"+ex);
         }
-
-        /*
-        * System.out.println("nom et prenom laureat: " +npl_sout.getText());
-        System.out.println("Soutenance: "+sout.getValue());
-        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
-        System.out.println("Date: "+date_sout.getValue());
-        System.out.println("Lieu: " +lieu_sout.getText());
-
-        System.out.println("Responsabilite: "+resp.getValue());
-        System.out.println("Description sur responsabilite: "+desc_resp.getText());
-        * */
-
+        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,Integer.parseInt(usrinfo.get("DR_ID")));
     }
     @FXML
     public void  getDataSout(ActionEvent event) {
