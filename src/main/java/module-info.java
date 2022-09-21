@@ -6,6 +6,7 @@ module com.example.gestacriv {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires java.sql;
+    requires java.desktop;
 
     opens com.example.gestacriv to javafx.fxml;
     exports com.example.gestacriv;
