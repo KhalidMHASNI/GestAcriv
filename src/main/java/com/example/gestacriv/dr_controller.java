@@ -15,6 +15,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,24 +25,10 @@ public class dr_controller implements Initializable {
 
     @FXML
     Label npn = new Label(),prof = new Label();
-    @FXML
-    Label npn1 = new Label(),prof1 = new Label();
     HashMap<String,String> usrinfo;
-    @FXML
-    Label encadLabel;
-    @FXML
-    Label typeEncadLabel;
-    @FXML
-    Label npl_enc_label;
     public void displaynpn(HashMap<String, String> usrinf){
-        //System.out.println("aaaaaa "+usrinf.get("DR_ID"));
-        npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
-        prof.setText(usrinf.get("PROFILE"));
-        npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
-        prof1.setText(usrinf.get("PROFILE"));
+        System.out.println("aaaaaa "+usrinf.get("DR_ID"));
         usrinfo = usrinf;
-        //System.out.println(usrinf.get("DR_ID"));
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinf.get("DR_ID")));
     }
 
 
@@ -65,12 +52,17 @@ public class dr_controller implements Initializable {
     public void  getDataEncad(ActionEvent event) {
 
 
+        System.out.println("nom et prenom laureat: " +npl_enc.getText());
+        System.out.println("Encadrement: "+encad.getValue());
+        System.out.println("Intitule: "+intitule_encad.getText());
+        System.out.println("Type encadrement: "+type_encad.getValue());
+
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
 
 
-        String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
+       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
@@ -81,11 +73,30 @@ public class dr_controller implements Initializable {
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             System.out.println("erreur be"+ex);
         }
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,Integer.parseInt(usrinfo.get("DR_ID")));
+
+        /*
+        * System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        System.out.println("Soutenance: "+sout.getValue());
+        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
+        System.out.println("Date: "+date_sout.getValue());
+        System.out.println("Lieu: " +lieu_sout.getText());
+
+        System.out.println("Responsabilite: "+resp.getValue());
+        System.out.println("Description sur responsabilite: "+desc_resp.getText());
+        * */
+
     }
     @FXML
     public void  getDataSout(ActionEvent event) {
+        System.out.println("nom et prenom laureat: " +npl_sout.getText());
+        System.out.println("Soutenance: "+sout.getValue());
+        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
+        System.out.println("Date: "+date_sout.getValue());
+        System.out.println("Lieu: " +lieu_sout.getText());
 
+               /* System.out.println("Responsabilite: "+resp.getValue());
+                System.out.println("Description sur responsabilite: "+desc_resp.getText());
+                * */
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -155,7 +166,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -165,19 +176,20 @@ public class dr_controller implements Initializable {
     @FXML
     private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
-    private  void hh(ActionEvent event) {
+    private  void hh(ActionEvent event){
 
-        if (event.getSource() == btnencad) {
+        if (event.getSource() == btnencad){
             encadgrid.toFront();
-        } else if (event.getSource() == btnR) {
+        }
+        else  if (event.getSource() == btnR){
             home2grid.toFront();
-        } else if (event.getSource() == btnhome || event.getSource() == btnL) {
+        }else  if (event.getSource() == btnhome || event.getSource() == btnL || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4){
             homegrid.toFront();
-        } else if (event.getSource() == btnresp) {
+        }else  if (event.getSource() == btnresp){
             respgrid.toFront();
-        } else if (event.getSource() == btnsout) {
+        }else if (event.getSource() == btnsout){
             soutgrid.toFront();
-        } else if (event.getSource() == btnparticip) {
+        }else if (event.getSource() == btnparticip){
             partcipgrid.toFront();
         } else if (event.getSource() == lire_encad) {
             lire_encad_grid.toFront();
@@ -188,6 +200,7 @@ public class dr_controller implements Initializable {
         } else if (event.getSource() == lire_manif) {
             lire_manif_grid.toFront();
         }
+
     }
     @FXML
     void choisir_fichier(ActionEvent event){
