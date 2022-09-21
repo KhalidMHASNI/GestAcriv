@@ -334,7 +334,6 @@
                                     <Font size="26.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="btnL1" layoutX="1466.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
                               <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
                            </children>
                         </AnchorPane>
@@ -594,7 +593,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="respo" ellipsisString="" layoutX="35.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="responsabilite" textFill="DARKORANGE" wrapText="true">
+                                          <Label fx:id="respoLabel" ellipsisString="" layoutX="35.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="responsabilite" textFill="DARKORANGE" wrapText="true">
                                              <font>
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
@@ -631,12 +630,12 @@
                                                 <Font name="Arial Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="sout" ellipsisString="" layoutX="46.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="sout" textFill="DARKORANGE" wrapText="true">
+                                          <Label fx:id="soutLabel" ellipsisString="" layoutX="46.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="sout" textFill="DARKORANGE" wrapText="true">
                                              <font>
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="intitule_sout" ellipsisString="" layoutX="46.0" layoutY="98.0" prefHeight="36.0" prefWidth="526.0" text="intitule_sout">
+                                          <Label fx:id="intitule_sout_Label" ellipsisString="" layoutX="46.0" layoutY="98.0" prefHeight="36.0" prefWidth="526.0" text="intitule_sout">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
