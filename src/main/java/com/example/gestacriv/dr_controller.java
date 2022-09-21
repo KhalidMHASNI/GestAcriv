@@ -40,7 +40,7 @@ public class dr_controller implements Initializable {
         npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof1.setText(usrinf.get("PROFILE"));
         usrinfo = usrinf;
-        System.out.println(usrinf.get("DR_ID"));
+        //System.out.println(usrinf.get("DR_ID"));
         newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinf.get("DR_ID")));
     }
 
@@ -65,11 +65,6 @@ public class dr_controller implements Initializable {
     public void  getDataEncad(ActionEvent event) {
 
 
-        System.out.println("nom et prenom laureat: " +npl_enc.getText());
-        System.out.println("Encadrement: "+encad.getValue());
-        System.out.println("Intitule: "+intitule_encad.getText());
-        System.out.println("Type encadrement: "+type_encad.getValue());
-
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -90,15 +85,7 @@ public class dr_controller implements Initializable {
     }
     @FXML
     public void  getDataSout(ActionEvent event) {
-        System.out.println("nom et prenom laureat: " +npl_sout.getText());
-        System.out.println("Soutenance: "+sout.getValue());
-        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
-        System.out.println("Date: "+date_sout.getValue());
-        System.out.println("Lieu: " +lieu_sout.getText());
 
-               /* System.out.println("Responsabilite: "+resp.getValue());
-                System.out.println("Description sur responsabilite: "+desc_resp.getText());
-                * */
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -168,7 +155,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -176,25 +163,31 @@ public class dr_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
 
     @FXML
-    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid;
+    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
-    private  void hh(ActionEvent event){
+    private  void hh(ActionEvent event) {
 
-        if (event.getSource() == btnencad){
+        if (event.getSource() == btnencad) {
             encadgrid.toFront();
-        }
-        else  if (event.getSource() == btnR){
+        } else if (event.getSource() == btnR) {
             home2grid.toFront();
-        }else  if (event.getSource() == btnhome || event.getSource() == btnL){
+        } else if (event.getSource() == btnhome || event.getSource() == btnL) {
             homegrid.toFront();
-        }else  if (event.getSource() == btnresp){
+        } else if (event.getSource() == btnresp) {
             respgrid.toFront();
-        }else if (event.getSource() == btnsout){
+        } else if (event.getSource() == btnsout) {
             soutgrid.toFront();
-        }else if (event.getSource() == btnparticip){
+        } else if (event.getSource() == btnparticip) {
             partcipgrid.toFront();
+        } else if (event.getSource() == lire_encad) {
+            lire_encad_grid.toFront();
+        } else if (event.getSource() == lire_sout) {
+            lire_sout_grid.toFront();
+        } else if (event.getSource() == lire_resp) {
+            lire_resp_grid.toFront();
+        } else if (event.getSource() == lire_manif) {
+            lire_manif_grid.toFront();
         }
-
     }
     @FXML
     void choisir_fichier(ActionEvent event){
