@@ -48,6 +48,7 @@ public class changeScene {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Doctorant Page");
         stage.show();
     }
     public static void toEns(ActionEvent event,Stage stage,Scene scene,Parent root){
@@ -55,6 +56,7 @@ public class changeScene {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Enseignant Page");
         stage.show();
     }
 

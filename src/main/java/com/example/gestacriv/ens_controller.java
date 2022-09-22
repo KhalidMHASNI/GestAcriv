@@ -169,7 +169,7 @@ public class ens_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnpdf,btnpdf2,btnpdf3,btnL,btnR,btnL1,btnR1,btn_annuler,btn_annuler1,btn_annuler2;
+    private  Button btnhome,btnactu,lire_encad,lire_sout,lire_resp,lire_manif,lire_proj,btnpdf,btnpdf2,btnpdf3,btnR,btnR1,btn_annuler,btn_annuler1,btn_annuler2,btnL1,btnL2,btnL3,btnL4,btnL5;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip,btnproj;
 
@@ -177,17 +177,19 @@ public class ens_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3;
 
     @FXML
-    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,newprojgrid,partcipgrid;
+    private GridPane homegrid,actugrid,actu2grid,respgrid,encadgrid,soutgrid,newprojgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid,lire_proj_grid;
     @FXML
     private  void hh(ActionEvent event){
 
         if (event.getSource() == btnencad){
             encadgrid.toFront();
-        }
-        else  if (event.getSource() == btnR || event.getSource() == btnL){
-            home2grid.toFront();
-        }else  if (event.getSource() == btnhome || event.getSource() == btnR1 || event.getSource() == btnL1){
+        } else if (event.getSource() == btnhome) {
             homegrid.toFront();
+
+        } else  if (event.getSource() == btnR){
+            actu2grid.toFront();
+        }else  if (event.getSource()== btnactu || event.getSource() == btnR1 || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4 || event.getSource()==btnL5){
+            actugrid.toFront();
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
         }else if (event.getSource() == btnsout){
@@ -196,6 +198,16 @@ public class ens_controller implements Initializable {
             newprojgrid.toFront();
         }else if (event.getSource() == btnparticip){
             partcipgrid.toFront();
+        } else if (event.getSource() == lire_encad) {
+            lire_encad_grid.toFront();
+        } else if (event.getSource() == lire_sout) {
+            lire_sout_grid.toFront();
+        } else if (event.getSource() == lire_resp) {
+            lire_resp_grid.toFront();
+        } else if (event.getSource() == lire_manif) {
+            lire_manif_grid.toFront();
+        } else if (event.getSource() == lire_proj) {
+            lire_proj_grid.toFront();
         }
 
     }
