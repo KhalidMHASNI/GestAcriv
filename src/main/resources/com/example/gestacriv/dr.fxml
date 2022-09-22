@@ -417,155 +417,6 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
-                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
-                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn12" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="50.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof12" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="50.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel2" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label2" ellipsisString="" layoutX="108.0" layoutY="143.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="143.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn14" alignment="CENTER" ellipsisString="" layoutX="172.0" layoutY="59.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof14" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="63.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel4" ellipsisString="" layoutX="28.0" layoutY="106.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label4" ellipsisString="" layoutX="112.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="162.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="95.0" layoutY="34.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="38.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel1" ellipsisString="" layoutX="28.0" layoutY="89.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label1" ellipsisString="" layoutX="107.0" layoutY="149.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="149.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn13" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="44.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof13" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="47.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel3" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label3" ellipsisString="" layoutX="108.0" layoutY="158.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="158.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="lire_sout_grid" style="-fx-background-color: snow;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1055,56 +906,6 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-                           <children>
-                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="177.0" text="BIENVENUE" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="-36.4000244140625" stroke="#0080a3" strokeWidth="3.0" />
-                              <Button fx:id="btnactu" alignment="CENTER" layoutX="1245.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Voir actualites" textAlignment="CENTER" />
-                              <AnchorPane layoutX="43.0" layoutY="93.0" prefHeight="758.0" prefWidth="1318.0">
-                                 <children>
-                                    <ImageView fitHeight="562.0" fitWidth="902.0" layoutX="240.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/back.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="424.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/avatar.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label fx:id="npn" alignment="CENTER" layoutX="642.0" layoutY="251.0" prefHeight="86.0" prefWidth="156.0" text="np &#10;pn&#10;" textFill="DARKORANGE">
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="prof" alignment="CENTER" layoutX="516.0" layoutY="279.0" prefHeight="30.0" prefWidth="125.0" text="Dr." textFill="#007fa4">
-                                       <font>
-                                          <Font name="Arial Bold" size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutX="390.0" layoutY="171.0" prefHeight="42.0" prefWidth="504.0" text="Gestion des activités du" textAlignment="CENTER" textFill="DARKORANGE">
-                                       <font>
-                                          <Font name="Arial Bold Italic" size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="actugrid" prefHeight="966.0" prefWidth="1396.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1244,6 +1045,225 @@
                                     </AnchorPane>
                                  </center></BorderPane>
                               <Button fx:id="btnR" alignment="CENTER" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="22.0" prefWidth="87.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Voir plus" textAlignment="CENTER" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="863.1999969482422" minHeight="10.0" prefHeight="560.6000030517578" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="177.0" text="BIENVENUE" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="-36.4000244140625" stroke="#0080a3" strokeWidth="3.0" />
+                              <Button fx:id="btnactu" alignment="CENTER" layoutX="1245.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Voir actualites" textAlignment="CENTER" />
+                              <AnchorPane layoutX="43.0" layoutY="93.0" prefHeight="758.0" prefWidth="1318.0">
+                                 <children>
+                                    <ImageView fitHeight="562.0" fitWidth="902.0" layoutX="240.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/back.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="424.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="npn" alignment="CENTER" layoutX="642.0" layoutY="251.0" prefHeight="86.0" prefWidth="156.0" text="np &#10;pn&#10;" textFill="DARKORANGE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="prof" alignment="CENTER" layoutX="516.0" layoutY="279.0" prefHeight="30.0" prefWidth="125.0" text="Dr." textFill="#007fa4">
+                                       <font>
+                                          <Font name="Arial Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="390.0" layoutY="171.0" prefHeight="42.0" prefWidth="504.0" text="Gestion des activités du" textAlignment="CENTER" textFill="DARKORANGE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
+                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
+                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn12" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="50.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof12" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="50.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel12" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label12" ellipsisString="" layoutX="108.0" layoutY="143.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="143.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="encadLabel12" ellipsisString="" layoutX="28.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn14" alignment="CENTER" ellipsisString="" layoutX="172.0" layoutY="59.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof14" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="63.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel14" ellipsisString="" layoutX="28.0" layoutY="106.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label14" ellipsisString="" layoutX="112.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="162.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="encadLabel14" ellipsisString="" layoutX="28.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="91.0" layoutY="58.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="24.0" layoutY="62.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel11" ellipsisString="" layoutX="28.0" layoutY="89.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label11" ellipsisString="" layoutX="107.0" layoutY="149.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="149.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="encadLabel11" ellipsisString="" layoutX="28.0" layoutY="20.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn13" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="56.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof13" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="59.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel13" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label13" ellipsisString="" layoutX="108.0" layoutY="158.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="158.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="encadLabel13" ellipsisString="" layoutX="28.0" layoutY="14.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
                            </children>
                         </AnchorPane>
                      </children>

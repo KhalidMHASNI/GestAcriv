@@ -116,5 +116,50 @@ public class newActivDr {
     *           LES 4 DERNIERS ACTIVITES
     * */
 
+    public static void refresh4Encad(javafx.scene.control.Label encad1,javafx.scene.control.Label encad2,javafx.scene.control.Label encad3,javafx.scene.control.Label encad4
+            ,javafx.scene.control.Label typeEncad1,javafx.scene.control.Label typeEncad2,javafx.scene.control.Label typeEncad3,javafx.scene.control.Label typeEncad4
+            ,javafx.scene.control.Label npLaureat1,javafx.scene.control.Label npLaureat2,javafx.scene.control.Label npLaureat3,javafx.scene.control.Label npLaureat4,int dr_id){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
 
+        String query1 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-4;";  //Latesr one
+        String query2 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-3;";
+        String query3 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-2;";
+        String query4 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-1;";    //Latest one
+
+
+
+        try (Connection con = DriverManager.getConnection(url, user, password);) {
+            ResultSet s4 = con.prepareStatement(query4).executeQuery();
+            while (s4.next()){
+                encad1.setText(s4.getString("encad"));
+                typeEncad1.setText( s4.getString("type_encad"));
+                npLaureat1.setText( s4.getString("npnom"));
+            }
+            ResultSet s3 = con.prepareStatement(query3).executeQuery();
+            while (s3.next()){
+                encad2.setText(s3.getString("encad"));
+                typeEncad2.setText( s3.getString("type_encad"));
+                npLaureat2.setText( s3.getString("npnom"));
+            }
+            ResultSet s2 = con.prepareStatement(query2).executeQuery();
+            while (s2.next()){
+                encad3.setText(s2.getString("encad"));
+                typeEncad3.setText( s2.getString("type_encad"));
+                npLaureat3.setText( s2.getString("npnom"));
+            }
+            ResultSet s1 = con.prepareStatement(query1).executeQuery();
+            while (s1.next()){
+                encad4.setText(s1.getString("encad"));
+                typeEncad4.setText( s1.getString("type_encad"));
+                npLaureat4.setText( s1.getString("npnom"));
+            }
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+    }
 }

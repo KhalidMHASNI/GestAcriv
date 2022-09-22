@@ -32,6 +32,13 @@ public class dr_controller implements Initializable {
     @FXML
     Label encadLabel,typeEncadLabel,npl_enc_label;
     @FXML
+    Label encadLabel11,encadLabel12,encadLabel13,encadLabel14;
+    @FXML
+    Label typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14;
+    @FXML
+    Label npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14;
+    ////////////////
+    @FXML
     Label soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout;
     @FXML
     Label respoLabel,respoDesc;
@@ -50,11 +57,13 @@ public class dr_controller implements Initializable {
         npn4.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof4.setText(usrinf.get("PROFILE"));
         usrinfo = usrinf;
+        int x = Integer.parseInt(usrinf.get("DR_ID"));
         //System.out.println(usrinf.get("DR_ID"));
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinf.get("DR_ID")));
-        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinf.get("DR_ID")));
-        newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinf.get("DR_ID")));
-        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinf.get("DR_ID")));
+        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, x);
+        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,x);
+        newActivDr.refreshRespo(respoLabel,respoDesc,x);
+        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
+        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
     }
 
 
