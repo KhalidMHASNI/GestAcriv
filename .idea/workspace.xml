@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="hooome">
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="news done v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,9 +53,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.gestacriv" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.gestacriv" />
     </key>
   </component>
@@ -225,7 +225,35 @@
       <option name="project" value="LOCAL" />
       <updated>1663611518560</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="be ending soon">
+      <created>1663615287783</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1663615287783</updated>
+    </task>
+    <task id="LOCAL-00022" summary="be ending soon">
+      <created>1663616377639</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663616377639</updated>
+    </task>
+    <task id="LOCAL-00023" summary="news">
+      <created>1663780447917</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1663780447918</updated>
+    </task>
+    <task id="LOCAL-00024" summary="news done v2">
+      <created>1663784119857</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1663784119857</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +281,10 @@
     <MESSAGE value="getData fixed" />
     <MESSAGE value="dr be" />
     <MESSAGE value="l'app ah SALINAHA" />
-    <option name="LAST_COMMIT_MESSAGE" value="l'app ah SALINAHA" />
+    <MESSAGE value="be ending soon" />
+    <MESSAGE value="news" />
+    <MESSAGE value="news done v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="news done v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

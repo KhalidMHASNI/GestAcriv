@@ -104,6 +104,31 @@
          <children>
             <StackPane prefHeight="1038.0" prefWidth="1396.0">
                <children>
+                  <GridPane fx:id="lire_sout_grid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnL11" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
+                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
+                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Soutenances" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
                   <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -352,152 +377,6 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="partcipgrid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
-                           <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
-                                 <center>
-                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button fx:id="btn_annuler3" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="nature_manif" layoutX="435.0" layoutY="34.0" prefHeight="39.0" prefWidth="351.0" styleClass="zone_txt" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="40.0" text="Nature de la manifestation">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="115.0" text="Date">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="365.0" text="Nature de la participation">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <TextArea fx:id="nature_particip" layoutX="431.0" layoutY="320.0" prefHeight="120.0" prefWidth="358.0" styleClass="zone_area" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </TextArea>
-                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="btnpdf4" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="lieu_conf" layoutX="428.0" layoutY="212.0" prefHeight="42.0" prefWidth="365.0" styleClass="zone_txt" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="218.0" text="Lieu de la conference">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <DatePicker fx:id="date_manif" layoutX="430.0" layoutY="115.0" prefHeight="30.0" prefWidth="361.0" styleClass="zone_date" stylesheets="@../css/style.css" />
-                                          <Label fx:id="labelpdf4" alignment="CENTER" layoutX="159.0" layoutY="535.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter participation au manifestation" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnL" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
-                              <BorderPane layoutX="403.0" layoutY="249.0" prefHeight="278.0" prefWidth="590.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button fx:id="lire_manif" layoutX="453.0" layoutY="242.0" mnemonicParsing="false" onAction="#hh" prefHeight="23.0" prefWidth="113.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Lire plus" textAlignment="CENTER" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="Arial Black" size="12.0" />
-                                             </font>
-                                          </Button>
-                                          <Label fx:id="npn22" alignment="CENTER" ellipsisString="" layoutX="34.0" layoutY="59.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof22" alignment="CENTER" ellipsisString="" layoutX="34.0" layoutY="59.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="natureManif" ellipsisString="" layoutX="34.0" layoutY="21.0" prefHeight="30.0" prefWidth="298.0" text="Nature Manif" textFill="DARKORANGE" wrapText="true">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="dateManif" ellipsisString="" layoutX="34.0" layoutY="201.0" prefHeight="30.0" prefWidth="108.0" text="Date manif">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lieuManif" ellipsisString="" layoutX="183.0" layoutY="201.0" prefHeight="30.0" prefWidth="108.0" text="lieu manif">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="natureParticip" ellipsisString="" layoutX="28.0" layoutY="116.0" prefHeight="36.0" prefWidth="526.0" text="nature Participation">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="lire_encad_grid" style="-fx-background-color: snow;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -508,17 +387,17 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../../../../../../../../../css/style.css" text="Retour" />
+                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
                               <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
                               <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
                                  <font>
                                     <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -533,17 +412,17 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Button fx:id="btnL13" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../../../../../../../../../css/style.css" text="Retour" />
+                              <Button fx:id="btnL13" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
                               <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
                               <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Responsabilités" textFill="DARKORANGE">
                                  <font>
                                     <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -558,42 +437,17 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Button fx:id="btnL12" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../../../../../../../../../css/style.css" text="Retour" />
+                              <Button fx:id="btnL12" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
                               <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
                               <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Manifestations" textFill="DARKORANGE">
                                  <font>
                                     <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="lire_sout_grid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnL11" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../../../../../../../../../css/style.css" text="Retour" />
-                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
-                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Soutenances" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../../../../../../../../../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -666,7 +520,7 @@
                                                 <Font name="Arial Black" size="12.0" />
                                              </font>
                                           </Button>
-                                          <Label fx:id="respoDesc" ellipsisString="" layoutX="51.0" layoutY="120.0" prefHeight="30.0" prefWidth="108.0" text="Desc respo">
+                                          <Label fx:id="respoDesc" layoutX="35.0" layoutY="121.0" prefHeight="30.0" prefWidth="481.0" text="Desc respo">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
@@ -676,12 +530,12 @@
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="npn21" alignment="CENTER" ellipsisString="" layoutX="83.0" layoutY="57.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                          <Label fx:id="npn3" alignment="CENTER" ellipsisString="" layoutX="83.0" layoutY="57.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
                                              <font>
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="prof21" alignment="CENTER" ellipsisString="" layoutX="35.0" layoutY="61.0" text="Dr." textAlignment="CENTER">
+                                          <Label fx:id="prof3" alignment="CENTER" ellipsisString="" layoutX="35.0" layoutY="61.0" text="Dr." textAlignment="CENTER">
                                              <font>
                                                 <Font name="Arial Bold" size="20.0" />
                                              </font>
@@ -713,22 +567,22 @@
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="intitule_sout_Label" ellipsisString="" layoutX="46.0" layoutY="98.0" prefHeight="36.0" prefWidth="526.0" text="intitule_sout">
+                                          <Label fx:id="intitule_sout_Label" layoutX="40.0" layoutY="90.0" prefHeight="54.0" prefWidth="526.0" text="intitule_sout">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="npl_sout_label" ellipsisString="" layoutX="40.0" layoutY="150.0" prefHeight="30.0" prefWidth="108.0" text="np_sout_label">
+                                          <Label fx:id="npl_sout_label" ellipsisString="" layoutX="46.0" layoutY="151.0" prefHeight="30.0" prefWidth="279.0" text="np_sout_label">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="dateSout" ellipsisString="" layoutX="46.0" layoutY="203.0" prefHeight="30.0" prefWidth="108.0" text="Date sout">
+                                          <Label fx:id="dateSout" ellipsisString="" layoutX="40.0" layoutY="203.0" prefHeight="30.0" prefWidth="147.0" text="Date sout">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="lieuSout" ellipsisString="" layoutX="195.0" layoutY="203.0" prefHeight="30.0" prefWidth="108.0" text="lieu sout">
+                                          <Label fx:id="lieuSout" ellipsisString="" layoutX="224.0" layoutY="203.0" prefHeight="30.0" prefWidth="190.0" text="lieu sout">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
@@ -737,6 +591,152 @@
                                     </AnchorPane>
                                  </center></BorderPane>
                               <Button fx:id="btnR" alignment="CENTER" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="22.0" prefWidth="87.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Voir plus" textAlignment="CENTER" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="home2grid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnL" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
+                              <BorderPane layoutX="403.0" layoutY="249.0" prefHeight="278.0" prefWidth="590.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="lire_manif" layoutX="453.0" layoutY="242.0" mnemonicParsing="false" onAction="#hh" prefHeight="23.0" prefWidth="113.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Lire plus" textAlignment="CENTER" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="Arial Black" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="npn4" alignment="CENTER" ellipsisString="" layoutX="134.0" layoutY="55.0" prefHeight="30.0" prefWidth="206.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof4" alignment="CENTER" ellipsisString="" layoutX="34.0" layoutY="59.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="natureManif" ellipsisString="" layoutX="34.0" layoutY="21.0" prefHeight="30.0" prefWidth="298.0" text="Nature Manif" textFill="DARKORANGE" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dateManif" ellipsisString="" layoutX="34.0" layoutY="201.0" prefHeight="30.0" prefWidth="147.0" text="Date manif">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lieuManif" ellipsisString="" layoutX="224.0" layoutY="201.0" prefHeight="30.0" prefWidth="214.0" text="lieu manif">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="natureParticip" ellipsisString="" layoutX="28.0" layoutY="116.0" prefHeight="36.0" prefWidth="526.0" text="nature Participation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="partcipgrid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btn_annuler3" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getDataManif" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="nature_manif" layoutX="435.0" layoutY="34.0" prefHeight="39.0" prefWidth="351.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="40.0" text="Nature de la manifestation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="115.0" text="Date">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="365.0" text="Nature de la participation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="nature_particip" layoutX="431.0" layoutY="320.0" prefHeight="120.0" prefWidth="358.0" styleClass="zone_area" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf4" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="lieu_conf" layoutX="428.0" layoutY="212.0" prefHeight="42.0" prefWidth="365.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="218.0" text="Lieu de la conference">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="date_manif" layoutX="430.0" layoutY="115.0" prefHeight="30.0" prefWidth="361.0" styleClass="zone_date" stylesheets="@../css/style.css" />
+                                          <Label fx:id="labelpdf4" alignment="CENTER" layoutX="159.0" layoutY="535.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter participation au manifestation" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>
