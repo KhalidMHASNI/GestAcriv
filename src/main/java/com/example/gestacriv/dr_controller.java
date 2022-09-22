@@ -166,7 +166,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,btnactu,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -174,7 +174,7 @@ public class dr_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
 
     @FXML
-    private GridPane homegrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
+    private GridPane homegrid,actugrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -183,8 +183,11 @@ public class dr_controller implements Initializable {
         }
         else  if (event.getSource() == btnR){
             home2grid.toFront();
-        }else  if (event.getSource() == btnhome || event.getSource() == btnL || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4){
+        }else if (event.getSource() == btnhome) {
             homegrid.toFront();
+        }
+        else  if (event.getSource() == btnactu || event.getSource() == btnL || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4){
+            actugrid.toFront();
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
         }else if (event.getSource() == btnsout){
