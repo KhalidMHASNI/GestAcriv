@@ -20,16 +20,16 @@ public class newActivDr {
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
             while (s.next()){
-                if (s.getString("encad")!=null||s.getString("type_encad")!=null||s.getString("npnom")!=null){
-                    encad.setText(s.getString("encad"));
-                    typeEncad.setText( s.getString("type_encad"));
-                    npLaureat.setText( s.getString("npnom"));
+                encad.setText(s.getString("encad"));
+                typeEncad.setText( s.getString("type_encad"));
+                npLaureat.setText( s.getString("npnom"));
+                /*if (s.getString("encad")!=null||s.getString("type_encad")!=null||s.getString("npnom")!=null){
                     //intituleDB = s.getString("intitule");
                 }else {
                     encad.setText("null");
                     typeEncad.setText("null");
                     npLaureat.setText("null");
-                }
+                }*/
             }
         } catch (SQLException ex) {
 
@@ -45,25 +45,17 @@ public class newActivDr {
         String password = "gestactiv2022";
 
         String query = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout);";
-        String soutDB="",intituleSoutDB="",npSoutDB="",dateSoutDB="",lieuSoutDB="";
-
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
 
-                while (s.next()){
-                    if (s.getString("sout")!=null||s.getString("intitule_sout")!=null||s.getString("npnom")!=null||s.getString("sout_date")!=null||s.getString("sout_lieu")!=null){
-                        sout.setText(s.getString("sout"));
-                        intituleSout.setText(s.getString("intitule_sout"));
-                        npSout.setText(s.getString("npnom"));
-                        dateSout.setText(s.getString("sout_date"));
-                        lieuSout.setText(s.getString("sout_lieu"));
-                    }else {
-                        System.out.println("AAAAAa");
-                        sout.setText("null");intituleSout.setText("null");npSout.setText("null");dateSout.setText("null");lieuSout.setText("null");
-                    }
-
-                }
+            while (s.next()){
+                sout.setText(s.getString("sout"));
+                intituleSout.setText(s.getString("intitule_sout"));
+                npSout.setText(s.getString("npnom"));
+                dateSout.setText(s.getString("sout_date"));
+                lieuSout.setText(s.getString("sout_lieu"));
+            }
 
         } catch (SQLException ex) {
 
@@ -84,16 +76,9 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-            if (s.next()){
-                while (s.next()){
-                    respoDB = s.getString("respo");
-                    descRespoDB = s.getString("desc_respo");
-                }
-                respo.setText(respoDB);
-                descrespo.setText(descRespoDB);
-            }else {
-                respo.setText("null");
-                descrespo.setText("null");
+            while (s.next()){
+                respo.setText(s.getString("respo"));
+                descrespo.setText(s.getString("desc_respo"));
             }
         } catch (SQLException ex) {
 
@@ -113,22 +98,11 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-            if (s.next()){
-                while (s.next()){
-                    natureManifDB = s.getString("nature_manif");
-                    natureParticipDB = s.getString("nature_particip");
-                    dateManifDB = s.getString("date_manif");
-                    lieuManifDB = s.getString("lieu_manif");
-                }
-                natureManif.setText(natureManifDB);
-                natureParticip.setText(natureParticipDB);
-                dateManif.setText(dateManifDB);
-                lieuManif.setText(lieuManifDB);
-            }else {
-                natureManif.setText("null");
-                natureParticip.setText("null");
-                dateManif.setText("null");
-                lieuManif.setText("null");
+            while (s.next()){
+                natureManif.setText(s.getString("nature_manif"));
+                natureParticip.setText(s.getString("nature_particip"));
+                dateManif.setText(s.getString("date_manif"));
+                lieuManif.setText(s.getString("lieu_manif"));
             }
         } catch (SQLException ex) {
 
@@ -137,5 +111,10 @@ public class newActivDr {
             System.out.println("erreur be"+ex);
         }
     }
+
+    /*
+    *           LES 4 DERNIERS ACTIVITES
+    * */
+
 
 }
