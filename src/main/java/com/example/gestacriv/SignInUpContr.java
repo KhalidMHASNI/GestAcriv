@@ -79,7 +79,6 @@ public class SignInUpContr implements Initializable{
                     root = loadr.load();
                     dr_controller c = loadr.getController();
                     c.displaynpn(userInfo);
-
                     changeScene.toDr(event,stage,scene,root);
                 }else if (userInfo.get("PROFILE").equals("Doctorant")){
 

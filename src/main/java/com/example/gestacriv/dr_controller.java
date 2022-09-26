@@ -30,13 +30,13 @@ public class dr_controller implements Initializable {
 
     HashMap<String,String> usrinfo;
     @FXML
-    Label encadLabel,typeEncadLabel,npl_enc_label;
+    Label encadLabel= new Label(),typeEncadLabel= new Label(),npl_enc_label= new Label();
     @FXML
-    Label encadLabel11,encadLabel12,encadLabel13,encadLabel14;
+    Label encadLabel11= new Label(),encadLabel12= new Label(),encadLabel13= new Label(),encadLabel14= new Label();
     @FXML
-    Label typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14;
+    Label typeEncadLabel11= new Label(),typeEncadLabel12= new Label(),typeEncadLabel13= new Label(),typeEncadLabel14= new Label();
     @FXML
-    Label npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14;
+    Label npl_enc_label11= new Label(),npl_enc_label12= new Label(),npl_enc_label13= new Label(),npl_enc_label14= new Label();
     ////////////////
     @FXML
     Label soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout;
