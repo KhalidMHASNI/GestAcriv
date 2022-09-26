@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="lire plus !!">
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Logo added">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/icons/iconblue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/icons/iconhome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/icons/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/GAlogo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/iconblue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/iconhome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/toppng.com-home-icons-blue-home-icon-blue-694x694.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/drt.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/drt.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/ens.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/ens.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/img/back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/back.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +235,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663785368739</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="icons">
+      <created>1663874123304</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663874123304</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Logo added">
+      <created>1664213714972</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1664213714973</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,7 +278,9 @@
     <MESSAGE value="dr be" />
     <MESSAGE value="l'app ah SALINAHA" />
     <MESSAGE value="lire plus !!" />
-    <option name="LAST_COMMIT_MESSAGE" value="lire plus !!" />
+    <MESSAGE value="icons" />
+    <MESSAGE value="Logo added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logo added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
