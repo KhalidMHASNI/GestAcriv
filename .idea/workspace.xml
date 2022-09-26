@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Logo added!!!" />
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Logo added!!!§" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664214181926</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Logo added!!!§">
+      <created>1664217362712</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664217362712</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,7 +289,8 @@
     <MESSAGE value="icons" />
     <MESSAGE value="Logo added" />
     <MESSAGE value="Logo added!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logo added!!!" />
+    <MESSAGE value="Logo added!!!§" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logo added!!!§" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
