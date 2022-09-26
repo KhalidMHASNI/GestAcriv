@@ -20,16 +20,16 @@
                   <Font name="Arial" size="28.0" />
                </font>
             </Text>
-            <TextField fx:id="cnxemail" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" style="-fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4);">
+            <TextField fx:id="cnxemail" alignment="CENTER" layoutX="210.0" layoutY="254.0" prefHeight="35.0" prefWidth="411.0" promptText="E-mail académique" styleClass="inscri" stylesheets="@../css/style.css">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <PasswordField fx:id="cnxpassword" alignment="CENTER" layoutX="210.0" layoutY="375.0" prefHeight="35.0" prefWidth="411.0" promptText="Mot de passe" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-radius: 10px 100px / 120px;">
+            <PasswordField fx:id="cnxpassword" alignment="CENTER" layoutX="210.0" layoutY="375.0" prefHeight="35.0" prefWidth="411.0" promptText="Mot de passe" styleClass="inscri" stylesheets="@../css/style.css">
                <font>
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button layoutX="336.0" layoutY="528.0" mnemonicParsing="false" onAction="#open_panel" style="-fx-cursor: hand; -fx-background-color: transparent; -fx-border-width: 3px; -fx-border-color: linear-gradient(from 25% 25% to 100% 100%,#ff8c00,#6EC1E4); -fx-border-radius: 30px;" text="Se connecter" textFill="WHITE">
+            <Button layoutX="345.0" layoutY="525.0" mnemonicParsing="false" onAction="#open_panel" styleClass="btninscri" stylesheets="@../css/style.css" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
@@ -40,9 +40,9 @@
    <left>
       <AnchorPane prefHeight="800.0" prefWidth="458.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="158.0" fitWidth="344.0" layoutX="37.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="210.0" fitWidth="475.0" layoutX="-15.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/umi.png" />
+                  <Image url="@../img/GAlogo.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
@@ -60,7 +60,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="222.0" layoutY="492.0" mnemonicParsing="false" onAction="#open_inscrip" styleClass="btn_dr" stylesheets="@../css/style.css" text="S'inscrire" textFill="#007fa4">
+            <Button layoutX="222.0" layoutY="501.0" mnemonicParsing="false" onAction="#open_inscrip" styleClass="btninscri" stylesheets="@../css/style.css" text="S'inscrire" textFill="#007fa4">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>

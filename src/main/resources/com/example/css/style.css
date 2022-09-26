@@ -12,6 +12,28 @@
 -fx-border-width:0px 0px 5px 0px;
 
 }
+.btninscri{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+-fx-border-color: #6EC1E4;
+-fx-border-width:0px 0px 0px 4px;
+
+}
+
+.btninscri:hover {
+-fx-border-color: #ff8c00;
+-fx-border-width:0px 0px 0px 4px;
+
+}
+.inscri {
+-fx-background-color: transparent;
+-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #6ec1e4,#ff8c00);
+-fx-border-width: 3px;
+-fx-border-radius: 10px 100px / 120px;
+}
+.inscri:focused{
+-fx-border-color: #ff8c00;
+}
 .btn_dr{
 -fx-background-color: transparent;
 -fx-cursor: hand;
