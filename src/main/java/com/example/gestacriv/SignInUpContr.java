@@ -49,9 +49,7 @@ public class SignInUpContr implements Initializable{
     public void open_panel(ActionEvent event) throws IOException {
         HashMap<String,String> userInfo;
         try {
-
             String psw = javaPostreSql.checkpasswd(cnxemail.getText());
-            System.out.println("lalo");
 
             if (!javaPostreSql.checkexists(cnxemail.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -64,7 +62,6 @@ public class SignInUpContr implements Initializable{
                 alert.setHeaderText("Le mot de passe que vous avez entrer est incorrecte .");
                 alert.showAndWait();
             }else {
-                System.out.println("appah "+cnxemail.getText()+" "+cnxpassword.getText());
 
                 userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
 
@@ -88,7 +85,7 @@ public class SignInUpContr implements Initializable{
 
                     FXMLLoader loadr = new FXMLLoader(getClass().getResource("ens.fxml"));
                     root = loadr.load();
-                    dr_controller c = loadr.getController();
+                    ens_controller c = loadr.getController();
                     c.displaynpn(userInfo);
                     changeScene.toEns(event,stage,scene,root);
                 }
@@ -116,7 +113,7 @@ public class SignInUpContr implements Initializable{
                 alert.setTitle("Field vide");
                 alert.setContentText("Veillez entrer tous les champs du formulaire!");
                 alert.showAndWait();
-            } else if (!Pattern.matches("^[a-zA-Z]\\.[a-zA-z]+(@edu.umi.ac.ma|@edu.umi.ma)$", email.getText())){
+            } else if (!Pattern.matches("^[a-zA-Z]\\.[a-zA-z]+(@edu.umi.ac.ma|@umi.ac.ma)$", email.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("E-mail");
                 alert.setHeaderText("L'email doit être sous la forme \"p.nom@umi.ac.ma\" pour les enseignants et le staff administratif, et \"p.nom@edu.umi.ac.ma\" pour les étudiants et les doctorants.");

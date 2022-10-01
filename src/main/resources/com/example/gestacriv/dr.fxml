@@ -264,94 +264,6 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="partcipgrid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
-                           <children>
-                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
-                                 <center>
-                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Button fx:id="btn_annuler3" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="nature_manif" layoutX="435.0" layoutY="34.0" prefHeight="39.0" prefWidth="351.0" styleClass="zone_txt" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="40.0" text="Nature de la manifestation">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="115.0" text="Date">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="32.0" layoutY="365.0" text="Nature de la participation">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <TextArea fx:id="nature_particip" layoutX="431.0" layoutY="320.0" prefHeight="120.0" prefWidth="358.0" styleClass="zone_area" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </TextArea>
-                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="btnpdf4" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
-                                             <font>
-                                                <Font size="13.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="lieu_conf" layoutX="428.0" layoutY="212.0" prefHeight="42.0" prefWidth="365.0" styleClass="zone_txt" stylesheets="@../css/style.css">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label layoutX="32.0" layoutY="218.0" text="Lieu de la conference">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <DatePicker fx:id="date_manif" layoutX="430.0" layoutY="115.0" prefHeight="30.0" prefWidth="361.0" styleClass="zone_date" stylesheets="@../css/style.css" />
-                                          <Label fx:id="labelpdf4" alignment="CENTER" layoutX="159.0" layoutY="535.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: white;" textFill="DARKORANGE">
-                                             <font>
-                                                <Font name="System Italic" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center>
-                              </BorderPane>
-                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter participation au manifestation" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="encadgrid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -436,155 +348,6 @@
                                     <Font name="Arial" size="30.0" />
                                  </font>
                               </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: snow;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
-                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
-                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn12" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="50.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof12" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="50.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel2" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label2" ellipsisString="" layoutX="108.0" layoutY="143.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="143.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn14" alignment="CENTER" ellipsisString="" layoutX="172.0" layoutY="59.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof14" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="63.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel4" ellipsisString="" layoutX="28.0" layoutY="106.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label4" ellipsisString="" layoutX="112.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="162.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="95.0" layoutY="34.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="38.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel1" ellipsisString="" layoutX="28.0" layoutY="89.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label1" ellipsisString="" layoutX="107.0" layoutY="149.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="149.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
-                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
-                                 <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label fx:id="npn13" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="44.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
-                                             <font>
-                                                <Font name="System Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="prof13" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="47.0" text="Dr." textAlignment="CENTER">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="typeEncadLabel3" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="npl_enc_label3" ellipsisString="" layoutX="108.0" layoutY="158.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="28.0" layoutY="158.0" text="Pour">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </center></BorderPane>
                            </children>
                         </AnchorPane>
                      </children>
@@ -1217,6 +980,243 @@
                                     </AnchorPane>
                                  </center>
                               </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnL1" layoutX="1266.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
+                              <Line endX="1094.0" layoutX="256.0" layoutY="75.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
+                              <Label layoutX="40.0" layoutY="48.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <BorderPane layoutX="801.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn12" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="50.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof12" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="50.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel2" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label2" ellipsisString="" layoutX="108.0" layoutY="143.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="143.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="801.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn14" alignment="CENTER" ellipsisString="" layoutX="172.0" layoutY="59.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof14" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="63.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel4" ellipsisString="" layoutX="28.0" layoutY="106.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label4" ellipsisString="" layoutX="112.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="162.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="48.0" layoutY="99.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="95.0" layoutY="34.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="38.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel1" ellipsisString="" layoutX="28.0" layoutY="89.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label1" ellipsisString="" layoutX="107.0" layoutY="149.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="149.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                              <BorderPane layoutX="48.0" layoutY="382.0" prefHeight="271.0" prefWidth="554.0" styleClass="box_actu" stylesheets="@../css/style.css">
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="npn13" alignment="CENTER" ellipsisString="" layoutX="108.0" layoutY="44.0" prefHeight="30.0" prefWidth="238.0" text="npnom">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="prof13" alignment="CENTER" ellipsisString="" layoutX="28.0" layoutY="47.0" text="Dr." textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="typeEncadLabel3" ellipsisString="" layoutX="28.0" layoutY="95.0" prefHeight="36.0" prefWidth="526.0" text="typeEncadLabel">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="npl_enc_label3" ellipsisString="" layoutX="108.0" layoutY="158.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="28.0" layoutY="158.0" text="Pour">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center></BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="partcipgrid" style="-fx-background-color: snow;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="570.0" prefWidth="1276.0" style="-fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #007FA4,#ff8c00); -fx-border-width: 0px 3px 3px 3px;">
+                                 <center>
+                                    <AnchorPane prefHeight="608.0" prefWidth="1344.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btn_annuler3" layoutX="1000.0" layoutY="495.0" mnemonicParsing="false" onAction="#annuler" styleClass="btn_annu" stylesheets="@../css/style.css" text="Annuler" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="1121.0" layoutY="495.0" mnemonicParsing="false" onAction="#getDataManif" styleClass="btn_sub" stylesheets="@../css/style.css" text="Soumettre" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="nature_manif" layoutX="435.0" layoutY="34.0" prefHeight="39.0" prefWidth="351.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="40.0" text="Nature de la manifestation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="115.0" text="Date">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="32.0" layoutY="365.0" text="Nature de la participation">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="nature_particip" layoutX="431.0" layoutY="320.0" prefHeight="120.0" prefWidth="358.0" styleClass="zone_area" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Label layoutX="32.0" layoutY="495.0" text="Justification">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnpdf4" layoutX="152.0" layoutY="487.0" mnemonicParsing="false" onAction="#choisir_fichier" prefHeight="46.0" prefWidth="139.0" styleClass="btnpdf" stylesheets="@../css/style.css" text="Choisir fichiier (.pdf)" textAlignment="CENTER" textFill="#007fa4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="lieu_conf" layoutX="428.0" layoutY="212.0" prefHeight="42.0" prefWidth="365.0" styleClass="zone_txt" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="32.0" layoutY="218.0" text="Lieu de la conference">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="date_manif" layoutX="430.0" layoutY="115.0" prefHeight="30.0" prefWidth="361.0" styleClass="zone_date" stylesheets="@../css/style.css" />
+                                          <Label fx:id="labelpdf4" alignment="CENTER" layoutX="159.0" layoutY="535.0" prefHeight="20.0" prefWidth="125.0" style="-fx-background-color: white;" textFill="DARKORANGE">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Ajouter participation au manifestation" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>

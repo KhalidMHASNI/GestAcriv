@@ -30,8 +30,10 @@ public class ens_controller implements Initializable {
     Label npn = new Label(),prof = new Label();
     HashMap<String,String> usrinfo;
     public void displaynpn(HashMap<String, String> usrinf){
-        System.out.println("aaaaaa "+usrinf.get("DR_ID"));
+        System.out.println("aaaaaa "+usrinf.get("ENS_ID"));
         usrinfo = usrinf;
+        npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+        prof.setText(usrinf.get("PROFILE"));
     }
 
 
@@ -53,19 +55,11 @@ public class ens_controller implements Initializable {
 
     @FXML
     public void  getDataEncad(ActionEvent event) {
-
-
-        System.out.println("nom et prenom laureat: " +npl_enc.getText());
-        System.out.println("Encadrement: "+encad.getValue());
-        System.out.println("Intitule: "+intitule_encad.getText());
-        System.out.println("Type encadrement: "+type_encad.getValue());
-
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
 
-
-       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
+       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("ENS_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
@@ -76,17 +70,6 @@ public class ens_controller implements Initializable {
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             System.out.println("erreur be"+ex);
         }
-
-        /*
-        * System.out.println("nom et prenom laureat: " +npl_sout.getText());
-        System.out.println("Soutenance: "+sout.getValue());
-        System.out.println("Intitule Soutenance: "+intitule_sout.getText());
-        System.out.println("Date: "+date_sout.getValue());
-        System.out.println("Lieu: " +lieu_sout.getText());
-
-        System.out.println("Responsabilite: "+resp.getValue());
-        System.out.println("Description sur responsabilite: "+desc_resp.getText());
-        * */
 
     }
     @FXML
