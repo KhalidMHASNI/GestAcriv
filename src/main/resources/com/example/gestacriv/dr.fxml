@@ -27,23 +27,23 @@
    <children>
       <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="1166.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
-            <Pane prefHeight="120.0" prefWidth="160.0" style="-fx-background-color: white;">
+            <Pane prefHeight="120.0" prefWidth="160.0" style="-fx-background-color: #6ec1e4;">
                <children>
-                  <ImageView fitHeight="75.0" fitWidth="107.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/logo.png" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="7.0" layoutY="89.0" text="Application" textAlignment="CENTER" textFill="#007fa4">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="98.0" layoutY="89.0" text="Bureau" textAlignment="CENTER" textFill="DARKORANGE">
+                  <Label layoutX="98.0" layoutY="89.0" text="Bureau" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="155.0" fitWidth="225.0" layoutX="-18.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/GA.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" />
@@ -65,21 +65,39 @@
       </VBox>
       <Pane layoutX="160.0" layoutY="-1.0" prefHeight="127.0" prefWidth="1396.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
-            <Button layoutX="1200.0" layoutY="79.0" mnemonicParsing="false" onAction="#open_cnx" styleClass="btn_dr" stylesheets="@../css/style.css" text="Se deconnecter" textFill="WHITE">
+            <Button layoutX="1204.0" layoutY="90.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="30.0" prefWidth="108.0" styleClass="btn_dr" stylesheets="@../css/style.css" textFill="WHITE">
                <font>
-                  <Font name="Segoe UI Symbol" size="18.0" />
+                  <Font name="Arial Bold" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnhome" alignment="CENTER" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" prefHeight="42.0" prefWidth="91.0" styleClass="btn_dr" stylesheets="@../css/style.css" text="Acceuil" textFill="DARKORANGE">
+            <Button fx:id="btnhome" alignment="BOTTOM_LEFT" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" prefHeight="42.0" prefWidth="91.0" styleClass="btn_dr" stylesheets="@../css/style.css" textFill="DARKORANGE">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
-            <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="995.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="22.0" fitWidth="36.0" layoutX="1036.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/iconhome.png" />
                </image>
             </ImageView>
+            <Label alignment="CENTER" layoutX="1058.0" layoutY="87.0" prefHeight="26.0" prefWidth="68.0" text="Acceuil" textFill="DARKORANGE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1209.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/logout.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1238.0" layoutY="89.0" prefHeight="16.0" prefWidth="68.0" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <VBox layoutX="160.0" layoutY="126.0" prefHeight="1036.0" prefWidth="1396.0">
@@ -1227,7 +1245,7 @@
                                           <Image url="@../img/back.jpg" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="npn" alignment="CENTER" layoutX="642.0" layoutY="251.0" prefHeight="86.0" prefWidth="156.0" text="np &#10;pn&#10;" textFill="DARKORANGE">
+                                    <Label fx:id="npn" alignment="CENTER" layoutX="642.0" layoutY="251.0" prefHeight="86.0" prefWidth="156.0" text="np &#10;pn&#10;" textFill="#6ec1e4">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
