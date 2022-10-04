@@ -56,10 +56,21 @@ public class dr_controller implements Initializable {
     Label lieuSout11=new Label(),lieuSout12=new Label(),lieuSout13=new Label(),lieuSout14=new Label();
     ////////////////
     @FXML
-    Label respoLabel,respoDesc;
+    Label respoLabel,respoLabel1,respoLabel2,respoLabel3,respoLabel4;
+    @FXML
+    Label respoDesc,respoDesc1,respoDesc2,respoDesc3,respoDesc4;
+
+    ////////////////
     @FXML
     Label natureManif,natureParticip,dateManif,lieuManif;
-
+    @FXML
+    Label natureManif1,natureManif2,natureManif3,natureManif4;
+    @FXML
+    Label natureParticip1,natureParticip2,natureParticip3,natureParticip4;
+    @FXML
+    Label dateManif1,dateManif2,dateManif3,dateManif4;
+    @FXML
+    Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
 
@@ -81,9 +92,10 @@ public class dr_controller implements Initializable {
         newActivDr.refreshRespo(respoLabel,respoDesc,x);
         newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
         ////////
-
         newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
         newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
+        newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
+        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
         /////////
 
     }

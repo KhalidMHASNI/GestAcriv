@@ -50,7 +50,7 @@ public class SignInUpContr implements Initializable{
         HashMap<String,String> userInfo;
         try {
             String psw = javaPostreSql.checkpasswd(cnxemail.getText());
-
+            //System.out.println(!psw.trim().equals(cnxpassword.getText().trim()));
             if (!javaPostreSql.checkexists(cnxemail.getText())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("E-mail ");
@@ -65,7 +65,7 @@ public class SignInUpContr implements Initializable{
 
                 userInfo = javaPostreSql.readFromDataBase(cnxemail.getText(),cnxpassword.getText());
 
-                System.out.println(userInfo.get("PROFILE"));
+                //System.out.println(userInfo.get("PROFILE"));
 
                 if (userInfo.get("PROFILE").equals("Docteur")){
 

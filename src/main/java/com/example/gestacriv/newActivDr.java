@@ -132,16 +132,21 @@ public class newActivDr {
 
         try (Connection con = DriverManager.getConnection(url, user, password);) {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
-            while (s4.next()){
-                System.out.println(s4.getString("encad")+"  "+s4.getString("type_encad")+"  "+s4.getString("npnom"));
-                encad1.setText(s4.getString("encad"));
-                typeEncad1.setText(s4.getString("type_encad"));
-                npLaureat1.setText(s4.getString("npnom"));
+            if (s4.isBeforeFirst()){
+                while (s4.next()){
+                    System.out.println(s4.getString("encad")+"  "+s4.getString("type_encad")+"  "+s4.getString("npnom"));
+                    encad1.setText(s4.getString("encad"));
+                    typeEncad1.setText(s4.getString("type_encad"));
+                    npLaureat1.setText(s4.getString("npnom"));
+                }
+            }else {
+                encad1.setText("NULL");
+                typeEncad1.setText("NULL");
+                npLaureat1.setText("NULL");
             }
             ResultSet s3 = con.prepareStatement(query3).executeQuery();
             if (s3.isBeforeFirst()){
                 while (s3.next()){
-                    System.out.println(s3.getString("encad")+"  "+s3.getString("type_encad")+"  "+s3.getString("npnom"));
                     encad2.setText(s3.getString("encad"));
                     typeEncad2.setText( s3.getString("type_encad"));
                     npLaureat2.setText( s3.getString("npnom"));
@@ -193,10 +198,10 @@ public class newActivDr {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query1 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-4;";  //Latesr one
-        String query2 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-3;";
-        String query3 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-2;";
-        String query4 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-1;";    //Latest one
+        String query1 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-3;";  //Latesr one
+        String query2 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-2;";
+        String query3 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-1;";
+        String query4 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout);";    //Latest one
 
 
 
@@ -232,6 +237,144 @@ public class newActivDr {
                 npLaureat4.setText( s1.getString("npnom"));
                 dateSout4.setText(s1.getString("sout_date"));
                 lieuSout4.setText(s1.getString("sout_lieu"));
+            }
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+    }
+    public static void refresh4Resp(javafx.scene.control.Label respoL1,javafx.scene.control.Label respoL2,javafx.scene.control.Label respoL3,javafx.scene.control.Label respoL4
+            ,javafx.scene.control.Label respoD1,javafx.scene.control.Label respoD2,javafx.scene.control.Label respoD3,javafx.scene.control.Label respoD4
+            ,int dr_id){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+
+        String query1 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-3;";  //Latesr one
+        String query2 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-2;";
+        String query3 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-1;";
+        String query4 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo);";    //Latest one
+        try (Connection con = DriverManager.getConnection(url, user, password);) {
+            ResultSet s4 = con.prepareStatement(query4).executeQuery();
+            if (s4.isBeforeFirst()){
+                while (s4.next()){
+                    respoL1.setText(s4.getString("respo"));
+                    respoD1.setText(s4.getString("desc_respo"));
+                }
+            }else {
+                respoL1.setText("NULL");
+                respoD1.setText("NULL");
+            }
+            ResultSet s3 = con.prepareStatement(query3).executeQuery();
+            if (s3.isBeforeFirst()){
+                while (s3.next()){
+                    respoL2.setText(s4.getString("respo"));
+                    respoD2.setText(s4.getString("desc_respo"));
+                }
+            }else {
+                respoL2.setText("NULL");
+                respoD2.setText("NULL");
+            }
+            ResultSet s2 = con.prepareStatement(query2).executeQuery();
+            if (s2.isBeforeFirst()){
+                while (s2.next()){
+                    respoL3.setText(s4.getString("respo"));
+                    respoD3.setText(s4.getString("tdesc_respo"));
+                }
+            }else {
+                respoL3.setText("NULL");
+                respoD3.setText("NULL");
+            }
+
+            ResultSet s1 = con.prepareStatement(query1).executeQuery();
+            if (s1.isBeforeFirst()){
+                while (s1.next()){
+                    respoL4.setText(s4.getString("respo"));
+                    respoD4.setText(s4.getString("desc_respo"));
+                }
+            }else {
+                respoL4.setText("NULL");
+                respoD4.setText("NULL");
+            }
+        } catch (SQLException ex) {
+
+            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+            lgr.log(Level.SEVERE, ex.getMessage(), ex);
+            System.out.println("erreur be"+ex);
+        }
+    }
+    public static void refresh4Manif(javafx.scene.control.Label natureM1,javafx.scene.control.Label natureM2,javafx.scene.control.Label natureM3,javafx.scene.control.Label natureM4
+            ,javafx.scene.control.Label natureP1,javafx.scene.control.Label natureP2,javafx.scene.control.Label natureP3,javafx.scene.control.Label natureP4
+            ,javafx.scene.control.Label dateM1,javafx.scene.control.Label dateM2,javafx.scene.control.Label dateM3,javafx.scene.control.Label dateM4
+            ,javafx.scene.control.Label lieuM1,javafx.scene.control.Label lieuM2,javafx.scene.control.Label lieuM3,javafx.scene.control.Label lieuM4
+            ,int dr_id){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+
+        String query1 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-3;";  //Latesr one
+        String query2 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-2;";
+        String query3 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-1;";
+        String query4 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif);";    //Latest one
+        try (Connection con = DriverManager.getConnection(url, user, password);) {
+            ResultSet s4 = con.prepareStatement(query4).executeQuery();
+            if (s4.isBeforeFirst()){
+                while (s4.next()){
+                    natureM1.setText(s4.getString("nature_manif"));
+                    natureP1.setText(s4.getString("nature_particip"));
+                    dateM1.setText(s4.getString("date_manif"));
+                    lieuM1.setText(s4.getString("lieu_conf"));
+                }
+            }else {
+                natureM1.setText("NULL");
+                natureP1.setText("NULL");
+                dateM1.setText("NULL");
+                lieuM1.setText("NULL");
+            }
+            ResultSet s3 = con.prepareStatement(query3).executeQuery();
+            if (s3.isBeforeFirst()){
+                while (s3.next()){
+                    natureM2.setText(s3.getString("nature_manif"));
+                    natureP2.setText(s3.getString("nature_particip"));
+                    dateM2.setText(s3.getString("date_manif"));
+                    lieuM2.setText(s3.getString("lieu_conf"));
+                }
+            }else {
+                natureM2.setText("NULL");
+                natureP2.setText("NULL");
+                dateM2.setText("NULL");
+                lieuM2.setText("NULL");
+            }
+            ResultSet s2 = con.prepareStatement(query2).executeQuery();
+            if (s2.isBeforeFirst()){
+                while (s2.next()){
+                    natureM3.setText(s2.getString("nature_manif"));
+                    natureP3.setText(s2.getString("nature_particip"));
+                    dateM3.setText(s2.getString("date_manif"));
+                    lieuM3.setText(s2.getString("lieu_conf"));
+                }
+            }else {
+                natureM3.setText("NULL");
+                natureP3.setText("NULL");
+                dateM3.setText("NULL");
+                lieuM3.setText("NULL");
+            }
+
+            ResultSet s1 = con.prepareStatement(query1).executeQuery();
+            if (s1.isBeforeFirst()){
+                while (s1.next()){
+                    natureM4.setText(s1.getString("nature_manif"));
+                    natureP4.setText(s1.getString("nature_particip"));
+                    dateM4.setText(s1.getString("date_manif"));
+                    lieuM4.setText(s1.getString("lieu_conf"));
+                }
+            }else {
+                natureM4.setText("NULL");
+                natureP4.setText("NULL");
+                dateM4.setText("NULL");
+                lieuM4.setText("NULL");
             }
         } catch (SQLException ex) {
 

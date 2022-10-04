@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Ens inscrip/cnx done&#10;ens_controller.java  in progress ...">
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="npn and prof done for dr.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/SignInUpContr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664898327068</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="npn and prof done for dr.fxml">
+      <created>1664900665673</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1664900665673</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,7 +302,8 @@
     <MESSAGE value="icons" />
     <MESSAGE value="Logo added" />
     <MESSAGE value="Ens inscrip/cnx done&#10;ens_controller.java  in progress ..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ens inscrip/cnx done&#10;ens_controller.java  in progress ..." />
+    <MESSAGE value="npn and prof done for dr.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="npn and prof done for dr.fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
