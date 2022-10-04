@@ -27,6 +27,10 @@ public class dr_controller implements Initializable {
     Label npn = new Label(),prof = new Label();
     @FXML
     Label npn1 = new Label(),prof1 = new Label(),npn2 = new Label(),prof2 = new Label(), npn3 = new Label(),prof3 = new Label(),npn4 = new Label(),prof4 = new Label();
+    @FXML
+    Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label();
+    @FXML
+    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label();
 
     HashMap<String,String> usrinfo;
     @FXML
@@ -41,15 +45,27 @@ public class dr_controller implements Initializable {
     @FXML
     Label soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout;
     @FXML
+    Label soutLabel11=new Label(),soutLabel12=new Label(),soutLabel13=new Label(),soutLabel14=new Label();
+    @FXML
+    Label intitule_sout_Label11=new Label(),intitule_sout_Label12=new Label(),intitule_sout_Label13=new Label(),intitule_sout_Label14=new Label();
+    @FXML
+    Label npl_sout_label11=new Label(),npl_sout_label12=new Label(),npl_sout_label13=new Label(),npl_sout_label14=new Label();
+    @FXML
+    Label dateSout11=new Label(),dateSout12=new Label(),dateSout13=new Label(),dateSout14=new Label();
+    @FXML
+    Label lieuSout11=new Label(),lieuSout12=new Label(),lieuSout13=new Label(),lieuSout14=new Label();
+    ////////////////
+    @FXML
     Label respoLabel,respoDesc;
     @FXML
     Label natureManif,natureParticip,dateManif,lieuManif;
 
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+
         prof.setText(usrinf.get("PROFILE"));
-        npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
-        prof1.setText(usrinf.get("PROFILE"));
+        npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn11.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn12.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn13.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn14.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+        prof1.setText(usrinf.get("PROFILE"));prof11.setText(usrinf.get("PROFILE"));prof12.setText(usrinf.get("PROFILE"));prof13.setText(usrinf.get("PROFILE"));prof14.setText(usrinf.get("PROFILE"));
         npn2.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof2.setText(usrinf.get("PROFILE"));
         npn3.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
@@ -63,7 +79,11 @@ public class dr_controller implements Initializable {
         newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,x);
         newActivDr.refreshRespo(respoLabel,respoDesc,x);
         newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
+        ////////
+
         newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
+        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
+
     }
 
 

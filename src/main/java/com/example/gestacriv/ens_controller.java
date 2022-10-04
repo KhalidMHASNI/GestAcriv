@@ -59,7 +59,7 @@ public class ens_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
 
-       String query = "INSERT INTO public.encad( encad_id, npnom, encad, \"intitule \", type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("ENS_ID")+");";
+       String query = "INSERT INTO public.encad( encad_id, npnom, encad, intitule, type_encad, ens_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("ENS_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
@@ -89,8 +89,8 @@ public class ens_controller implements Initializable {
 
 
         String query = "INSERT INTO public.sout(\n" +
-                "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, dr_id_fk)\n" +
-                "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+intitule_sout.getText().trim()+"', '"+date_sout.getValue()+"', '"+lieu_sout.getText().trim()+"', "+usrinfo.get("DR_ID")+");";
+                "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, ens_id_fk)\n" +
+                "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+intitule_sout.getText().trim()+"', '"+date_sout.getValue()+"', '"+lieu_sout.getText().trim()+"', "+usrinfo.get("ENS_ID")+");";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
@@ -114,8 +114,8 @@ public class ens_controller implements Initializable {
         String password = "gestactiv2022";
 
         String query = "INSERT INTO public.respo(\n" +
-                "\tsout_id, respo, desc_respo, dr_id_fk)\n" +
-                "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+desc_resp.getText().trim()+"', '"+usrinfo.get("DR_ID")+"');";
+                "\tsout_id, respo, desc_respo, ens_id_fk)\n" +
+                "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+desc_resp.getText().trim()+"', '"+usrinfo.get("ENS_ID")+"');";
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             pst.executeUpdate();
