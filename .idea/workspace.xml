@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="Ens inscrip/cnx done&#10;ens_controller.java  in progress ...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/newActivDr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/dr.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664649298115</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Ens inscrip/cnx done&#10;ens_controller.java  in progress ...">
+      <created>1664898327068</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664898327068</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
