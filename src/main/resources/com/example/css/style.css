@@ -12,6 +12,22 @@
 -fx-border-width:0px 0px 5px 0px;
 
 }
+
+.btnop{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+-fx-border-color: #ff8c00;
+-fx-border-width:0px 0px 0px 4px;
+
+
+}
+
+.btnop:hover {
+-fx-border-color: #007FA4;
+-fx-border-width:0px 0px 0px 4px;
+
+}
+
 .btninscri{
 -fx-background-color: transparent;
 -fx-cursor: hand;

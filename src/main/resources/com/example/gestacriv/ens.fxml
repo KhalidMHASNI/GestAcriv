@@ -1474,29 +1474,24 @@
                               <Button fx:id="btnactu" alignment="CENTER" layoutX="1245.0" layoutY="48.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Voir actualites" textAlignment="CENTER" />
                               <AnchorPane layoutX="43.0" layoutY="93.0" prefHeight="758.0" prefWidth="1318.0">
                                  <children>
-                                    <ImageView fitHeight="562.0" fitWidth="902.0" layoutX="240.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="612.0" fitWidth="1103.0" layoutX="152.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/back.jpg" />
+                                          <Image url="@../img/back.png" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="424.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/avatar.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label fx:id="npn" alignment="CENTER" layoutX="671.0" layoutY="251.0" prefHeight="86.0" prefWidth="156.0" text="np &#10;pn&#10;" textFill="DARKORANGE">
+                                    <Label alignment="CENTER" layoutX="451.0" layoutY="74.0" prefHeight="42.0" prefWidth="279.0" text="Gestion des activités de" textAlignment="CENTER" textFill="DARKORANGE">
                                        <font>
-                                          <Font name="System Bold" size="20.0" />
+                                          <Font name="Arial Bold Italic" size="22.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="prof" alignment="CENTER" ellipsisString="" layoutX="495.0" layoutY="279.0" prefHeight="30.0" prefWidth="178.0" text="Pr." textFill="#007fa4">
+                                    <Label fx:id="prof" alignment="CENTER" layoutX="425.0" layoutY="153.0" prefHeight="30.0" prefWidth="125.0" text="Pr." textFill="#007fa4">
                                        <font>
                                           <Font name="Arial Bold" size="25.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER" layoutX="390.0" layoutY="171.0" prefHeight="42.0" prefWidth="504.0" text="Gestion des activités du" textAlignment="CENTER" textFill="DARKORANGE">
+                                    <Label fx:id="npn" alignment="CENTER" layoutX="603.0" layoutY="134.0" prefHeight="68.0" prefWidth="138.0" text="np &#10;pn&#10;" textFill="#6ec1e4">
                                        <font>
-                                          <Font name="Arial Bold Italic" size="36.0" />
+                                          <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Label>
                                  </children>
