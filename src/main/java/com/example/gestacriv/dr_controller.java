@@ -1,5 +1,6 @@
 package com.example.gestacriv;
 
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -28,9 +31,9 @@ public class dr_controller implements Initializable {
     @FXML
     Label npn1 = new Label(),prof1 = new Label(),npn2 = new Label(),prof2 = new Label(), npn3 = new Label(),prof3 = new Label(),npn4 = new Label(),prof4 = new Label();
     @FXML
-    Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label(),npn21,npn22,npn23,npn24,npn31,npn32,npn33,npn34,npn41,npn42,npn43,npn44;
+    Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label(),npn21=new Label(),npn22=new Label(),npn23=new Label(),npn24=new Label(),npn31=new Label(),npn32=new Label(),npn33=new Label(),npn34=new Label(),npn41=new Label(),npn42=new Label(),npn43=new Label(),npn44=new Label();
     @FXML
-    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21,prof22,prof23,prof24,prof31,prof32,prof33,prof34,prof41,prof42,prof43,prof44;
+    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21=new Label()    ,prof22=new Label(),prof23=new Label(),prof24=new Label(),prof31=new Label(),prof32=new Label(),prof33=new Label(),prof34=new Label(),prof41=new Label(),prof42=new Label(),prof43=new Label(),prof44=new Label();
 
     HashMap<String,String> usrinfo;
     @FXML
@@ -73,7 +76,6 @@ public class dr_controller implements Initializable {
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
-
         prof.setText(usrinf.get("PROFILE"));
         npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn11.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn12.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn13.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn14.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof1.setText(usrinf.get("PROFILE"))    ;prof11.setText(usrinf.get("PROFILE"));prof12.setText(usrinf.get("PROFILE"));prof13.setText(usrinf.get("PROFILE"));prof14.setText(usrinf.get("PROFILE"));
@@ -84,6 +86,8 @@ public class dr_controller implements Initializable {
         npn4.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn41.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn42.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn43.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn44.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof4.setText(usrinf.get("PROFILE"))    ;prof41.setText(usrinf.get("PROFILE"));prof42.setText(usrinf.get("PROFILE"));prof43.setText(usrinf.get("PROFILE"));prof44.setText(usrinf.get("PROFILE"));
         /////////////////
+        timer.start();
+        /////////////////
         usrinfo = usrinf;
         int x = Integer.parseInt(usrinf.get("DR_ID"));
         //System.out.println(usrinf.get("DR_ID"));
@@ -92,16 +96,30 @@ public class dr_controller implements Initializable {
         newActivDr.refreshRespo(respoLabel,respoDesc,x);
         newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
         ////////
+        letab.setText(usrinf.get("ETAB"));
+        lspec.setText(usrinf.get("SPEC"));
+        lgrade.setText(usrinf.get("GRADE"));
+        ////////
         newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
         newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
         newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
         newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
         /////////
-
     }
+    @FXML
+    Label dateM,dateD,dateDD,time;
+    AnimationTimer timer = new AnimationTimer() {
+    @Override
+    public void handle(long now) {
+            dateM.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("LLLL")).toUpperCase(Locale.ROOT));
+            dateD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("d")));
+            dateDD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE")));
+            time.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        }
+    };
 
-
-
+    @FXML
+    Label letab,lspec,lgrade;
     Stage stage;
     Scene scene;
     Parent root;
@@ -137,16 +155,14 @@ public class dr_controller implements Initializable {
             System.out.println("erreur be"+ex);
         }
         newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,Integer.parseInt(usrinfo.get("DR_ID")));
+        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
 
     }
     @FXML
     public void  getDataSout(ActionEvent event) {
-
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
-
-
         String query = "INSERT INTO public.sout(\n" +
                 "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, dr_id_fk)\n" +
                 "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+intitule_sout.getText().trim()+"', '"+date_sout.getValue()+"', '"+lieu_sout.getText().trim()+"', "+usrinfo.get("DR_ID")+");";
@@ -161,6 +177,7 @@ public class dr_controller implements Initializable {
             System.out.println("erreur be "+ex);
         }
         newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinfo.get("DR_ID")));
+        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
     }
 
     @FXML
@@ -186,6 +203,8 @@ public class dr_controller implements Initializable {
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             System.out.println("erreur be "+ex);
         }
+        newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
+        newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
     }
     @FXML
     public void getDataManif(ActionEvent event){
@@ -208,6 +227,8 @@ public class dr_controller implements Initializable {
             System.out.println("erreur be "+ex);
         }
         newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinfo.get("DR_ID")));
+        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
+
     }
 
     @FXML

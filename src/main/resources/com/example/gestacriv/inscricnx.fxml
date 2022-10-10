@@ -23,7 +23,7 @@
             </ImageView>
             <ImageView fitHeight="532.0" fitWidth="1035.0" layoutX="150.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/Application%20Bureau.png" />
+                  <Image url="@../img/Application_Bureau.png" />
                </image>
             </ImageView>
             <Button layoutX="772.0" layoutY="572.0" mnemonicParsing="false" onAction="#open_cnx" snapToPixel="false" styleClass="btnop" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">
