@@ -74,6 +74,17 @@
 -fx-border-color: #6ec1e4;
 
 }
+
+.btn_lire{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+}
+
+.btn_lire:hover {
+-fx-border-width:0px 0px 3px 0px;
+-fx-border-color: #6ec1e4;
+
+}
 .btn_sub {
 -fx-background-color: linear-gradient(from 40% 40% to 100% 100%,#007FA4,#6ec1e4);
 -fx-cursor: hand;
