@@ -94,9 +94,9 @@
    <left>
       <AnchorPane prefHeight="800.0" prefWidth="458.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="210.0" fitWidth="475.0" layoutX="-15.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="210.0" fitWidth="475.0" layoutX="22.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/GAlogo.png" />
+                  <Image url="@../img/GA.png" />
                </image>
             </ImageView>
             <Button alignment="CENTER" layoutX="209.0" layoutY="504.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="40.0" prefWidth="151.0" styleClass="btninscri" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">

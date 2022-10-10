@@ -109,8 +109,8 @@ public class newActivDr {
     }
 
     /*
-    *           LES 4 DERNIERS ACTIVITES
-    * */
+     *           LES 4 DERNIERS ACTIVITES
+     * */
 
     public static void refresh4Encad(javafx.scene.control.Label encad1,javafx.scene.control.Label encad2,javafx.scene.control.Label encad3,javafx.scene.control.Label encad4
             ,javafx.scene.control.Label typeEncad1,javafx.scene.control.Label typeEncad2,javafx.scene.control.Label typeEncad3,javafx.scene.control.Label typeEncad4

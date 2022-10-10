@@ -55,39 +55,39 @@ public class javaPostreSql {
             PreparedStatement pst = con.prepareStatement(query);
             ResultSet s = pst.executeQuery();
 
-           if (s.isBeforeFirst()) {
-               while (s.next()){
-                   dr = s.getInt("dr_id");
-                   nom = s.getString("nom");
-                   prenom = s.getString("prenom");
-                   cni = s.getString("cni");
-                   email=s.getString("email");
-                   passwd=s.getString("passwd");
-                   tel = s.getString("tel");
-                   grade=s.getString("grade");
-                   spec=s.getString("spec");
-                   etab = s.getString("etab");
-               }
-               usrInf.put("DR_ID",Integer.toString(dr));
-               usrInf.put("PROFILE","Docteur");
-           }else {
-               query = "SELECT ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.enseignant WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
-               s = con.prepareStatement(query).executeQuery();
-               while (s.next()){
-                   ens = s.getInt("ens_id");
-                   nom = s.getString("nom");
-                   prenom = s.getString("prenom");
-                   cni = s.getString("cni");
-                   email=s.getString("email");
-                   passwd=s.getString("passwd");
-                   tel = s.getString("tel");
-                   grade=s.getString("grade");
-                   spec=s.getString("spec");
-                   etab = s.getString("etab");
-               }
-               usrInf.put("ENS_ID",Integer.toString(ens));
-               usrInf.put("PROFILE","Enseignant");
-           }
+            if (s.isBeforeFirst()) {
+                while (s.next()){
+                    dr = s.getInt("dr_id");
+                    nom = s.getString("nom");
+                    prenom = s.getString("prenom");
+                    cni = s.getString("cni");
+                    email=s.getString("email");
+                    passwd=s.getString("passwd");
+                    tel = s.getString("tel");
+                    grade=s.getString("grade");
+                    spec=s.getString("spec");
+                    etab = s.getString("etab");
+                }
+                usrInf.put("DR_ID",Integer.toString(dr));
+                usrInf.put("PROFILE","Docteur");
+            }else {
+                query = "SELECT ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.enseignant WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
+                s = con.prepareStatement(query).executeQuery();
+                while (s.next()){
+                    ens = s.getInt("ens_id");
+                    nom = s.getString("nom");
+                    prenom = s.getString("prenom");
+                    cni = s.getString("cni");
+                    email=s.getString("email");
+                    passwd=s.getString("passwd");
+                    tel = s.getString("tel");
+                    grade=s.getString("grade");
+                    spec=s.getString("spec");
+                    etab = s.getString("etab");
+                }
+                usrInf.put("ENS_ID",Integer.toString(ens));
+                usrInf.put("PROFILE","Enseignant");
+            }
             usrInf.put("NOM",nom.trim());
             usrInf.put("PRENOM",prenom.trim());
             usrInf.put("CNI",cni.trim());

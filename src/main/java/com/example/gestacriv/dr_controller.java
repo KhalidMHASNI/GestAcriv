@@ -109,8 +109,8 @@ public class dr_controller implements Initializable {
     @FXML
     Label dateM,dateD,dateDD,time;
     AnimationTimer timer = new AnimationTimer() {
-    @Override
-    public void handle(long now) {
+        @Override
+        public void handle(long now) {
             dateM.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("LLLL")).toUpperCase(Locale.ROOT));
             dateD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("d")));
             dateDD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE")));
@@ -256,7 +256,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnactu,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -264,7 +264,7 @@ public class dr_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
 
     @FXML
-    private GridPane homegrid,actugrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
+    private GridPane homegrid,actugrid,editgrid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -297,6 +297,8 @@ public class dr_controller implements Initializable {
             lire_resp_grid.toFront();
         } else if (event.getSource() == lire_manif) {
             lire_manif_grid.toFront();
+        }else if (event.getSource() == btnconfir) {
+            editgrid.toFront();
         }
 
     }

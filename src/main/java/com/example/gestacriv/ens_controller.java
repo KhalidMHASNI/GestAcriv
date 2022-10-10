@@ -152,7 +152,7 @@ public class ens_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnactu,lire_encad,lire_sout,lire_resp,lire_manif,lire_proj,btnpdf,btnpdf2,btnpdf3,btnR,btnR1,btn_annuler,btn_annuler1,btn_annuler2,btnL1,btnL2,btnL3,btnL4,btnL5;
+    private  Button btnhome,btnactu,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,lire_proj,btnpdf,btnpdf2,btnpdf3,btnR,btnR1,btn_annuler,btn_annuler1,btn_annuler2,btnL1,btnL2,btnL3,btnL4,btnL5;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip,btnproj;
 
@@ -160,7 +160,7 @@ public class ens_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3;
 
     @FXML
-    private GridPane homegrid,actugrid,actu2grid,respgrid,encadgrid,soutgrid,newprojgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid,lire_proj_grid;
+    private GridPane homegrid,actugrid,editgrid,actu2grid,respgrid,encadgrid,soutgrid,newprojgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid,lire_proj_grid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -191,6 +191,8 @@ public class ens_controller implements Initializable {
             lire_manif_grid.toFront();
         } else if (event.getSource() == lire_proj) {
             lire_proj_grid.toFront();
+        } else if (event.getSource() == btnconfir) {
+            editgrid.toFront();
         }
 
     }
