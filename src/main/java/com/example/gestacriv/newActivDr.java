@@ -6,15 +6,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class newActivDr {
-
-
     public static void refreshEncad(javafx.scene.control.Label encad,javafx.scene.control.Label typeEncad,javafx.scene.control.Label npLaureat,int dr_id){
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
 
         String query = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad);";
-        String encadDB="",typeEncadDB="",npLaureatDB="",intituleDB="";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
@@ -93,7 +90,6 @@ public class newActivDr {
         String password = "gestactiv2022";
 
         String query = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif);";
-        String natureManifDB="",natureParticipDB="",dateManifDB="",lieuManifDB="";
 
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
@@ -113,8 +109,8 @@ public class newActivDr {
     }
 
     /*
-    *           LES 4 DERNIERS ACTIVITES
-    * */
+     *           LES 4 DERNIERS ACTIVITES
+     * */
 
     public static void refresh4Encad(javafx.scene.control.Label encad1,javafx.scene.control.Label encad2,javafx.scene.control.Label encad3,javafx.scene.control.Label encad4
             ,javafx.scene.control.Label typeEncad1,javafx.scene.control.Label typeEncad2,javafx.scene.control.Label typeEncad3,javafx.scene.control.Label typeEncad4
@@ -208,36 +204,73 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);) {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
             while (s4.next()){
-                sout1.setText(s4.getString("sout"));
-                intitSout1.setText( s4.getString("intitule_sout"));
-                npLaureat1.setText( s4.getString("npnom"));
-                dateSout1.setText(s4.getString("sout_date"));
-                lieuSout1.setText(s4.getString("sout_lieu"));
+                if (s4.isBeforeFirst()){
+                    while (s4.next()){
+                        sout1.setText(s4.getString("sout"));
+                        intitSout1.setText( s4.getString("intitule_sout"));
+                        npLaureat1.setText( s4.getString("npnom"));
+                        dateSout1.setText(s4.getString("sout_date"));
+                        lieuSout1.setText(s4.getString("sout_lieu"));
+                    }
+                }else {
+                    sout1.setText("NULL");
+                    intitSout1.setText("NULL");
+                    npLaureat1.setText("NULL");
+                    dateSout1.setText("NULL");
+                    lieuSout1.setText("NULL");
+                }
+
             }
             ResultSet s3 = con.prepareStatement(query3).executeQuery();
-            while (s3.next()){
-                sout2.setText(s3.getString("sout"));
-                intitSout2.setText( s3.getString("intitule_sout"));
-                npLaureat2.setText( s3.getString("npnom"));
-                dateSout2.setText(s3.getString("sout_date"));
-                lieuSout2.setText(s3.getString("sout_lieu"));
+            if (s3.isBeforeFirst()){
+                while (s3.next()){
+                    sout2.setText(s3.getString("sout"));
+                    intitSout2.setText( s3.getString("intitule_sout"));
+                    npLaureat2.setText( s3.getString("npnom"));
+                    dateSout2.setText(s3.getString("sout_date"));
+                    lieuSout2.setText(s3.getString("sout_lieu"));
+                }
+            }else {
+                sout2.setText("NULL");
+                intitSout2.setText("NULL");
+                npLaureat2.setText("NULL");
+                dateSout2.setText("NULL");
+                lieuSout2.setText("NULL");
             }
             ResultSet s2 = con.prepareStatement(query2).executeQuery();
-            while (s2.next()){
-                sout3.setText(s2.getString("sout"));
-                intitSout3.setText( s2.getString("intitule_sout"));
-                npLaureat3.setText( s2.getString("npnom"));
-                dateSout3.setText(s2.getString("sout_date"));
-                lieuSout3.setText(s2.getString("sout_lieu"));
+            if (s2.isBeforeFirst()){
+                while (s2.next()){
+                    sout3.setText(s2.getString("sout"));
+                    intitSout3.setText( s2.getString("intitule_sout"));
+                    npLaureat3.setText( s2.getString("npnom"));
+                    dateSout3.setText(s2.getString("sout_date"));
+                    lieuSout3.setText(s2.getString("sout_lieu"));
+                }
+            }else {
+                sout3.setText("NULL");
+                intitSout3.setText("NULL");
+                npLaureat3.setText("NULL");
+                dateSout3.setText("NULL");
+                lieuSout3.setText("NULL");
             }
+
             ResultSet s1 = con.prepareStatement(query1).executeQuery();
-            while (s1.next()){
-                sout4.setText(s1.getString("sout"));
-                intitSout4.setText( s1.getString("intitule_sout"));
-                npLaureat4.setText( s1.getString("npnom"));
-                dateSout4.setText(s1.getString("sout_date"));
-                lieuSout4.setText(s1.getString("sout_lieu"));
+            if (s1.isBeforeFirst()){
+                while (s1.next()){
+                    sout4.setText(s1.getString("sout"));
+                    intitSout4.setText( s1.getString("intitule_sout"));
+                    npLaureat4.setText( s1.getString("npnom"));
+                    dateSout4.setText(s1.getString("sout_date"));
+                    lieuSout4.setText(s1.getString("sout_lieu"));
+                }
+            }else {
+                sout4.setText("NULL");
+                intitSout4.setText("NULL");
+                npLaureat4.setText("NULL");
+                dateSout4.setText("NULL");
+                lieuSout4.setText("NULL");
             }
+
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
@@ -260,8 +293,8 @@ public class newActivDr {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
             if (s4.isBeforeFirst()){
                 while (s4.next()){
-                    respoL1.setText(s4.getString("respo"));
-                    respoD1.setText(s4.getString("desc_respo"));
+                    respoL1.setText(s4.getString("respo").trim());
+                    respoD1.setText(s4.getString("desc_respo").trim());
                 }
             }else {
                 respoL1.setText("NULL");
@@ -270,8 +303,8 @@ public class newActivDr {
             ResultSet s3 = con.prepareStatement(query3).executeQuery();
             if (s3.isBeforeFirst()){
                 while (s3.next()){
-                    respoL2.setText(s4.getString("respo"));
-                    respoD2.setText(s4.getString("desc_respo"));
+                    respoL2.setText(s3.getString("respo"));
+                    respoD2.setText(s3.getString("desc_respo"));
                 }
             }else {
                 respoL2.setText("NULL");
@@ -280,8 +313,8 @@ public class newActivDr {
             ResultSet s2 = con.prepareStatement(query2).executeQuery();
             if (s2.isBeforeFirst()){
                 while (s2.next()){
-                    respoL3.setText(s4.getString("respo"));
-                    respoD3.setText(s4.getString("tdesc_respo"));
+                    respoL3.setText(s2.getString("respo"));
+                    respoD3.setText(s2.getString("tdesc_respo"));
                 }
             }else {
                 respoL3.setText("NULL");
@@ -291,8 +324,8 @@ public class newActivDr {
             ResultSet s1 = con.prepareStatement(query1).executeQuery();
             if (s1.isBeforeFirst()){
                 while (s1.next()){
-                    respoL4.setText(s4.getString("respo"));
-                    respoD4.setText(s4.getString("desc_respo"));
+                    respoL4.setText(s1.getString("respo"));
+                    respoD4.setText(s1.getString("desc_respo"));
                 }
             }else {
                 respoL4.setText("NULL");

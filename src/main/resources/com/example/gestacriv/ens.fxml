@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -1228,6 +1229,94 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
+                  <GridPane fx:id="editgrid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="1018.0" prefWidth="1396.0">
+                           <children>
+                              <BorderPane layoutX="31.0" layoutY="81.0" prefHeight="675.0" prefWidth="1276.0">
+                                 <right>
+                                    <AnchorPane prefHeight="800.0" prefWidth="1340.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="nom" alignment="CENTER" layoutX="296.0" layoutY="45.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom actuel" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="pnom" alignment="CENTER" layoutX="25.0" layoutY="45.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom actuel" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="tel" alignment="CENTER" layoutX="53.0" layoutY="247.0" prefHeight="45.0" prefWidth="354.0" promptText="Num Télephone actuel" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <PasswordField fx:id="password" alignment="CENTER" layoutX="431.0" layoutY="429.0" prefHeight="26.0" prefWidth="356.0" promptText="Nouveau mot de passe" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </PasswordField>
+                                          <PasswordField fx:id="cpassword" alignment="CENTER" layoutX="253.0" layoutY="486.0" prefHeight="26.0" prefWidth="356.0" promptText="confirmation du nouveau mdp" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </PasswordField>
+                                          <Button layoutX="1105.0" layoutY="258.0" mnemonicParsing="false" styleClass="btninscri" stylesheets="@../css/style.css" text="Confirmer" textFill="#007fa4">
+                                             <font>
+                                                <Font name="Arial" size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <ImageView fitHeight="800.0" fitWidth="1.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                          <PasswordField fx:id="password1" alignment="CENTER" layoutX="60.0" layoutY="429.0" prefHeight="26.0" prefWidth="356.0" promptText="Mot de passe actuel" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </PasswordField>
+                                          <TextField fx:id="tel1" alignment="CENTER" layoutX="53.0" layoutY="319.0" prefHeight="45.0" prefWidth="354.0" promptText="Num Télephone nouvau" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="153.0" fitWidth="312.0" layoutX="1082.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/gear.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="TOP_LEFT" ellipsisString="" layoutX="769.0" layoutY="80.0" prefHeight="190.0" prefWidth="312.0" text="Vouz pouvez modifier &#10;tous ce que vous voul-&#10;ez  dans cette page (nom et &#10;prenom, telephone, mot de &#10;passe)&#10;" textFill="#007fa4">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="nom1" alignment="CENTER" layoutX="296.0" layoutY="122.0" prefHeight="35.0" prefWidth="185.0" promptText="Nom" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="pnom1" alignment="CENTER" layoutX="25.0" layoutY="122.0" prefHeight="35.0" prefWidth="185.0" promptText="Prenom" styleClass="inscri" stylesheets="@../css/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
+                                 </right>
+                              </BorderPane>
+                              <Label layoutX="31.0" layoutY="45.0" text="Modification" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
                   <GridPane fx:id="homegrid" prefHeight="966.0" prefWidth="1396.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1309,7 +1398,7 @@
                                     </Label>
                                     <ImageView fitHeight="213.0" fitWidth="259.0" layoutX="261.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../img/calendar%20-orange.png" />
+                                          <Image url="@../img/calendar_orange.png" />
                                        </image>
                                     </ImageView>
                                     <Label fx:id="dateM" alignment="CENTER" layoutX="295.0" layoutY="315.0" prefHeight="30.0" prefWidth="145.0" text="month" textFill="WHITE">
@@ -1327,7 +1416,7 @@
                                           <Font name="Arial Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Button alignment="CENTER" layoutX="948.0" layoutY="380.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="108.0" styleClass="btnop" stylesheets="@../css/style.css" text="Modifier" textFill="#007fa4">
+                                    <Button fx:id="btnconfir" alignment="CENTER" layoutX="948.0" layoutY="380.0" mnemonicParsing="false" onAction="#hh" prefHeight="42.0" prefWidth="108.0" styleClass="btnop" stylesheets="@../css/style.css" text="Modifier" textFill="#007fa4">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>

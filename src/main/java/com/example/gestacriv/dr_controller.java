@@ -31,9 +31,9 @@ public class dr_controller implements Initializable {
     @FXML
     Label npn1 = new Label(),prof1 = new Label(),npn2 = new Label(),prof2 = new Label(), npn3 = new Label(),prof3 = new Label(),npn4 = new Label(),prof4 = new Label();
     @FXML
-    Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label(),npn21,npn22,npn23,npn24,npn31,npn32,npn33,npn34,npn41,npn42,npn43,npn44;
+    Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label(),npn21=new Label(),npn22=new Label(),npn23=new Label(),npn24=new Label(),npn31=new Label(),npn32=new Label(),npn33=new Label(),npn34=new Label(),npn41=new Label(),npn42=new Label(),npn43=new Label(),npn44=new Label();
     @FXML
-    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21,prof22,prof23,prof24,prof31,prof32,prof33,prof34,prof41,prof42,prof43,prof44;
+    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21=new Label()    ,prof22=new Label(),prof23=new Label(),prof24=new Label(),prof31=new Label(),prof32=new Label(),prof33=new Label(),prof34=new Label(),prof41=new Label(),prof42=new Label(),prof43=new Label(),prof44=new Label();
 
     HashMap<String,String> usrinfo;
     @FXML
@@ -111,9 +111,9 @@ public class dr_controller implements Initializable {
     AnimationTimer timer = new AnimationTimer() {
         @Override
         public void handle(long now) {
-            dateD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd")));
+            dateM.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("LLLL")).toUpperCase(Locale.ROOT));
+            dateD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("d")));
             dateDD.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE")));
-            dateM.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMMM")).toUpperCase(Locale.ROOT));
             time.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
         }
     };
@@ -256,7 +256,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnactu,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -264,7 +264,7 @@ public class dr_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
 
     @FXML
-    private GridPane homegrid,actugrid,home2grid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
+    private GridPane homegrid,actugrid,editgrid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -297,6 +297,8 @@ public class dr_controller implements Initializable {
             lire_resp_grid.toFront();
         } else if (event.getSource() == lire_manif) {
             lire_manif_grid.toFront();
+        }else if (event.getSource() == btnconfir) {
+            editgrid.toFront();
         }
 
     }
