@@ -40,9 +40,9 @@
    <left>
       <AnchorPane prefHeight="800.0" prefWidth="458.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="210.0" fitWidth="475.0" layoutX="-15.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="210.0" fitWidth="475.0" layoutX="35.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/GAlogo.png" />
+                  <Image url="@../img/GA.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="799.0" fitWidth="180.0" layoutX="444.0" pickOnBounds="true" preserveRatio="true">
