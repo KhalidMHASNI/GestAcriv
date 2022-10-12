@@ -2,6 +2,7 @@ package com.example.gestacriv;
 
 
 import java.sql.*;
+import java.text.StringCharacterIterator;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -170,5 +171,26 @@ public class javaPostreSql {
             System.out.println("erreur be"+ex);
         }
         return null;
+    }
+    protected static String addApos(String text) {
+        final StringBuffer sb = new StringBuffer(text.length() * 2);
+        final StringCharacterIterator iterator = new StringCharacterIterator(text);
+
+        char character = iterator.current();
+
+        while (character != StringCharacterIterator.DONE) {
+            if (character == '"')
+                sb.append("\'");
+            else if (character == '\'')
+                sb.append("\'\'");
+            else if (character == '\n')
+                sb.append("\\n");
+            else/*from www  . ja  v a2 s.  c  o m*/
+                sb.append(character);
+
+            character = iterator.next();
+        }
+
+        return sb.toString();
     }
 }

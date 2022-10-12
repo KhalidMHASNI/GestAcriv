@@ -16,17 +16,14 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-            while (s.next()){
-                encad.setText(s.getString("encad"));
-                typeEncad.setText( s.getString("type_encad"));
-                npLaureat.setText( s.getString("npnom"));
-                /*if (s.getString("encad")!=null||s.getString("type_encad")!=null||s.getString("npnom")!=null){
-                    //intituleDB = s.getString("intitule");
-                }else {
-                    encad.setText("null");
-                    typeEncad.setText("null");
-                    npLaureat.setText("null");
-                }*/
+            if (s.isBeforeFirst()){
+                while (s.next()){
+                    encad.setText(s.getString("encad"));
+                    typeEncad.setText( s.getString("type_encad"));
+                    npLaureat.setText( s.getString("npnom"));
+                }
+            }else {
+                typeEncad.setText("Aucun encadrement");
             }
         } catch (SQLException ex) {
 
@@ -45,13 +42,16 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-
-            while (s.next()){
-                sout.setText(s.getString("sout"));
-                intituleSout.setText(s.getString("intitule_sout"));
-                npSout.setText(s.getString("npnom"));
-                dateSout.setText(s.getString("sout_date"));
-                lieuSout.setText(s.getString("sout_lieu"));
+            if (s.isBeforeFirst()){
+                while (s.next()){
+                    sout.setText(s.getString("sout"));
+                    intituleSout.setText(s.getString("intitule_sout"));
+                    npSout.setText(s.getString("npnom"));
+                    dateSout.setText(s.getString("sout_date"));
+                    lieuSout.setText(s.getString("sout_lieu"));
+                }
+            }else {
+                npSout.setText("Aucun Soutenance");
             }
 
         } catch (SQLException ex) {
@@ -73,9 +73,13 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-            while (s.next()){
-                respo.setText(s.getString("respo"));
-                descrespo.setText(s.getString("desc_respo"));
+            if (s.isBeforeFirst()){
+                while (s.next()){
+                    respo.setText(s.getString("respo"));
+                    descrespo.setText(s.getString("desc_respo"));
+                }
+            }else {
+                descrespo.setText("Aucune Responsabilité");
             }
         } catch (SQLException ex) {
 
@@ -94,11 +98,15 @@ public class newActivDr {
         try (Connection con = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = con.prepareStatement(query)) {
             ResultSet s = pst.executeQuery();
-            while (s.next()){
-                natureManif.setText(s.getString("nature_manif"));
-                natureParticip.setText(s.getString("nature_particip"));
-                dateManif.setText(s.getString("date_manif"));
-                lieuManif.setText(s.getString("lieu_conf"));
+            if(s.isBeforeFirst()){
+                while (s.next()){
+                    natureManif.setText(s.getString("nature_manif"));
+                    natureParticip.setText(s.getString("nature_particip"));
+                    dateManif.setText(s.getString("date_manif"));
+                    lieuManif.setText(s.getString("lieu_conf"));
+                }
+            }else {
+                natureParticip.setText("Aucune manifestation");
             }
         } catch (SQLException ex) {
 
@@ -314,7 +322,7 @@ public class newActivDr {
             if (s2.isBeforeFirst()){
                 while (s2.next()){
                     respoL3.setText(s2.getString("respo"));
-                    respoD3.setText(s2.getString("tdesc_respo"));
+                    respoD3.setText(s2.getString("desc_respo"));
                 }
             }else {
                 respoL3.setText("NULL");
