@@ -51,7 +51,7 @@
             <MenuButton alignment="CENTER" maxHeight="33.0" maxWidth="164.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="162.0" styleClass="btn" stylesheets="@../css/style.css" text="Ajouter" textAlignment="CENTER" textFill="WHITE">
                <items>
                   <MenuItem fx:id="btnencad" mnemonicParsing="false" onAction="#hh" text="Encadrement" />
-                  <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenace" />
+                  <MenuItem fx:id="btnsout" mnemonicParsing="false" onAction="#hh" text="Soutenance" />
                   <MenuItem fx:id="btnresp" mnemonicParsing="false" onAction="#hh" text="Responsabilité" />
                   <MenuItem fx:id="btnparticip" mnemonicParsing="false" onAction="#hh" text="Participation au manifestation" />
                </items>

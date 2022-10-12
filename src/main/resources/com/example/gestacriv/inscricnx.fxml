@@ -36,6 +36,16 @@
                   <Font name="Verdana" size="18.0" />
                </font>
             </Button>
+            <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="1047.0" layoutY="760.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/aboutapp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnabout" layoutX="1082.0" layoutY="756.0" mnemonicParsing="false" onAction="#open_about" prefHeight="35.0" prefWidth="150.0" snapToPixel="false" styleClass="btnop" stylesheets="@../css/style.css" text="A propos de l'application" textFill="#007fa4">
+               <font>
+                  <Font name="Verdana" size="10.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
