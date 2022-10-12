@@ -1,7 +1,6 @@
 package com.example.gestacriv;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,6 +38,7 @@ public class SignInUpContr implements Initializable{
     public void open_inscrip(ActionEvent event) throws IOException {
         changeScene.toInsc(event,stage,scene,root);
     }
+
     @FXML
     public void open_about(ActionEvent event) throws IOException {
         changeScene.toAbout(event,stage,scene,root);
@@ -63,8 +63,6 @@ public class SignInUpContr implements Initializable{
 
 
     }
-
-
     @FXML
     Button btnabout,btnbjr;
     @FXML

@@ -2,6 +2,7 @@ package com.example.gestacriv;
 
 
 import java.sql.*;
+import java.text.StringCharacterIterator;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,9 +18,8 @@ public class javaPostreSql {
                 spec = usrspec.trim(), grade = usrgrade.trim(), profile = usrprof.trim(), email = usremail.trim(), passwd = usrpassword.trim();
         String query ="";
         int  tel = usrtel;
-        if(profile=="Docteur"){
-
-            query = "INSERT INTO public.docteur(dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"');";
+        if(profile=="Docteur"||profile=="Doctorant"){
+            query = "INSERT INTO public.docteur(dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab, prof) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"', '"+profile+"');";
         } else {
             query = "INSERT INTO public.enseignant(ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"');";
         }
@@ -170,5 +170,26 @@ public class javaPostreSql {
             System.out.println("erreur be"+ex);
         }
         return null;
+    }
+    protected static String addApos(String text) {
+        final StringBuffer sb = new StringBuffer(text.length() * 2);
+        final StringCharacterIterator iterator = new StringCharacterIterator(text);
+
+        char character = iterator.current();
+
+        while (character != StringCharacterIterator.DONE) {
+            if (character == '"')
+                sb.append("\'");
+            else if (character == '\'')
+                sb.append("\'\'");
+            else if (character == '\n')
+                sb.append("\\n");
+            else/*from www  . ja  v a2 s.  c  o m*/
+                sb.append(character);
+
+            character = iterator.next();
+        }
+
+        return sb.toString();
     }
 }

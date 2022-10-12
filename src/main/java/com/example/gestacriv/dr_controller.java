@@ -2,23 +2,17 @@ package com.example.gestacriv;
 
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.*;
+import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import java.io.File;
-import java.io.IOException;
+import javafx.stage.*;
+import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,6 +68,9 @@ public class dr_controller implements Initializable {
     Label dateManif1,dateManif2,dateManif3,dateManif4;
     @FXML
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
+    /////////////
+    @FXML
+    Label l1,l2,l3,l4,l5;
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof.setText(usrinf.get("PROFILE"));
@@ -91,10 +88,10 @@ public class dr_controller implements Initializable {
         usrinfo = usrinf;
         int x = Integer.parseInt(usrinf.get("DR_ID"));
         //System.out.println(usrinf.get("DR_ID"));
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, x);
-        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,x);
+        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1, x);
+        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,x);
         newActivDr.refreshRespo(respoLabel,respoDesc,x);
-        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
+        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,x);
         ////////
         letab.setText(usrinf.get("ETAB"));
         lspec.setText(usrinf.get("SPEC"));
@@ -142,93 +139,139 @@ public class dr_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
 
+        if (npl_enc.getText().isEmpty()||encad.getValue()==null||javaPostreSql.addApos(intitule_encad.getText()).isEmpty()||type_encad.getValue()==null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champ(s) vide");
+            alert.setHeaderText("Tous les champs doivent être pleins réssayez");
+            alert.showAndWait();
+        }else {
+            String query = "INSERT INTO public.encad( encad_id, npnom, encad, intitule, type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+javaPostreSql.addApos(intitule_encad.getText())+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
 
-        String query = "INSERT INTO public.encad( encad_id, npnom, encad, intitule, type_encad, dr_id_fk) VALUES (DEFAULT, '"+npl_enc.getText()+"', '"+encad.getValue()+"', '"+ intitule_encad.getText()+"', '"+type_encad.getValue()+"',"+usrinfo.get("DR_ID")+");";
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement(query)) {
-            pst.executeUpdate();
+            } catch (SQLException ex) {
 
-        } catch (SQLException ex) {
-
-            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-            System.out.println("erreur be"+ex);
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be"+ex);
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Encadrement");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Encadrement est ajouté avec succès");
+            alert.showAndWait();
+            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
+            actugrid.toFront();
         }
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,Integer.parseInt(usrinfo.get("DR_ID")));
-        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
-
     }
     @FXML
     public void  getDataSout(ActionEvent event) {
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
-        String query = "INSERT INTO public.sout(\n" +
-                "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, dr_id_fk)\n" +
-                "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+intitule_sout.getText().trim()+"', '"+date_sout.getValue()+"', '"+lieu_sout.getText().trim()+"', "+usrinfo.get("DR_ID")+");";
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement(query)) {
-            pst.executeUpdate();
 
-        } catch (SQLException ex) {
+        if (npl_sout.getText().trim().isEmpty()||sout.getValue().isEmpty()||javaPostreSql.addApos(intitule_sout.getText().trim()).isEmpty()||javaPostreSql.addApos(lieu_sout.getText().trim()).isEmpty()||date_sout.getValue()==null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champ(s) vide");
+            alert.setHeaderText("Tous les champs doivent être pleins réssayez");
+            alert.showAndWait();
+        }else {
+            String query = "INSERT INTO public.sout(\n" +
+                    "\tsout_id, npnom, sout, intitule_sout, \"sout_date\", sout_lieu, dr_id_fk)\n" +
+                    "\tVALUES (DEFAULT, '"+npl_sout.getText().trim()+"', '"+sout.getValue()+"', '"+javaPostreSql.addApos(intitule_sout.getText().trim())+"', '"+date_sout.getValue()+"', '"+javaPostreSql.addApos(lieu_sout.getText().trim())+"', "+usrinfo.get("DR_ID")+");";
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
 
-            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-            System.out.println("erreur be "+ex);
+            } catch (SQLException ex) {
+
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Soutenance");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Soutenance est ajouté avec succès");
+            alert.showAndWait();
+            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
+            actugrid.toFront();
         }
-        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinfo.get("DR_ID")));
-        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
     }
 
     @FXML
     public void  getDataRespo(ActionEvent event) {
-
-        System.out.println("Responsabilite: "+resp.getValue());
-        System.out.println("Description sur responsabilite: "+desc_resp.getText());
-
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query = "INSERT INTO public.respo(\n" +
-                "\tresp_id, respo, desc_respo, dr_id_fk)\n" +
-                "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+desc_resp.getText().trim()+"', '"+usrinfo.get("DR_ID")+"');";
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement(query)) {
-            pst.executeUpdate();
+        if (resp.getValue()==null||desc_resp.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champ(s) vide");
+            alert.setHeaderText("Tous les champs doivent être pleins réssayez");
+            alert.showAndWait();
+        }else {
+            String query = "INSERT INTO public.respo(\n" +
+                    "\tresp_id, respo, desc_respo, dr_id_fk)\n" +
+                    "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+javaPostreSql.addApos(desc_resp.getText().trim())+"', '"+usrinfo.get("DR_ID")+"');";
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
 
-        } catch (SQLException ex) {
+            } catch (SQLException ex) {
 
-            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-            System.out.println("erreur be "+ex);
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Responsabilité");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Responsabilité est ajouté avec succès");
+            alert.showAndWait();
+            newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
+            actugrid.toFront();
         }
-        newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
-        newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
-    }
+        }
     @FXML
     public void getDataManif(ActionEvent event){
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query = "INSERT INTO public.manif(\n" +
-                "\tmanif_id, nature_manif, date_manif, lieu_conf, nature_particip, dr_id_fk)\n" +
-                "\tVALUES (DEFAULT, '"+nature_manif.getText()+"', '"+date_manif.getValue()+"', '"+lieu_conf.getText()+"', '"+nature_particip.getText()+"', '"+usrinfo.get("DR_ID")+"');";
+        if(nature_manif.getText().isEmpty()||date_manif.getValue()==null||lieu_conf.getText().isEmpty()||nature_manif.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champ(s) vide");
+            alert.setHeaderText("Tous les champs doivent être pleins réssayez");
+            alert.showAndWait();
+        }else {
+            String query = "INSERT INTO public.manif(\n" +
+                    "\tmanif_id, nature_manif, date_manif, lieu_conf, nature_particip, dr_id_fk)\n" +
+                    "\tVALUES (DEFAULT, '"+nature_manif.getText()+"', '"+date_manif.getValue()+"', '"+lieu_conf.getText()+"', '"+nature_particip.getText()+"', '"+usrinfo.get("DR_ID")+"');";
 
-        try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pst = con.prepareStatement(query)) {
-            pst.executeUpdate();
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
 
-        } catch (SQLException ex) {
+            } catch (SQLException ex) {
 
-            Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
-            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-            System.out.println("erreur be "+ex);
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Manifestation");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Manifestation est ajouté avec succès");
+            alert.showAndWait();
+            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
+            actugrid.toFront();
         }
-        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinfo.get("DR_ID")));
-        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
-
     }
 
     @FXML
@@ -239,10 +282,10 @@ public class dr_controller implements Initializable {
     ChoiceBox<String> resp = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
-    String[] encadr = {"Encadrement_thèse","Encadrement_habiliation"};
+    String[] encadr = {"Encadrement thèse","Encadrement habiliation"};
     String[] type_encadr = {"Directeur de thèse","Encadrant de thèse","Co-encadrant de thèse"};
-    String[] souten = {"Soutenance_thèse","Soutenance_Habilitation"};
-    String[] respo = {"Responsable filière","Responsable module","Chef_Laboratoire","Chef_Equipe"};
+    String[] souten = {"Soutenance Thèse","Soutenance Habilitation"};
+    String[] respo = {"Responsable filière","Responsable module","Chef laboratoire","Chef d'équipe"};
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
@@ -278,10 +321,10 @@ public class dr_controller implements Initializable {
         }
         else  if (event.getSource() == btnactu || event.getSource() == btnL || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4){
             actugrid.toFront();
-            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, l1,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
 
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
