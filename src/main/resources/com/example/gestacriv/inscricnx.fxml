@@ -23,7 +23,7 @@
             </ImageView>
             <ImageView fitHeight="532.0" fitWidth="1035.0" layoutX="150.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/Application_Bureau.png" />
+                  <Image url="@../img/Application%20Bureau.png" />
                </image>
             </ImageView>
             <Button layoutX="772.0" layoutY="572.0" mnemonicParsing="false" onAction="#open_cnx" snapToPixel="false" styleClass="btnop" stylesheets="@../css/style.css" text="Se connecter" textFill="#007fa4">
@@ -34,6 +34,16 @@
             <Button layoutX="970.0" layoutY="572.0" mnemonicParsing="false" onAction="#open_inscrip" styleClass="btnop" stylesheets="@../css/style.css" text="S'inscrire" textFill="#007fa4">
                <font>
                   <Font name="Verdana" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="1047.0" layoutY="760.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/aboutapp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnabout" layoutX="1082.0" layoutY="756.0" mnemonicParsing="false" onAction="#open_about" prefHeight="35.0" prefWidth="150.0" snapToPixel="false" styleClass="btnop" stylesheets="@../css/style.css" text="A propos de l'application" textFill="#007fa4">
+               <font>
+                  <Font name="Verdana" size="10.0" />
                </font>
             </Button>
          </children>

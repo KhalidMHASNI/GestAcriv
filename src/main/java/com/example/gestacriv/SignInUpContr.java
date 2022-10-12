@@ -7,10 +7,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -33,7 +39,32 @@ public class SignInUpContr implements Initializable{
         changeScene.toInsc(event,stage,scene,root);
     }
 
+    @FXML
+    public void open_about(ActionEvent event) throws IOException {
+        changeScene.toAbout(event,stage,scene,root);
+    }
+    @FXML
+    public void open_inscricnx(ActionEvent event) throws IOException {
+        changeScene.toInscriCnx(event,stage,scene,root);
+    }
+    @FXML
+    Hyperlink yogithub,yolinkedin,magithub,malinkedin;
+    @FXML
+    public void link(ActionEvent event) throws IOException, URISyntaxException {
+        if (event.getSource() == yogithub) {
+            Desktop.getDesktop().browse(new URI("https://github.com/YassineOurara"));
+        } else if (event.getSource() == magithub) {
+            Desktop.getDesktop().browse(new URI("https://github.com/KhalidMHASNI"));
+        } else if (event.getSource() == yolinkedin) {
+            Desktop.getDesktop().browse(new URI("https://www.linkedin.com/in/yassine-ourara-852a62229/"));
+        } else if (event.getSource() == malinkedin) {
+            Desktop.getDesktop().browse(new URI("https://www.linkedin.com/in/khalid-mhasni-637b94209/"));
+        }
 
+
+    }
+    @FXML
+    Button btnabout,btnbjr;
     @FXML
     TextField pnom,nom,cni,email,etab,tel,password,cpassword;
     @FXML

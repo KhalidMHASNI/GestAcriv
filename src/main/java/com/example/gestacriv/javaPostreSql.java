@@ -18,9 +18,8 @@ public class javaPostreSql {
                 spec = usrspec.trim(), grade = usrgrade.trim(), profile = usrprof.trim(), email = usremail.trim(), passwd = usrpassword.trim();
         String query ="";
         int  tel = usrtel;
-        if(profile=="Docteur"){
-
-            query = "INSERT INTO public.docteur(dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"');";
+        if(profile=="Docteur"||profile=="Doctorant"){
+            query = "INSERT INTO public.docteur(dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab, prof) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"', '"+profile+"');";
         } else {
             query = "INSERT INTO public.enseignant(ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab) VALUES (DEFAULT, '"+nom+"', '"+prenom+"', '"+cni+"', '"+email+"', '"+passwd+"', "+tel+", '"+grade+"', '"+spec+"', '"+etab+"');";
         }

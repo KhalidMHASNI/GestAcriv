@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class newActivDr {
-    public static void refreshEncad(javafx.scene.control.Label encad,javafx.scene.control.Label typeEncad,javafx.scene.control.Label npLaureat,int dr_id){
+    public static void refreshEncad(javafx.scene.control.Label encad,javafx.scene.control.Label typeEncad,javafx.scene.control.Label npLaureat,javafx.scene.control.Label l1,int dr_id){
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -18,12 +18,18 @@ public class newActivDr {
             ResultSet s = pst.executeQuery();
             if (s.isBeforeFirst()){
                 while (s.next()){
+                    encad.setVisible(true);
+                    npLaureat.setVisible(true);
+                    l1.setVisible(true);
                     encad.setText(s.getString("encad"));
                     typeEncad.setText( s.getString("type_encad"));
                     npLaureat.setText( s.getString("npnom"));
                 }
             }else {
                 typeEncad.setText("Aucun encadrement");
+                encad.setVisible(false);
+                npLaureat.setVisible(false);
+                l1.setVisible(false);
             }
         } catch (SQLException ex) {
 
@@ -33,7 +39,7 @@ public class newActivDr {
         }
     }
 
-    public static void refreshSout(javafx.scene.control.Label sout,javafx.scene.control.Label intituleSout,javafx.scene.control.Label npSout,javafx.scene.control.Label dateSout,javafx.scene.control.Label lieuSout, int dr_id){
+    public static void refreshSout(javafx.scene.control.Label sout,javafx.scene.control.Label intituleSout,javafx.scene.control.Label npSout,javafx.scene.control.Label dateSout,javafx.scene.control.Label lieuSout,javafx.scene.control.Label l2,javafx.scene.control.Label l3, int dr_id){
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -44,6 +50,11 @@ public class newActivDr {
             ResultSet s = pst.executeQuery();
             if (s.isBeforeFirst()){
                 while (s.next()){
+                    sout.setVisible(true);
+                    intituleSout.setVisible(true);
+                    dateSout.setVisible(true);
+                    lieuSout.setVisible(true);
+                    l2.setVisible(true);l3.setVisible(true);
                     sout.setText(s.getString("sout"));
                     intituleSout.setText(s.getString("intitule_sout"));
                     npSout.setText(s.getString("npnom"));
@@ -52,6 +63,11 @@ public class newActivDr {
                 }
             }else {
                 npSout.setText("Aucun Soutenance");
+                sout.setVisible(false);
+                intituleSout.setVisible(false);
+                dateSout.setVisible(false);
+                lieuSout.setVisible(false);
+                l2.setVisible(false);l3.setVisible(false);
             }
 
         } catch (SQLException ex) {
@@ -75,11 +91,13 @@ public class newActivDr {
             ResultSet s = pst.executeQuery();
             if (s.isBeforeFirst()){
                 while (s.next()){
+                    respo.setVisible(true);
                     respo.setText(s.getString("respo"));
                     descrespo.setText(s.getString("desc_respo"));
                 }
             }else {
                 descrespo.setText("Aucune Responsabilité");
+                respo.setVisible(false);
             }
         } catch (SQLException ex) {
 
@@ -88,7 +106,7 @@ public class newActivDr {
             System.out.println("erreur be"+ex);
         }
     }
-    public static void refreshManif(javafx.scene.control.Label natureManif,javafx.scene.control.Label natureParticip,javafx.scene.control.Label dateManif,javafx.scene.control.Label lieuManif,int dr_id){
+    public static void refreshManif(javafx.scene.control.Label natureManif,javafx.scene.control.Label natureParticip,javafx.scene.control.Label dateManif,javafx.scene.control.Label lieuManif,javafx.scene.control.Label l4,javafx.scene.control.Label l5,int dr_id){
         String url = "jdbc:postgresql://localhost:5432/GestActivDB";
         String user = "Admin";
         String password = "gestactiv2022";
@@ -100,6 +118,11 @@ public class newActivDr {
             ResultSet s = pst.executeQuery();
             if(s.isBeforeFirst()){
                 while (s.next()){
+                    natureManif.setVisible(true);
+                    dateManif.setVisible(true);
+                    dateManif.setVisible(true);
+                    lieuManif.setVisible(true);
+                    l4.setVisible(true);l5.setVisible(true);
                     natureManif.setText(s.getString("nature_manif"));
                     natureParticip.setText(s.getString("nature_particip"));
                     dateManif.setText(s.getString("date_manif"));
@@ -107,6 +130,11 @@ public class newActivDr {
                 }
             }else {
                 natureParticip.setText("Aucune manifestation");
+                natureManif.setVisible(false);
+                dateManif.setVisible(false);
+                dateManif.setVisible(false);
+                lieuManif.setVisible(false);
+                l4.setVisible(false);l5.setVisible(false);
             }
         } catch (SQLException ex) {
 
@@ -127,10 +155,10 @@ public class newActivDr {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query1 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-3;";  //Latesr one
-        String query2 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-2;";
-        String query3 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad)-1;";
-        String query4 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" AND encad_id = (SELECT max(encad_id) AS maxID FROM encad);";    //Latest one
+        String query1 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" order by encad_id desc OFFSET 4-1 LIMIT 1;";
+        String query2 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" order by encad_id desc OFFSET 4-2 LIMIT 1;";
+        String query3 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" order by encad_id desc OFFSET 4-3 LIMIT 1;";
+        String query4 = "SELECT * FROM encad where dr_id_fk = "+dr_id+" order by encad_id desc OFFSET 4-4 LIMIT 1;";    //Latest one
 
 
 
@@ -202,11 +230,10 @@ public class newActivDr {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query1 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-3;";  //Latesr one
-        String query2 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-2;";
-        String query3 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout)-1;";
-        String query4 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" AND sout_id = (SELECT max(sout_id) AS maxID FROM sout);";    //Latest one
-
+        String query1 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" order by sout_id desc OFFSET 4-1 LIMIT 1;";
+        String query2 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" order by sout_id desc OFFSET 4-2 LIMIT 1;";
+        String query3 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" order by sout_id desc OFFSET 4-3 LIMIT 1;";
+        String query4 = "SELECT * FROM sout where dr_id_fk = "+dr_id+" order by sout_id desc OFFSET 4-4 LIMIT 1;";    //Latest one
 
 
         try (Connection con = DriverManager.getConnection(url, user, password);) {
@@ -293,10 +320,10 @@ public class newActivDr {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query1 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-3;";  //Latesr one
-        String query2 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-2;";
-        String query3 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo)-1;";
-        String query4 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" AND resp_id = (SELECT max(resp_id) AS maxID FROM respo);";    //Latest one
+        String query1 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" order by resp_id desc OFFSET 4-1 LIMIT 1;";
+        String query2 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" order by resp_id desc OFFSET 4-2 LIMIT 1;";
+        String query3 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" order by resp_id desc OFFSET 4-3 LIMIT 1;";
+        String query4 = "SELECT * FROM respo where dr_id_fk = "+dr_id+" order by resp_id desc OFFSET 4-4 LIMIT 1;";    //Latest one
         try (Connection con = DriverManager.getConnection(url, user, password);) {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
             if (s4.isBeforeFirst()){
@@ -355,10 +382,10 @@ public class newActivDr {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query1 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-3;";  //Latesr one
-        String query2 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-2;";
-        String query3 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif)-1;";
-        String query4 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif);";    //Latest one
+        String query1 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" order by manif_id desc OFFSET 4-1 LIMIT 1;";
+        String query2 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" order by manif_id desc OFFSET 4-2 LIMIT 1;";
+        String query3 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" order by manif_id desc OFFSET 4-3 LIMIT 1;";
+        String query4 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" order by manif_id desc OFFSET 4-4 LIMIT 1;";    //Latest oneString query4 = "SELECT * FROM manif where dr_id_fk = "+dr_id+" AND manif_id = (SELECT max(manif_id) AS maxID FROM manif);";    //Latest one
         try (Connection con = DriverManager.getConnection(url, user, password);) {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
             if (s4.isBeforeFirst()){

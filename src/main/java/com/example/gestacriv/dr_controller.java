@@ -68,6 +68,9 @@ public class dr_controller implements Initializable {
     Label dateManif1,dateManif2,dateManif3,dateManif4;
     @FXML
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
+    /////////////
+    @FXML
+    Label l1,l2,l3,l4,l5;
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof.setText(usrinf.get("PROFILE"));
@@ -85,10 +88,10 @@ public class dr_controller implements Initializable {
         usrinfo = usrinf;
         int x = Integer.parseInt(usrinf.get("DR_ID"));
         //System.out.println(usrinf.get("DR_ID"));
-        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, x);
-        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,x);
+        newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1, x);
+        newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,x);
         newActivDr.refreshRespo(respoLabel,respoDesc,x);
-        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,x);
+        newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,x);
         ////////
         letab.setText(usrinf.get("ETAB"));
         lspec.setText(usrinf.get("SPEC"));
@@ -136,7 +139,7 @@ public class dr_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        if (npl_enc.getText().isEmpty()||encad.getValue().isEmpty()||javaPostreSql.addApos(intitule_encad.getText()).isEmpty()||type_encad.getValue().isEmpty()){
+        if (npl_enc.getText().isEmpty()||encad.getValue()==null||javaPostreSql.addApos(intitule_encad.getText()).isEmpty()||type_encad.getValue()==null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Champ(s) vide");
             alert.setHeaderText("Tous les champs doivent être pleins réssayez");
@@ -158,9 +161,9 @@ public class dr_controller implements Initializable {
             alert.setHeaderText("Succès");
             alert.setContentText("Encadrement est ajouté avec succès");
             alert.showAndWait();
-            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
-            annuler(event);
+            actugrid.toFront();
         }
     }
     @FXML
@@ -193,9 +196,9 @@ public class dr_controller implements Initializable {
             alert.setHeaderText("Succès");
             alert.setContentText("Soutenance est ajouté avec succès");
             alert.showAndWait();
-            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
-            annuler(event);
+            actugrid.toFront();
         }
     }
 
@@ -231,7 +234,7 @@ public class dr_controller implements Initializable {
             alert.showAndWait();
             newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
-            annuler(event);
+            actugrid.toFront();
         }
         }
     @FXML
@@ -265,9 +268,9 @@ public class dr_controller implements Initializable {
             alert.setHeaderText("Succès");
             alert.setContentText("Manifestation est ajouté avec succès");
             alert.showAndWait();
-            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
-            annuler(event);
+            actugrid.toFront();
         }
     }
 
@@ -279,10 +282,10 @@ public class dr_controller implements Initializable {
     ChoiceBox<String> resp = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
-    String[] encadr = {"Encadrement_thèse","Encadrement_habiliation"};
+    String[] encadr = {"Encadrement thèse","Encadrement habiliation"};
     String[] type_encadr = {"Directeur de thèse","Encadrant de thèse","Co-encadrant de thèse"};
-    String[] souten = {"Soutenance_thèse","Soutenance_Habilitation"};
-    String[] respo = {"Responsable filière","Responsable module","Chef_Laboratoire","Chef_Equipe"};
+    String[] souten = {"Soutenance Thèse","Soutenance Habilitation"};
+    String[] respo = {"Responsable filière","Responsable module","Chef laboratoire","Chef d'équipe"};
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
@@ -318,10 +321,10 @@ public class dr_controller implements Initializable {
         }
         else  if (event.getSource() == btnactu || event.getSource() == btnL || event.getSource() == btnL1 || event.getSource() == btnL2 || event.getSource() == btnL3 || event.getSource() == btnL4){
             actugrid.toFront();
-            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label, l1,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
 
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
