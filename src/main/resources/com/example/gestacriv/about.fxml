@@ -25,7 +25,7 @@
                   <Image url="@../img/aboutback.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="214.0" layoutY="290.0" prefHeight="295.0" prefWidth="412.0" text="Application bureau permet &#10;aux chers enseignants,docteurs et doctorants &#10;d'ajouter tous leurs activités &#10;" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="214.0" layoutY="290.0" prefHeight="295.0" prefWidth="412.0" text="Application bureau permet &#10;aux chers enseignants,docteurs et doctorants &#10;d'ajouter toutes leurs activités &#10;" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
