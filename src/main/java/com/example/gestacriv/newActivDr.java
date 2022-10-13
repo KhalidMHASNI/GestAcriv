@@ -166,7 +166,6 @@ public class newActivDr {
             ResultSet s4 = con.prepareStatement(query4).executeQuery();
             if (s4.isBeforeFirst()){
                 while (s4.next()){
-                    System.out.println(s4.getString("encad")+"  "+s4.getString("type_encad")+"  "+s4.getString("npnom"));
                     encad1.setText(s4.getString("encad"));
                     typeEncad1.setText(s4.getString("type_encad"));
                     npLaureat1.setText(s4.getString("npnom"));

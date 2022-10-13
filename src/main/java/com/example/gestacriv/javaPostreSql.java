@@ -97,7 +97,7 @@ public class javaPostreSql {
             usrInf.put("PASSWORD",passwd.trim());
             usrInf.put("EMAIL",email.trim());
             usrInf.put("SPEC",spec.trim());
-            System.out.println(usrInf);
+            //System.out.println(usrInf);
         } catch (SQLException ex) {
 
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
@@ -152,13 +152,13 @@ public class javaPostreSql {
                 while (s.next()){
                     psw = s.getString("passwd");
                 }
-                System.out.println("AAAAA "+psw);
+                //System.out.println("AAAAA "+psw);
 
             }else {
                 while (s1.next()){
                     psw = s1.getString("passwd");
                 }
-                System.out.println("AAAAA "+psw);
+                //System.out.println("AAAAA "+psw);
 
             }
             return psw;

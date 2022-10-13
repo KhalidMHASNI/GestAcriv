@@ -70,7 +70,7 @@ public class dr_controller implements Initializable {
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
     /////////////
     @FXML
-    Label l1,l2,l3,l4,l5;
+    Label l1=new Label(),l2=new Label(),l3=new Label(),l4=new Label(),l5=new Label();
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof.setText(usrinf.get("PROFILE"));
@@ -98,7 +98,7 @@ public class dr_controller implements Initializable {
         lgrade.setText(usrinf.get("GRADE"));
         ////////
         newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
-        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
+        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
         newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
         newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
         /////////
@@ -163,6 +163,11 @@ public class dr_controller implements Initializable {
             alert.showAndWait();
             newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
+            npl_enc.setText(null);
+            encad.setValue(null);
+            intitule_encad.setText(null);
+            type_encad.setValue(null);
+            labelpdf.setText(null);
             actugrid.toFront();
         }
     }
@@ -197,7 +202,13 @@ public class dr_controller implements Initializable {
             alert.setContentText("Soutenance est ajouté avec succès");
             alert.showAndWait();
             newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_enc_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
+            npl_sout.setText(null);
+            sout.setValue(null);
+            intitule_sout.setText(null);
+            date_sout.setValue(null);
+            lieu_sout.setText(null);
+            labelpdf2.setText(null);
             actugrid.toFront();
         }
     }
@@ -234,6 +245,9 @@ public class dr_controller implements Initializable {
             alert.showAndWait();
             newActivDr.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
+            resp.setValue(null);
+            desc_resp.setText(null);
+            labelpdf3.setText(null);
             actugrid.toFront();
         }
         }
@@ -270,6 +284,11 @@ public class dr_controller implements Initializable {
             alert.showAndWait();
             newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
             newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
+            nature_manif.setText(null);
+            lieu_conf.setText(null);
+            nature_particip.setText(null);
+            date_manif.setValue(null);
+            labelpdf4.setText(null);
             actugrid.toFront();
         }
     }
@@ -398,7 +417,146 @@ public class dr_controller implements Initializable {
 
     }
 
+    //////////   Modification   ///////////
+    @FXML
+    TextField oldN,oldP,newN,newP,oldT,newT,oldPasswd,newPasswd,newCPasswd;
 
+    public void modifInfo(ActionEvent event){
+        if (oldT.getText().isEmpty()&&newT.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()) {
+            modifNP(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Nom et Prenom");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Nom et Prenom sont modifiés avec succès");
+            alert.showAndWait();
+            oldN.setText(null);oldP.setText(null);newN.setText(null);newP.setText(null);
+        } else if (oldN.getText().isEmpty()&&oldP.getText().isEmpty()&&newN.getText().isEmpty()&&newP.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()) {
+            modifT(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Télephone");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Le numéro de téléphone est modifié avec succès");
+            alert.showAndWait();
+            oldT.setText(null);newT.setText(null);
+        } else if (oldN.getText().isEmpty()&&oldP.getText().isEmpty()&&newN.getText().isEmpty()&&newP.getText().isEmpty()&&oldT.getText().isEmpty()&&newT.getText().isEmpty()) {
+            modifPass(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Mot de passe");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Le mot de passe est modifié avec succès");
+            alert.showAndWait();
+            oldPasswd.setText(null);newPasswd.setText(null);newCPasswd.setText(null);
+        }else if (oldN.getText().isEmpty()&&oldP.getText().isEmpty()&&newN.getText().isEmpty()&&newP.getText().isEmpty()&&oldT.getText().isEmpty()&&newT.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champ(s) vide");
+            alert.setHeaderText("Les champs ne doivent pas être tous vides réssayez");
+            alert.showAndWait();
+        } else {
+            modifNP(event);
+            modifT(event);
+            modifPass(event);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Mot de passe,nom prénom et téléphone");
+            alert.setHeaderText("Succès");
+            alert.setContentText("Tous les modifications sont ajoutées avec succès");
+            alert.showAndWait();
+            oldN.setText(null);oldP.setText(null);newN.setText(null);newP.setText(null);oldT.setText(null);newT.setText(null);oldPasswd.setText(null);newPasswd.setText(null);newCPasswd.setText(null);
+        }
+    }
+    public void modifNP(ActionEvent event){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+        if (oldP.getText().equals(usrinfo.get("PRENOM")) && oldN.getText().equals(usrinfo.get("NOM"))){
+            String query = "UPDATE public.docteur\n" +
+                    "\tSET nom='"+newN.getText()+"', prenom='"+newP.getText()+"'\n" +
+                    "\tWHERE dr_id="+usrinfo.get("DR_ID")+";";
+
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
+            } catch (SQLException ex) {
+
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }catch (NumberFormatException ex){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Champ(s) erronés(s)");
+                alert.setHeaderText("Les champs de nom ou de prenom ne doivent pas contenir des nombres");
+                alert.showAndWait();
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur inadéquat");
+            alert.setHeaderText("Le nom et le prenom actuels sont erronés");
+            alert.showAndWait();
+        }
+    }
+    public void modifT(ActionEvent event){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+        if (oldT.getText().equals(usrinfo.get("TEL"))){
+            String query = "UPDATE public.docteur\n" +
+                    "\tSET tel='"+newT.getText()+"'\n" +
+                    "\tWHERE dr_id='"+usrinfo.get("DR_ID")+"';";
+
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
+
+            } catch (SQLException ex) {
+
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }catch (NumberFormatException ex){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Champ(s) erroné(s)");
+                alert.setHeaderText("Le champ du telephone ne doivent pas contenir des lettres");
+                alert.showAndWait();
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur inadéquat");
+            alert.setHeaderText("Le nom et le prenom actuels sont erronés");
+            alert.showAndWait();
+        }
+    }
+    public void modifPass(ActionEvent event){
+        String url = "jdbc:postgresql://localhost:5432/GestActivDB";
+        String user = "Admin";
+        String password = "gestactiv2022";
+        if (oldPasswd.getText().equals(usrinfo.get("PASSWORD"))&&newPasswd.getText().equals(newCPasswd.getText())){
+            String query = "UPDATE public.docteur\n" +
+                    "\tSET passwd='"+newPasswd.getText()+"'\n" +
+                    "\tWHERE dr_id='"+usrinfo.get("DR_ID")+"';";
+
+            try (Connection con = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pst = con.prepareStatement(query)) {
+                pst.executeUpdate();
+
+            } catch (SQLException ex) {
+
+                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                System.out.println("erreur be "+ex);
+            }catch (NumberFormatException ex){
+                System.out.println(ex);
+            }
+        } else if (!newPasswd.getText().equals(newCPasswd.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Confirmation erronée");
+            alert.setHeaderText("Le nouvau mot de passe n'est pas identique à sa confirmation");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur inadéquat");
+            alert.setHeaderText("Le mot de passe actuels est erroné");
+            alert.showAndWait();
+        }
+    }
 
 
 }
