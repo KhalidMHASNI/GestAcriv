@@ -14,8 +14,9 @@ public class javaPostreSql {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String nom = usrnom.trim().substring(0,1).toUpperCase()+usrnom.trim().substring(1),prenom = usrpnom.trim().substring(0,1).toUpperCase()+usrpnom.trim().substring(1),cni = usrcni.trim(), etab = usretab.trim(),
+        String nom = usrnom,prenom = usrpnom,cni = usrcni.trim(), etab = usretab.trim(),
                 spec = usrspec.trim(), grade = usrgrade.trim(), profile = usrprof.trim(), email = usremail.trim(), passwd = usrpassword.trim();
+
         String query ="";
         int  tel = usrtel;
         if(profile=="Docteur"||profile=="Doctorant"){

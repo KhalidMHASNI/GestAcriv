@@ -43,7 +43,7 @@ public class ens_controller implements Initializable {
     Parent root;
     @FXML
     public void open_cnx(ActionEvent event) throws IOException {
-        changeScene.toCnx(event,stage,scene,root);
+        changeScene.toCnx(event);
     }
     @FXML
     TextField npl_enc,npl_sout,lieu_sout;

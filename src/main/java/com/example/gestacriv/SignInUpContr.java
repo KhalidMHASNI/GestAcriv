@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -31,7 +30,7 @@ public class SignInUpContr implements Initializable{
 
     @FXML
     public void open_cnx(ActionEvent event) throws IOException {
-        changeScene.toCnx(event,stage,scene,root);
+        changeScene.toCnx(event);
     }
 
     @FXML
@@ -104,7 +103,7 @@ public class SignInUpContr implements Initializable{
                     root = loadr.load();
                     dr_controller c = loadr.getController();
                     c.displaynpn(userInfo);
-                    changeScene.toDr(event,stage,scene,root);
+                    changeScene.toDr(event, root);
                 }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
                     FXMLLoader loadr = new FXMLLoader(getClass().getResource("drt.fxml"));
@@ -162,7 +161,8 @@ public class SignInUpContr implements Initializable{
                 alert.showAndWait();
             } else {
                 String spec = specialite();
-                javaPostreSql.writeToDataBase(nom.getText(), pnom.getText(), cni.getText(), etab.getText(), telnum, spec, profile.getValue(), grade.getValue(), password.getText(), email
+                System.out.println(nom.getText()+"  "+pnom.getText().trim().substring(0,1).toUpperCase()+pnom.getText().trim().substring(1));
+                javaPostreSql.writeToDataBase(nom.getText().trim().substring(0,1).toUpperCase()+nom.getText().trim().substring(1), pnom.getText().trim().substring(0,1).toUpperCase()+pnom.getText().trim().substring(1), cni.getText(), etab.getText(), telnum, spec, profile.getValue(), grade.getValue(), password.getText(), email
                         .getText());
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Inscription");
@@ -170,7 +170,7 @@ public class SignInUpContr implements Initializable{
                 alert.setContentText("Inscription avec succès");
                 alert.showAndWait();
 
-                changeScene.toCnx(event, stage, scene, root);
+                changeScene.toCnx(event);
 
             }
         }catch (NumberFormatException e){
@@ -179,6 +179,8 @@ public class SignInUpContr implements Initializable{
             alert.setHeaderText("Le champs du nom/prenom ou e-mail a un format incorrecte");
             alert.showAndWait();
             System.out.println(e);
+        }catch (Exception e){
+            System.out.println("oué "+e);
         }
 
 

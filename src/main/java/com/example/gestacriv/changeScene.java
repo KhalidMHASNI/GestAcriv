@@ -5,18 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.HashMap;
 
 public class changeScene {
 
-    public static void toCnx(ActionEvent event, Stage stage, Scene scene, Parent root) throws IOException {
+    public static void toCnx(ActionEvent event) throws IOException {
         try {
-            root = FXMLLoader.load(changeScene.class.getResource("connexion.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Connexion");
-            stage.show();
+            Parent root = FXMLLoader.load(changeScene.class.getResource("connexion.fxml"));
+            Stage stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage1.setScene(scene);
+            stage1.setTitle("Connexion");
+            stage1.centerOnScreen();
+            stage1.show();
         }catch (IOException e){
             System.out.println("Cnx "+e);
         }
@@ -59,13 +59,14 @@ public class changeScene {
         }
     }
 
-    public static void toDr(ActionEvent event, Stage stage, Scene scene, Parent root){
+    public static void toDr(ActionEvent event, Parent root){
         //root = FXMLLoader.load(changeScene.class.getResource("dr.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Docteur Page");
-        stage.show();
+        Stage stage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage2.setScene(scene);
+        stage2.setTitle("Docteur Page");
+        stage2.setMaximized(true);
+        stage2.show();
     }
     public static void toDrt(ActionEvent event,Stage stage,Scene scene,Parent root){
         //root = FXMLLoader.load(changeScene.class.getResource("drt.fxml"));

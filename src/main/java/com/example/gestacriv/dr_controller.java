@@ -122,7 +122,7 @@ public class dr_controller implements Initializable {
     Parent root;
     @FXML
     public void open_cnx(ActionEvent event) throws IOException {
-        changeScene.toCnx(event,stage,scene,root);
+        changeScene.toCnx(event);
     }
     @FXML
     TextField npl_enc,npl_sout,lieu_sout,nature_manif,lieu_conf;
@@ -419,9 +419,9 @@ public class dr_controller implements Initializable {
 
     //////////   Modification   ///////////
     @FXML
-    TextField oldN,oldP,newN,newP,oldT,newT,oldPasswd,newPasswd,newCPasswd;
+    TextField oldN=new TextField(),oldP=new TextField(),newN=new TextField(),newP=new TextField(),oldT=new TextField(),newT=new TextField(),oldPasswd=new TextField(),newPasswd=new TextField(),newCPasswd=new TextField();
 
-    public void modifInfo(ActionEvent event){
+    public void modifInfo(ActionEvent event) throws IOException {
         if (oldT.getText().isEmpty()&&newT.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()) {
             modifNP(event);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -429,7 +429,9 @@ public class dr_controller implements Initializable {
             alert.setHeaderText("Succès");
             alert.setContentText("Nom et Prenom sont modifiés avec succès");
             alert.showAndWait();
+            npn.setText(newN.getText().trim()+" "+newP.getText().trim());
             oldN.setText(null);oldP.setText(null);newN.setText(null);newP.setText(null);
+            homegrid.toFront();
         } else if (oldN.getText().isEmpty()&&oldP.getText().isEmpty()&&newN.getText().isEmpty()&&newP.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()) {
             modifT(event);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -446,6 +448,7 @@ public class dr_controller implements Initializable {
             alert.setContentText("Le mot de passe est modifié avec succès");
             alert.showAndWait();
             oldPasswd.setText(null);newPasswd.setText(null);newCPasswd.setText(null);
+            changeScene.toCnx(event);
         }else if (oldN.getText().isEmpty()&&oldP.getText().isEmpty()&&newN.getText().isEmpty()&&newP.getText().isEmpty()&&oldT.getText().isEmpty()&&newT.getText().isEmpty()&&oldPasswd.getText().isEmpty()&&newPasswd.getText().isEmpty()&&newCPasswd.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Champ(s) vide");
@@ -461,6 +464,7 @@ public class dr_controller implements Initializable {
             alert.setContentText("Tous les modifications sont ajoutées avec succès");
             alert.showAndWait();
             oldN.setText(null);oldP.setText(null);newN.setText(null);newP.setText(null);oldT.setText(null);newT.setText(null);oldPasswd.setText(null);newPasswd.setText(null);newCPasswd.setText(null);
+            changeScene.toCnx(event);
         }
     }
     public void modifNP(ActionEvent event){
@@ -469,7 +473,7 @@ public class dr_controller implements Initializable {
         String password = "gestactiv2022";
         if (oldP.getText().equals(usrinfo.get("PRENOM")) && oldN.getText().equals(usrinfo.get("NOM"))){
             String query = "UPDATE public.docteur\n" +
-                    "\tSET nom='"+newN.getText()+"', prenom='"+newP.getText()+"'\n" +
+                    "\tSET nom='"+newN.getText().trim()+"', prenom='"+newP.getText().trim()+"'\n" +
                     "\tWHERE dr_id="+usrinfo.get("DR_ID")+";";
 
             try (Connection con = DriverManager.getConnection(url, user, password);
