@@ -28,27 +28,12 @@
    <children>
       <Pane layoutX="160.0" layoutY="-32.0" prefHeight="138.0" prefWidth="1396.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
          <children>
-            <ImageView fitHeight="22.0" fitWidth="36.0" layoutX="1036.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/iconhome.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1209.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/logout.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="1058.0" layoutY="87.0" prefHeight="26.0" prefWidth="68.0" text="Acceuil" textFill="DARKORANGE">
+            <Button layoutX="1158.0" layoutY="92.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="30.0" prefWidth="108.0" styleClass="btn_dr" stylesheets="@../css/style.css" text="Log out" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="15.0" />
                </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="1238.0" layoutY="89.0" prefHeight="16.0" prefWidth="68.0" text="Log out" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnhome" alignment="BOTTOM_LEFT" layoutX="1036.0" layoutY="79.0" mnemonicParsing="false" onAction="#hh" prefHeight="42.0" prefWidth="91.0" styleClass="btn_dr" stylesheets="@../css/style.css" textFill="DARKORANGE">
+            </Button>
+            <Button fx:id="btnprofile" alignment="BOTTOM_LEFT" layoutX="1329.0" layoutY="87.0" mnemonicParsing="false" onAction="#hh" prefHeight="36.0" prefWidth="54.0" styleClass="btninscri" stylesheets="@../css/style.css" textFill="DARKORANGE">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
@@ -56,11 +41,29 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button layoutX="1209.0" layoutY="90.0" mnemonicParsing="false" onAction="#open_cnx" prefHeight="30.0" prefWidth="108.0" styleClass="btn_dr" stylesheets="@../css/style.css" textFill="WHITE">
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1342.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/prof.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1128.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/logout.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnhome" alignment="BOTTOM_LEFT" layoutX="1010.0" layoutY="82.0" mnemonicParsing="false" onAction="#open_home" prefHeight="42.0" prefWidth="91.0" styleClass="btn_dr" stylesheets="@../css/style.css" text="Acceuil" textFill="DARKORANGE">
                <font>
-                  <Font name="Arial Bold" size="15.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
+            <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="983.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/iconhome.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <VBox layoutX="160.0" layoutY="126.0" prefHeight="1036.0" prefWidth="1396.0">

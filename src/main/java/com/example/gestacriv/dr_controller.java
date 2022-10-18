@@ -328,7 +328,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnprofile,btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button switchR1,switchR2,switchR3,switchL1,switchL2,switchL3,btnprofile,btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -336,7 +336,7 @@ public class dr_controller implements Initializable {
     private Label labelpdf,labelpdf2,labelpdf3,labelpdf4;
 
     @FXML
-    private GridPane homegrid,actugrid,editgrid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
+    private GridPane homegrid,hmgrid1,hmgrid2,hmgrid3,actugrid,editgrid,respgrid,encadgrid,soutgrid,partcipgrid,lire_encad_grid,lire_sout_grid,lire_resp_grid,lire_manif_grid;
     @FXML
     private  void hh(ActionEvent event){
 
@@ -373,6 +373,12 @@ public class dr_controller implements Initializable {
             editgrid.toFront();
         } else if (event.getSource()==btnprofile) {
             homegrid.toFront();
+        }else if (event.getSource()==switchR1) {
+            hmgrid2.toFront();
+        } else if (event.getSource()==switchR2) {
+            hmgrid3.toFront();
+        } else if (event.getSource()== switchR3) {
+            hmgrid1.toFront();
         }
 
     }
