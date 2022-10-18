@@ -373,11 +373,11 @@ public class dr_controller implements Initializable {
             editgrid.toFront();
         } else if (event.getSource()==btnprofile) {
             homegrid.toFront();
-        }else if (event.getSource()==switchR1) {
+        }else if (event.getSource()==switchR1 || event.getSource()== switchL3) {
             hmgrid2.toFront();
-        } else if (event.getSource()==switchR2) {
+        } else if (event.getSource()==switchR2||event.getSource()== switchL1) {
             hmgrid3.toFront();
-        } else if (event.getSource()== switchR3) {
+        } else if (event.getSource()== switchR3 || event.getSource()== switchL2) {
             hmgrid1.toFront();
         }
 

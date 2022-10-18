@@ -86,7 +86,7 @@ public class ens_controller implements Initializable {
     @FXML
     private TextArea intitule_encad,intitule_sout,desc_resp,nature_particip;
     @FXML
-    private DatePicker date_sout,date_manif;
+    private DatePicker date_sout= new DatePicker(),date_manif= new DatePicker();
     @FXML
     Label letab,lspec,lgrade;
 
@@ -266,8 +266,8 @@ public class ens_controller implements Initializable {
             alert.setHeaderText("Succès");
             alert.setContentText("Responsabilité est ajouté avec succès");
             alert.showAndWait();
-            newActivEns.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivEns.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("ENS_ID")));
             resp.setValue(null);
             desc_resp.setText(null);
             labelpdf3.setText(null);
@@ -287,9 +287,10 @@ public class ens_controller implements Initializable {
             alert.setHeaderText("Tous les champs doivent être pleins réssayez");
             alert.showAndWait();
         }else {
+
             String query = "INSERT INTO public.manif(\n" +
                     "\tmanif_id, nature_manif, date_manif, lieu_conf, nature_particip,dr_id_fk, ens_id_fk)\n" +
-                    "\tVALUES (DEFAULT, '"+nature_manif.getText()+"', '"+date_manif.getValue()+"', '"+lieu_conf.getText()+"', '"+nature_particip.getText()+"', NULL,'"+usrinfo.get("DR_ID")+"');";
+                    "\tVALUES (DEFAULT, '"+nature_manif.getText()+"', '"+date_manif.getValue()+"', '"+lieu_conf.getText()+"', '"+nature_particip.getText()+"', NULL,'"+usrinfo.get("ENS_ID")+"');";
 
             try (Connection con = DriverManager.getConnection(url, user, password);
                  PreparedStatement pst = con.prepareStatement(query)) {
@@ -311,7 +312,6 @@ public class ens_controller implements Initializable {
             nature_manif.setText(null);
             lieu_conf.setText(null);
             nature_particip.setText(null);
-            date_manif.setValue(null);
             labelpdf4.setText(null);
             actugrid.toFront();
         }
@@ -331,32 +331,39 @@ public class ens_controller implements Initializable {
             alert.setHeaderText("Tous les champs doivent être pleins réssayez");
             alert.showAndWait();
         }else {
-            String query = "INSERT INTO public.projet(\n" +
-                    "\tprojet_id, \"titreP\", \"descP\", \"budgP\", \"jourP\", ens_id_fk)\n" +
-                    "\tVALUES (DEFAULT, '"+javaPostreSql.addApos(titre_proj.getText().trim())+"', '"+javaPostreSql.addApos(desc_proj.getText().trim())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(usrinfo.get("ENS_ID"))+"');";
+            if (budget.getText().contains(",")){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Budget erroné");
+                alert.setHeaderText("Au lieu d'ajouter une virgule (,) il faut mieux utiliser un point (.) en entrant un budget decimal [199.99]");
+                alert.showAndWait();
+            }else {
+                String query = "INSERT INTO public.projet(\n" +
+                        "\tprojet_id, \"titreP\", \"descP\", \"budgP\", \"jourP\", ens_id_fk)\n" +
+                        "\tVALUES (DEFAULT, '"+javaPostreSql.addApos(titre_proj.getText().trim())+"', '"+javaPostreSql.addApos(desc_proj.getText().trim())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(usrinfo.get("ENS_ID"))+"');";
 //            javaPostreSql.addApos(desc_resp.getText().trim())
-            try (Connection con = DriverManager.getConnection(url, user, password);
-                 PreparedStatement pst = con.prepareStatement(query)) {
-                pst.executeUpdate();
+                try (Connection con = DriverManager.getConnection(url, user, password);
+                     PreparedStatement pst = con.prepareStatement(query)) {
+                    pst.executeUpdate();
 
-            } catch (SQLException ex) {
+                } catch (SQLException ex) {
 
-                Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
-                lgr.log(Level.SEVERE, ex.getMessage(), ex);
-                System.out.println("erreur be "+ex);
+                    Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
+                    lgr.log(Level.SEVERE, ex.getMessage(), ex);
+                    System.out.println("erreur be "+ex);
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Responsabilité");
+                alert.setHeaderText("Succès");
+                alert.setContentText("Responsabilité est ajouté avec succès");
+                alert.showAndWait();
+                newActivEns.refreshProjet(titreP,descP,dureeP,budgetP,Integer.parseInt(usrinfo.get("ENS_ID")));
+                newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("ENS_ID")));
+                titre_proj.setText(null);
+                desc_proj.setText(null);
+                budget.setText(null);
+                duree.setText(null);
+                actugrid.toFront();
             }
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Responsabilité");
-            alert.setHeaderText("Succès");
-            alert.setContentText("Responsabilité est ajouté avec succès");
-            alert.showAndWait();
-            newActivEns.refreshProjet(titreP,descP,dureeP,budgetP,Integer.parseInt(usrinfo.get("ENS_ID")));
-            newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("DR_ID")));
-            titre_proj.setText(null);
-            desc_proj.setText(null);
-            budget.setText(null);
-            duree.setText(null);
-            actugrid.toFront();
         }
     }
 
@@ -368,10 +375,10 @@ public class ens_controller implements Initializable {
     ChoiceBox<String> resp = new ChoiceBox<>();
     @FXML
     ChoiceBox<String> type_encad = new ChoiceBox<>();
-    String[] encadr = {"Encadrement_thèse","Encadrement_habiliation"};
+    String[] encadr = {"Encadrement Thèse","Encadrement Habiliation"};
     String[] type_encadr = {"Directeur de thèse","Encadrant de thèse","Co-encadrant de thèse"};
-    String[] souten = {"Soutenance_thèse","Soutenance_Habilitation"};
-    String[] respo = {"Responsable filière","Responsable module","Chef_Laboratoire","Chef_Equipe"};
+    String[] souten = {"Soutenance thèse","Soutenance Habilitation"};
+    String[] respo = {"Responsable filière","Responsable module","Chef Laboratoire","Chef Equipe"};
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
@@ -434,11 +441,11 @@ public class ens_controller implements Initializable {
             editgrid.toFront();
         } else if (event.getSource()==btnprofile) {
             homegrid.toFront();
-        }else if (event.getSource()==switchR1) {
+        }else if (event.getSource()==switchR1 || event.getSource()== switchL3) {
             hmgrid2.toFront();
-        } else if (event.getSource()==switchR2) {
+        } else if (event.getSource()==switchR2||event.getSource()== switchL1) {
             hmgrid3.toFront();
-        } else if (event.getSource()== switchR3) {
+        } else if (event.getSource()== switchR3 || event.getSource()== switchL2) {
             hmgrid1.toFront();
         }
 

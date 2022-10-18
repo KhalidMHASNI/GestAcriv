@@ -64,8 +64,18 @@
                                     <Font name="Arial Black" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="switchL2" layoutX="28.0" layoutY="333.0" mnemonicParsing="false" onAction="#hh" text="L2" />
-                              <Button fx:id="switchR2" layoutX="1457.0" layoutY="346.0" mnemonicParsing="false" onAction="#hh" text="R2" />
+                              <Button fx:id="switchL2" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <Button fx:id="switchR2" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switch.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1447.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switchR.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                      </children>
@@ -105,8 +115,18 @@
                                     <Font name="Arial Black" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="switchL3" layoutX="32.0" layoutY="342.0" mnemonicParsing="false" onAction="#hh" text="L3" />
-                              <Button fx:id="switchR3" layoutX="1438.0" layoutY="316.0" mnemonicParsing="false" onAction="#hh" text="Button" />
+                              <Button fx:id="switchL3" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <Button fx:id="switchR3" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switch.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1447.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switchR.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                      </children>
@@ -133,7 +153,7 @@
                               </Button>
                               <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/homesout_1.png" />
+                                    <Image url="@../img/homesout (1).png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="32.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
@@ -146,8 +166,18 @@
                                     <Font name="Arial Black" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="switchR1" layoutX="1457.0" layoutY="329.0" mnemonicParsing="false" onAction="#hh" styleClass="btnop" stylesheets="@../css/style.css" text="R1" />
-                              <Button fx:id="switchL1" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#hh" text="L1" />
+                              <Button fx:id="switchR1" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <Button fx:id="switchL1" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switch.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1447.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switchR.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                      </children>

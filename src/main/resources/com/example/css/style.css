@@ -27,6 +27,20 @@
 -fx-border-width:0px 0px 0px 4px;
 
 }
+.btnswi{
+-fx-background-color: transparent;
+-fx-cursor: hand;
+-fx-border-color: #ff8c00;
+-fx-border-width:0px 0px 4px 0px;
+
+
+}
+
+.btnswi:hover {
+-fx-border-color: #007FA4;
+-fx-border-width:0px 0px 4px 0px;
+
+}
 
 .btninscri{
 -fx-background-color: transparent;

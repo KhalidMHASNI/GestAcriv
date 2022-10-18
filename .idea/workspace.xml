@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="GestActiv V0.7">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/home.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/icons/prof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/homeencad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/homemanif.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/homeproj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/homeresp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/img/homesout_1.png" afterDir="false" />
+    <list default="true" id="210b56d7-8bc2-4e69-941f-c5227df4b85b" name="Changes" comment="GestActiv V0.8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/changeScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/dr_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestacriv/ens_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/ens.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/ens.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestacriv/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666112698100</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="GestActiv V0.8">
+      <created>1666113688343</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1666113688343</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,7 +368,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Testing" />
     <MESSAGE value="fx:id s update" />
     <MESSAGE value="fixing fx ids&#10;getData function&#10;dropDown temporarly fix" />
     <MESSAGE value="test test" />
@@ -391,7 +392,8 @@
     <MESSAGE value="GestActiv V0.5" />
     <MESSAGE value="GestActiv V0.6" />
     <MESSAGE value="GestActiv V0.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="GestActiv V0.7" />
+    <MESSAGE value="GestActiv V0.8" />
+    <option name="LAST_COMMIT_MESSAGE" value="GestActiv V0.8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

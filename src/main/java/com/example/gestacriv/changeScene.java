@@ -28,6 +28,7 @@ public class changeScene {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("About");
+            stage.centerOnScreen();
             stage.show();
         }catch (IOException e){
             System.out.println("about "+e);
@@ -53,6 +54,7 @@ public class changeScene {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Inscription");
+            stage.centerOnScreen();
             stage.show();
 
         } catch(Exception e) {
@@ -85,6 +87,7 @@ public class changeScene {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setMaximized(true);
             stage.show();
         }catch (IOException e){
             System.out.println("Dr "+e);
