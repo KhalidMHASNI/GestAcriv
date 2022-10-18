@@ -68,19 +68,12 @@ public class changeScene {
         stage2.setMaximized(true);
         stage2.show();
     }
-    public static void toDrt(ActionEvent event,Stage stage,Scene scene,Parent root){
-        //root = FXMLLoader.load(changeScene.class.getResource("drt.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Doctorant Page");
-        stage.show();
-    }
     public static void toEns(ActionEvent event,Stage stage,Scene scene,Parent root){
         //root = FXMLLoader.load(changeScene.class.getResource("ens.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.setTitle("Enseignant Page");
         stage.show();
     }

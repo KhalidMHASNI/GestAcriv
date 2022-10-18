@@ -106,11 +106,11 @@ public class SignInUpContr implements Initializable{
                     changeScene.toDr(event, root);
                 }else if (userInfo.get("PROFILE").equals("Doctorant")){
 
-                    FXMLLoader loadr = new FXMLLoader(getClass().getResource("drt.fxml"));
+                    FXMLLoader loadr = new FXMLLoader(getClass().getResource("dr.fxml"));
                     root = loadr.load();
                     dr_controller c = loadr.getController();
                     c.displaynpn(userInfo);
-                    changeScene.toDrt(event,stage,scene,root);
+                    changeScene.toDr(event,root);
                 }else if (userInfo.get("PROFILE").equals("Enseignant")){
 
                     FXMLLoader loadr = new FXMLLoader(getClass().getResource("ens.fxml"));

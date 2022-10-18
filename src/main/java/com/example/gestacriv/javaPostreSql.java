@@ -45,9 +45,10 @@ public class javaPostreSql {
         String user = "Admin";
         String password = "gestactiv2022";
 
-        String query = "SELECT dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.docteur WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
+        String query = "SELECT dr_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab, prof FROM public.docteur WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
+        String query1= "SELECT ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.enseignant WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
 
-        String nom="",prenom="",cni="",etab="",tel="",grade="",profile="",passwd="",email="",spec="";
+        String nom="",prenom="",cni="",etab="",tel="",grade="",profile="",passwd="",email="",spec="",prof="";
         int dr=0,ens=0;
 
         HashMap<String, String> usrInf = new HashMap<String, String>();
@@ -68,12 +69,15 @@ public class javaPostreSql {
                     grade=s.getString("grade");
                     spec=s.getString("spec");
                     etab = s.getString("etab");
+                    prof = s.getString("prof");
                 }
+                //System.out.println(prof+" "+prof.trim().equals("Doctorant")+" "+prof.equals("Docteur"));
+
+                if (prof.trim().equals("Docteur")) usrInf.put("PROFILE","Docteur");
+                else if (prof.trim().equals("Doctorant")) usrInf.put("PROFILE","Doctorant");
                 usrInf.put("DR_ID",Integer.toString(dr));
-                usrInf.put("PROFILE","Docteur");
             }else {
-                query = "SELECT ens_id, nom, prenom, cni, email, passwd, tel, grade, spec, etab FROM public.enseignant WHERE email='"+usremail+"' AND passwd='"+usrpassword+"'; ";
-                s = con.prepareStatement(query).executeQuery();
+                s = con.prepareStatement(query1).executeQuery();
                 while (s.next()){
                     ens = s.getInt("ens_id");
                     nom = s.getString("nom");
@@ -104,6 +108,8 @@ public class javaPostreSql {
             Logger lgr = Logger.getLogger(javaPostreSql.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
             System.out.println("erreur be"+ex);
+        } catch (Exception e){
+            System.out.println(e+ " aaa");
         }
         return usrInf;
     }

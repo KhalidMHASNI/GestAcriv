@@ -74,6 +74,7 @@ public class dr_controller implements Initializable {
     public void displaynpn(HashMap<String, String> usrinf){
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof.setText(usrinf.get("PROFILE"));
+        System.out.println(prof.getText());
         npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn11.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn12.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn13.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn14.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof1.setText(usrinf.get("PROFILE"))    ;prof11.setText(usrinf.get("PROFILE"));prof12.setText(usrinf.get("PROFILE"));prof13.setText(usrinf.get("PROFILE"));prof14.setText(usrinf.get("PROFILE"));
         npn2.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn21.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn22.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn23.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn24.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
@@ -87,6 +88,7 @@ public class dr_controller implements Initializable {
         /////////////////
         usrinfo = usrinf;
         int x = Integer.parseInt(usrinf.get("DR_ID"));
+        System.out.println(usrinf.get("PROFILE"));
         //System.out.println(usrinf.get("DR_ID"));
         newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1, x);
         newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,x);
@@ -124,6 +126,7 @@ public class dr_controller implements Initializable {
     public void open_cnx(ActionEvent event) throws IOException {
         changeScene.toCnx(event);
     }
+
     @FXML
     TextField npl_enc,npl_sout,lieu_sout,nature_manif,lieu_conf;
     @FXML
