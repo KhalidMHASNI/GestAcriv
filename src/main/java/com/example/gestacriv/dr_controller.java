@@ -126,7 +126,14 @@ public class dr_controller implements Initializable {
     public void open_cnx(ActionEvent event) throws IOException {
         changeScene.toCnx(event);
     }
-
+    @FXML
+    public void open_app(ActionEvent event) throws IOException {
+        changeScene.toInscriCnx(event,stage,scene,root);
+    }
+    @FXML
+    public void open_home(ActionEvent event) throws IOException {
+        changeScene.toHome(event,stage,scene,root);
+    }
     @FXML
     TextField npl_enc,npl_sout,lieu_sout,nature_manif,lieu_conf;
     @FXML
@@ -321,7 +328,7 @@ public class dr_controller implements Initializable {
     }
 
     @FXML
-    private  Button btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
+    private  Button btnprofile,btnhome,btnactu,home2grid,btnconfir,lire_encad,lire_sout,lire_resp,lire_manif,btnpdf,btnpdf2,btnpdf3,btnpdf4,btnL,btnL1,btnL2,btnL3,btnL4,btnR,btn_annuler,btn_annuler1,btn_annuler2,btn_annuler3;
     @FXML
     private MenuItem btnencad,btnsout,btnresp,btnparticip;
 
@@ -364,6 +371,8 @@ public class dr_controller implements Initializable {
             lire_manif_grid.toFront();
         }else if (event.getSource() == btnconfir) {
             editgrid.toFront();
+        } else if (event.getSource()==btnprofile) {
+            homegrid.toFront();
         }
 
     }

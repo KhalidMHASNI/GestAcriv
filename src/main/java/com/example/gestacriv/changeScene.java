@@ -39,6 +39,7 @@ public class changeScene {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.setTitle("BIENVENUE");
             stage.show();
         }catch (IOException e){
@@ -80,7 +81,7 @@ public class changeScene {
 
     public static void toHome(ActionEvent event,Stage stage,Scene scene,Parent root){
         try {
-            root = FXMLLoader.load(changeScene.class.getResource("inscnx.fxml"));
+            root = FXMLLoader.load(changeScene.class.getResource("home.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
