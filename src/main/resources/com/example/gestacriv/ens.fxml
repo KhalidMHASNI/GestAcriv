@@ -378,127 +378,6 @@
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: white;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnL1" layoutX="1265.0" layoutY="30.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
-                              <Line endX="1094.0" layoutX="256.0" layoutY="55.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
-                              <Label layoutX="38.0" layoutY="25.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial" size="30.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="602.0" fitWidth="1112.0" layoutX="281.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/encad.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="encadLabel11" ellipsisString="" layoutX="409.0" layoutY="164.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="typeEncadLabel11" ellipsisString="" layoutX="377.0" layoutY="243.0" prefHeight="36.0" prefWidth="334.0" text="typeEncadLabel">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="366.0" layoutY="299.0" text="Pour">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="npl_enc_label11" ellipsisString="" layoutX="547.0" layoutY="300.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="encadLabel12" ellipsisString="" layoutX="945.0" layoutY="151.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="typeEncadLabel12" ellipsisString="" layoutX="928.0" layoutY="251.0" prefHeight="36.0" prefWidth="386.0" text="typeEncadLabel">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="npl_enc_label12" ellipsisString="" layoutX="1122.0" layoutY="306.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="981.0" layoutY="299.0" text="Pour">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="encadLabel14" ellipsisString="" layoutX="944.0" layoutY="462.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="typeEncadLabel14" ellipsisString="" layoutX="923.0" layoutY="541.0" prefHeight="36.0" prefWidth="342.0" text="typeEncadLabel">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="937.0" layoutY="606.0" text="Pour">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="npl_enc_label14" ellipsisString="" layoutX="1108.0" layoutY="591.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="encadLabel13" ellipsisString="" layoutX="409.0" layoutY="447.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="typeEncadLabel13" ellipsisString="" layoutX="349.0" layoutY="547.0" prefHeight="36.0" prefWidth="273.0" text="typeEncadLabel">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="npl_enc_label13" ellipsisString="" layoutX="518.0" layoutY="584.0" prefHeight="30.0" prefWidth="108.0" text="Label">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="377.0" layoutY="584.0" text="Pour">
-                                 <font>
-                                    <Font size="21.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="176.0" fitWidth="279.0" layoutX="7.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/profile.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="52.0" layoutY="409.0" prefHeight="30.0" prefWidth="186.0" text="npnom" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="133.0" layoutY="374.0" text="Dr." textAlignment="CENTER" textFill="WHITE">
-                                 <font>
-                                    <Font name="Arial Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
                   <GridPane fx:id="lire_proj_grid" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -1460,6 +1339,127 @@
                               <Label fx:id="l5" layoutX="788.0" layoutY="542.0" text="dans">
                                  <font>
                                     <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="lire_encad_grid" style="-fx-background-color: white;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnL1" layoutX="1265.0" layoutY="30.0" mnemonicParsing="false" onAction="#hh" prefHeight="26.0" prefWidth="108.0" styleClass="btn_actu" stylesheets="@../css/style.css" text="Retour" />
+                              <Line endX="1094.0" layoutX="256.0" layoutY="55.0" startX="6.0" stroke="DARKORANGE" strokeWidth="3.0" />
+                              <Label layoutX="38.0" layoutY="25.0" prefHeight="36.0" prefWidth="214.0" text="Encadrements" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial" size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="602.0" fitWidth="1112.0" layoutX="281.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/encad.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="encadLabel11" ellipsisString="" layoutX="409.0" layoutY="164.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typeEncadLabel11" ellipsisString="" layoutX="377.0" layoutY="243.0" prefHeight="36.0" prefWidth="334.0" text="typeEncadLabel">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="366.0" layoutY="299.0" text="Pour">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_enc_label11" ellipsisString="" layoutX="547.0" layoutY="300.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="encadLabel12" ellipsisString="" layoutX="945.0" layoutY="151.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typeEncadLabel12" ellipsisString="" layoutX="928.0" layoutY="251.0" prefHeight="36.0" prefWidth="386.0" text="typeEncadLabel">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_enc_label12" ellipsisString="" layoutX="1122.0" layoutY="306.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="981.0" layoutY="299.0" text="Pour">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="encadLabel14" ellipsisString="" layoutX="944.0" layoutY="462.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typeEncadLabel14" ellipsisString="" layoutX="923.0" layoutY="541.0" prefHeight="36.0" prefWidth="342.0" text="typeEncadLabel">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="937.0" layoutY="606.0" text="Pour">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_enc_label14" ellipsisString="" layoutX="1108.0" layoutY="591.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="encadLabel13" ellipsisString="" layoutX="409.0" layoutY="447.0" prefHeight="30.0" prefWidth="298.0" text="encad" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typeEncadLabel13" ellipsisString="" layoutX="349.0" layoutY="547.0" prefHeight="36.0" prefWidth="273.0" text="typeEncadLabel">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_enc_label13" ellipsisString="" layoutX="518.0" layoutY="584.0" prefHeight="30.0" prefWidth="108.0" text="Label">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="377.0" layoutY="584.0" text="Pour">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="176.0" fitWidth="279.0" layoutX="7.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/profile.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="npn11" alignment="CENTER" ellipsisString="" layoutX="52.0" layoutY="409.0" prefHeight="30.0" prefWidth="186.0" text="npnom" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prof11" alignment="CENTER" ellipsisString="" layoutX="133.0" layoutY="374.0" text="Dr." textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
                                  </font>
                               </Label>
                            </children>

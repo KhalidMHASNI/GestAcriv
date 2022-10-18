@@ -117,6 +117,11 @@ public class ens_controller implements Initializable {
         newActivEns.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,x);
         newActivEns.refreshRespo(respoLabel,respoDesc,x);
         //////////
+        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
+        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
+        newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
+        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
+
         //////////
     }
     @FXML
@@ -522,9 +527,9 @@ public class ens_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
         if (oldP.getText().equals(usrinfo.get("PRENOM")) && oldN.getText().equals(usrinfo.get("NOM"))){
-            String query = "UPDATE public.docteur\n" +
+            String query = "UPDATE public.enseignant\n" +
                     "\tSET nom='"+newN.getText().trim()+"', prenom='"+newP.getText().trim()+"'\n" +
-                    "\tWHERE dr_id="+usrinfo.get("DR_ID")+";";
+                    "\tWHERE ens_id="+usrinfo.get("ENS_ID")+";";
 
             try (Connection con = DriverManager.getConnection(url, user, password);
                  PreparedStatement pst = con.prepareStatement(query)) {
@@ -552,9 +557,9 @@ public class ens_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
         if (oldT.getText().equals(usrinfo.get("TEL"))){
-            String query = "UPDATE public.docteur\n" +
+            String query = "UPDATE public.enseignant\n" +
                     "\tSET tel='"+newT.getText()+"'\n" +
-                    "\tWHERE dr_id='"+usrinfo.get("DR_ID")+"';";
+                    "\tWHERE ens_id='"+usrinfo.get("ENS_ID")+"';";
 
             try (Connection con = DriverManager.getConnection(url, user, password);
                  PreparedStatement pst = con.prepareStatement(query)) {
@@ -583,9 +588,9 @@ public class ens_controller implements Initializable {
         String user = "Admin";
         String password = "gestactiv2022";
         if (oldPasswd.getText().equals(usrinfo.get("PASSWORD"))&&newPasswd.getText().equals(newCPasswd.getText())){
-            String query = "UPDATE public.docteur\n" +
+            String query = "UPDATE public.enseignant\n" +
                     "\tSET passwd='"+newPasswd.getText()+"'\n" +
-                    "\tWHERE dr_id='"+usrinfo.get("DR_ID")+"';";
+                    "\tWHERE ens_id='"+usrinfo.get("ENS_ID")+"';";
 
             try (Connection con = DriverManager.getConnection(url, user, password);
                  PreparedStatement pst = con.prepareStatement(query)) {
