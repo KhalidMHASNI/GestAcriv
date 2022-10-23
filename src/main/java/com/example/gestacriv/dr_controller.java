@@ -38,6 +38,8 @@ public class dr_controller implements Initializable {
     Label typeEncadLabel11= new Label(),typeEncadLabel12= new Label(),typeEncadLabel13= new Label(),typeEncadLabel14= new Label();
     @FXML
     Label npl_enc_label11= new Label(),npl_enc_label12= new Label(),npl_enc_label13= new Label(),npl_enc_label14= new Label();
+    @FXML
+    Label l11,l12,l13,l14;
     ////////////////
     @FXML
     Label soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout;
@@ -51,6 +53,8 @@ public class dr_controller implements Initializable {
     Label dateSout11=new Label(),dateSout12=new Label(),dateSout13=new Label(),dateSout14=new Label();
     @FXML
     Label lieuSout11=new Label(),lieuSout12=new Label(),lieuSout13=new Label(),lieuSout14=new Label();
+    @FXML
+    Label l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312;
     ////////////////
     @FXML
     Label respoLabel,respoLabel1,respoLabel2,respoLabel3,respoLabel4;
@@ -68,6 +72,10 @@ public class dr_controller implements Initializable {
     Label dateManif1,dateManif2,dateManif3,dateManif4;
     @FXML
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
+    @FXML
+    Label l41,l42,l43,l44,l45,l46,l47,l48;
+
+
     /////////////
     @FXML
     Label l1=new Label(),l2=new Label(),l3=new Label(),l4=new Label(),l5=new Label();
@@ -99,10 +107,10 @@ public class dr_controller implements Initializable {
         lspec.setText(usrinf.get("SPEC"));
         lgrade.setText(usrinf.get("GRADE"));
         ////////
-        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
-        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
+        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,l11,l12,l13,l14,x);
+        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312,x);
         newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
-        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
+        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,l41,l42,l43,l44,l45,l46,l47,l48,x);
         /////////
     }
     @FXML
@@ -126,10 +134,7 @@ public class dr_controller implements Initializable {
     public void open_cnx(ActionEvent event) throws IOException {
         changeScene.toCnx(event);
     }
-    @FXML
-    public void open_app(ActionEvent event) throws IOException {
-        changeScene.toInscriCnx(event,stage,scene,root);
-    }
+
     @FXML
     public void open_home(ActionEvent event) throws IOException {
         changeScene.toHome(event,stage,scene,root);
@@ -172,7 +177,7 @@ public class dr_controller implements Initializable {
             alert.setContentText("Encadrement est ajouté avec succès");
             alert.showAndWait();
             newActivDr.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,l11,l12,l13,l14,Integer.parseInt(usrinfo.get("DR_ID")));
             npl_enc.setText(null);
             encad.setValue(null);
             intitule_encad.setText(null);
@@ -212,7 +217,7 @@ public class dr_controller implements Initializable {
             alert.setContentText("Soutenance est ajouté avec succès");
             alert.showAndWait();
             newActivDr.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312,Integer.parseInt(usrinfo.get("DR_ID")));
             npl_sout.setText(null);
             sout.setValue(null);
             intitule_sout.setText(null);
@@ -293,7 +298,7 @@ public class dr_controller implements Initializable {
             alert.setContentText("Manifestation est ajouté avec succès");
             alert.showAndWait();
             newActivDr.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("DR_ID")));
-            newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("DR_ID")));
+            newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,l41,l42,l43,l44,l45,l46,l47,l48,Integer.parseInt(usrinfo.get("DR_ID")));
             nature_manif.setText(null);
             lieu_conf.setText(null);
             nature_particip.setText(null);

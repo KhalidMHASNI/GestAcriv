@@ -37,7 +37,8 @@ public class ens_controller implements Initializable {
     @FXML
     Label npn11 = new Label(), npn12 = new Label(), npn13 = new Label(), npn14 = new Label(),npn21=new Label(),npn22=new Label(),npn23=new Label(),npn24=new Label(),npn31=new Label(),npn32=new Label(),npn33=new Label(),npn34=new Label(),npn41=new Label(),npn42=new Label(),npn43=new Label(),npn44=new Label();
     @FXML
-    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21=new Label()    ,prof22=new Label(),prof23=new Label(),prof24=new Label(),prof31=new Label(),prof32=new Label(),prof33=new Label(),prof34=new Label(),prof41=new Label(),prof42=new Label(),prof43=new Label(),prof44=new Label();
+    Label prof11 = new Label(),prof12 = new Label(),prof13 = new Label(),prof14 = new Label(),prof21=new Label()    ,prof22=new Label(),prof23=new Label(),prof24=new Label(),prof31=new Label(),prof32=new Label(),prof33=new Label(),prof34=new Label(),prof41=new Label(),prof42=new Label(),prof43=new Label(),prof44=new Label(),prof411=new Label(),npn411=new Label();
+
 
     @FXML
     Label encadLabel= new Label(),typeEncadLabel= new Label(),npl_enc_label= new Label();
@@ -47,6 +48,8 @@ public class ens_controller implements Initializable {
     Label typeEncadLabel11= new Label(),typeEncadLabel12= new Label(),typeEncadLabel13= new Label(),typeEncadLabel14= new Label();
     @FXML
     Label npl_enc_label11= new Label(),npl_enc_label12= new Label(),npl_enc_label13= new Label(),npl_enc_label14= new Label();
+    @FXML
+    Label l11,l12,l13,l14;
     ////////////////
     @FXML
     Label soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout;
@@ -60,6 +63,8 @@ public class ens_controller implements Initializable {
     Label dateSout11=new Label(),dateSout12=new Label(),dateSout13=new Label(),dateSout14=new Label();
     @FXML
     Label lieuSout11=new Label(),lieuSout12=new Label(),lieuSout13=new Label(),lieuSout14=new Label();
+    @FXML
+    Label l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312;
     ////////////////
     @FXML
     Label respoLabel,respoLabel1,respoLabel2,respoLabel3,respoLabel4;
@@ -77,10 +82,17 @@ public class ens_controller implements Initializable {
     Label dateManif1,dateManif2,dateManif3,dateManif4;
     @FXML
     Label lieuManif1,lieuManif2,lieuManif3,lieuManif4;
+    @FXML
+    Label l41,l42,l43,l44,l45,l46,l47,l48;
     //////////////////
     @FXML
     Label titreP,descP,budgetP,dureeP;
-    // //////////////
+    /////////////
+    @FXML
+    Label titreP1=new Label(),titreP2=new Label(),titreP3=new Label(),titreP4=new Label(),descP1=new Label(),descP2=new Label(),descP3=new Label(),descP4=new Label();
+    @FXML
+    Label budgetP1=new Label(),budgetP2=new Label(),budgetP3=new Label(),budgetP4=new Label(),dureeP1=new Label(),dureeP2=new Label(),dureeP3=new Label(),dureeP4=new Label();
+    // ////////////
     @FXML
     TextField npl_enc,npl_sout,lieu_sout,nature_manif,lieu_conf;
     @FXML
@@ -95,6 +107,8 @@ public class ens_controller implements Initializable {
         usrinfo = usrinf;
         npn.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof.setText(usrinf.get("PROFILE"));
+        npn411.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
+        prof411.setText(usrinf.get("PROFILE"));
         npn1.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn11.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn12.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn13.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn14.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
         prof1.setText(usrinf.get("PROFILE"))    ;prof11.setText(usrinf.get("PROFILE"));prof12.setText(usrinf.get("PROFILE"));prof13.setText(usrinf.get("PROFILE"));prof14.setText(usrinf.get("PROFILE"));
         npn2.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"))   ;npn21.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn22.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn23.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));npn24.setText(usrinf.get("NOM")+" "+ usrinf.get("PRENOM"));
@@ -117,11 +131,12 @@ public class ens_controller implements Initializable {
         newActivEns.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,x);
         newActivEns.refreshRespo(respoLabel,respoDesc,x);
         //////////
-        newActivDr.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,x);
-        newActivDr.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,x);
-        newActivDr.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
-        newActivDr.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,x);
-
+        System.out.println("Aa");
+       newActivEns.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,l11,l12,l13,l14,x);
+        newActivEns.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312,x);
+        newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,x);
+        newActivEns.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,l41,l42,l43,l44,l45,l46,l47,l48,x);
+        newActivEns.refresh4Proj(titreP1,titreP2,titreP3,titreP4,descP1,descP2,descP3,descP4,dureeP1,dureeP2,dureeP3,dureeP4,budgetP1,budgetP2,budgetP3,budgetP4,x);
         //////////
     }
     @FXML
@@ -185,7 +200,7 @@ public class ens_controller implements Initializable {
             alert.setContentText("Encadrement est ajouté avec succès");
             alert.showAndWait();
             newActivEns.refreshEncad(encadLabel,typeEncadLabel,npl_enc_label,l1,Integer.parseInt(usrinfo.get("ENS_ID")));
-            newActivEns.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,l11,l12,l13,l14,Integer.parseInt(usrinfo.get("ENS_ID")));
             npl_enc.setText(null);
             encad.setValue(null);
             intitule_encad.setText(null);
@@ -225,7 +240,7 @@ public class ens_controller implements Initializable {
             alert.setContentText("Soutenance est ajouté avec succès");
             alert.showAndWait();
             newActivEns.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("ENS_ID")));
-            newActivEns.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312,Integer.parseInt(usrinfo.get("ENS_ID")));
             npl_sout.setText(null);
             sout.setValue(null);
             intitule_sout.setText(null);
@@ -308,7 +323,7 @@ public class ens_controller implements Initializable {
             alert.setContentText("Manifestation est ajouté avec succès");
             alert.showAndWait();
             newActivEns.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("ENS_ID")));
-            newActivEns.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,l41,l42,l43,l44,l45,l46,l47,l48,Integer.parseInt(usrinfo.get("ENS_ID")));
             nature_manif.setText(null);
             lieu_conf.setText(null);
             nature_particip.setText(null);
@@ -339,7 +354,7 @@ public class ens_controller implements Initializable {
             }else {
                 String query = "INSERT INTO public.projet(\n" +
                         "\tprojet_id, \"titreP\", \"descP\", \"budgP\", \"jourP\", ens_id_fk)\n" +
-                        "\tVALUES (DEFAULT, '"+javaPostreSql.addApos(titre_proj.getText().trim())+"', '"+javaPostreSql.addApos(desc_proj.getText().trim())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(usrinfo.get("ENS_ID"))+"');";
+                        "\tVALUES (DEFAULT, '"+javaPostreSql.addApos(titre_proj.getText().trim())+"', '"+javaPostreSql.addApos(desc_proj.getText().trim())+"', '"+Integer.parseInt(budget.getText())+"', '"+Integer.parseInt(duree.getText())+"', '"+Integer.parseInt(usrinfo.get("ENS_ID"))+"');";
 //            javaPostreSql.addApos(desc_resp.getText().trim())
                 try (Connection con = DriverManager.getConnection(url, user, password);
                      PreparedStatement pst = con.prepareStatement(query)) {

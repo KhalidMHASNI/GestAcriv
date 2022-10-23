@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.dr_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1166.0" prefWidth="2224.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestacriv.homeContr">
 
    <children>
       <Pane layoutY="-1.0" prefHeight="127.0" prefWidth="1556.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #6EC1E4,#007FA4 );">
@@ -29,6 +30,137 @@
          <children>
             <StackPane>
                <children>
+                  <GridPane fx:id="hmgrid1" prefHeight="1171.0" prefWidth="1556.0" style="-fx-background-color: white;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/homesout_1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="32.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/homeencad.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="switchR1" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <Button fx:id="switchL1" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switch.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1447.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/switchR.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="encadLabel_home" alignment="TOP_LEFT" ellipsisString="" layoutX="195.0" layoutY="299.0" prefHeight="30.0" prefWidth="298.0" text="Encadrement" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="typeEncadLabel_home" ellipsisString="" layoutX="195.0" layoutY="327.0" prefHeight="36.0" prefWidth="368.0" text="typeEncadLabel">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l1" layoutX="199.0" layoutY="471.0" text="Pour">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_enc_label_home" ellipsisString="" layoutX="269.0" layoutY="472.0" prefHeight="30.0" prefWidth="289.0" text="Label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="soutLabel_home" alignment="TOP_LEFT" ellipsisString="" layoutX="891.0" layoutY="299.0" prefHeight="30.0" prefWidth="298.0" text="Soutenance" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="intitule_sout_Label_home" alignment="TOP_LEFT" ellipsisString="" layoutX="891.0" layoutY="332.0" maxWidth="451.0" prefHeight="80.0" prefWidth="459.0" text="intitule&#10;sout">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npl_sout_label_home" ellipsisString="" layoutX="891.0" layoutY="426.0" prefHeight="30.0" prefWidth="310.0" text="np_sout_label">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dateSout_home" ellipsisString="" layoutX="921.0" layoutY="472.0" prefHeight="30.0" prefWidth="108.0" text="Date sout">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lieuSout_home" ellipsisString="" layoutX="1087.0" layoutY="472.0" prefHeight="30.0" prefWidth="146.0" text="lieu sout">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l2" layoutX="891.0" layoutY="475.0" text="le">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l3" layoutX="1041.0" layoutY="475.0" text="dans">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="94.0" fitWidth="239.0" layoutX="694.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/GA.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="704.0" layoutY="24.0" mnemonicParsing="false" onAction="#open_app" prefHeight="68.0" prefWidth="161.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER_RIGHT" layoutX="562.0" layoutY="41.0" prefHeight="34.0" prefWidth="132.0" text="Acceder à l'app" textAlignment="CENTER" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="profEncad" layoutX="327.0" layoutY="245.0" prefHeight="18.0" prefWidth="34.0" text="Drt.">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npEncad" ellipsisString="" layoutX="367.0" layoutY="245.0" prefHeight="26.0" prefWidth="146.0" text="nnp">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="profSout" layoutX="1023.0" layoutY="244.0" prefHeight="18.0" prefWidth="34.0" text="Drt.">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npSout" ellipsisString="" layoutX="1063.0" layoutY="244.0" prefHeight="26.0" prefWidth="146.0" text="nnp">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="intitul_home" alignment="TOP_LEFT" ellipsisString="" layoutX="195.0" layoutY="372.0" prefHeight="94.0" prefWidth="451.0" text="l&#10;\n">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
                   <GridPane fx:id="hmgrid2" layoutX="10.0" layoutY="10.0" prefHeight="1171.0" prefWidth="1556.0" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,16 +171,6 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="678.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/GA.png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="691.0" layoutY="48.0" mnemonicParsing="false" onAction="#open_app" prefHeight="44.0" prefWidth="188.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </Button>
                               <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/homemanif.png" />
@@ -59,11 +181,6 @@
                                     <Image url="@../img/homeresp.png" />
                                  </image>
                               </ImageView>
-                              <Label alignment="CENTER" layoutX="678.0" layoutY="14.0" prefHeight="33.0" prefWidth="200.0" text="Acceder a l'app" textAlignment="CENTER" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial Black" size="14.0" />
-                                 </font>
-                              </Label>
                               <Button fx:id="switchL2" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
                               <Button fx:id="switchR2" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
                               <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
@@ -76,11 +193,89 @@
                                     <Image url="@../icons/switchR.png" />
                                  </image>
                               </ImageView>
+                              <Label fx:id="respoDesc_home" alignment="TOP_LEFT" ellipsisString="" layoutX="214.0" layoutY="366.0" prefHeight="138.0" prefWidth="310.0" text="Desc respo">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="respoLabel_home" alignment="TOP_LEFT" ellipsisString="" layoutX="214.0" layoutY="324.0" prefHeight="36.0" prefWidth="200.0" text="Respo" textFill="DARKORANGE" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Label>
+                              <Label fx:id="lieuManif_home" ellipsisString="" layoutX="1161.0" layoutY="461.0" prefHeight="30.0" prefWidth="132.0" text="lieu manif">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dateManif_home" ellipsisString="" layoutX="932.0" layoutY="461.0" prefHeight="30.0" prefWidth="108.0" text="Date manif">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="natureParticip_home" alignment="TOP_LEFT" ellipsisString="" layoutX="900.0" layoutY="367.0" prefHeight="68.0" prefWidth="434.0" text="nature Participation&#10;k">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="natureManif_home" alignment="TOP_LEFT" ellipsisString="" layoutX="904.0" layoutY="322.0" prefHeight="62.0" prefWidth="320.0" text="Nature Manif" textFill="DARKORANGE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l6" layoutX="900.0" layoutY="464.0" text="le">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l7" layoutX="1086.0" layoutY="464.0" text="dans">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="94.0" fitWidth="239.0" layoutX="694.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/GA.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="704.0" layoutY="24.0" mnemonicParsing="false" onAction="#open_app" prefHeight="68.0" prefWidth="161.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER_RIGHT" layoutX="562.0" layoutY="41.0" prefHeight="34.0" prefWidth="132.0" text="Acceder à l'app" textAlignment="CENTER" textFill="DARKORANGE">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="profResp" layoutX="326.0" layoutY="244.0" prefHeight="18.0" prefWidth="34.0" text="Drt.">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npResp" alignment="TOP_LEFT" ellipsisString="" layoutX="369.0" layoutY="243.0" prefHeight="26.0" prefWidth="154.0" text="nnp">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="profManif" layoutX="1023.0" layoutY="243.0" prefHeight="18.0" prefWidth="34.0" text="Drt.">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npManif" ellipsisString="" layoutX="1057.0" layoutY="243.0" prefHeight="26.0" prefWidth="154.0" text="nnp">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>
                   </GridPane>
-                  <GridPane fx:id="hmgrid3" layoutX="10.0" layoutY="10.0" prefHeight="1171.0" prefWidth="1556.0" style="-fx-background-color: white;">
+                  <GridPane fx:id="hmgrid3" layoutX="10.0" layoutY="10.0" style="-fx-background-color: white;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
@@ -90,27 +285,22 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="678.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="94.0" fitWidth="239.0" layoutX="694.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/GA.png" />
                                  </image>
                               </ImageView>
-                              <Button layoutX="691.0" layoutY="48.0" mnemonicParsing="false" onAction="#open_app" prefHeight="44.0" prefWidth="188.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
+                              <Button layoutX="704.0" layoutY="24.0" mnemonicParsing="false" onAction="#open_app" prefHeight="68.0" prefWidth="161.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/homeencad.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="32.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="377.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../img/homeproj.png" />
                                  </image>
                               </ImageView>
-                              <Label alignment="CENTER" layoutX="678.0" layoutY="14.0" prefHeight="33.0" prefWidth="200.0" text="Acceder a l'app" textAlignment="CENTER" textFill="DARKORANGE">
+                              <Label alignment="CENTER_RIGHT" layoutX="562.0" layoutY="41.0" prefHeight="34.0" prefWidth="132.0" text="Acceder à l'app" textAlignment="CENTER" textFill="DARKORANGE">
                                  <font>
                                     <Font name="Arial Black" size="14.0" />
                                  </font>
@@ -127,57 +317,46 @@
                                     <Image url="@../icons/switchR.png" />
                                  </image>
                               </ImageView>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </GridPane>
-                  <GridPane fx:id="hmgrid1" prefHeight="1171.0" prefWidth="1556.0" style="-fx-background-color: white;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="678.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/GA.png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="691.0" layoutY="48.0" mnemonicParsing="false" onAction="#open_app" prefHeight="44.0" prefWidth="188.0" styleClass="btnop" stylesheets="@../css/style.css" textFill="#007fa4">
+                              <Label fx:id="titreP_home" alignment="TOP_LEFT" ellipsisString="" layoutX="548.0" layoutY="295.0" prefHeight="53.0" prefWidth="342.0" text="Titre Projet&#10;\n&#10;" textFill="DARKORANGE" wrapText="true">
                                  <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </Button>
-                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/homesout (1).png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="460.0" fitWidth="802.0" layoutX="32.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/homeencad.png" />
-                                 </image>
-                              </ImageView>
-                              <Label alignment="CENTER" layoutX="678.0" layoutY="14.0" prefHeight="33.0" prefWidth="200.0" text="Acceder a l'app" textAlignment="CENTER" textFill="DARKORANGE">
-                                 <font>
-                                    <Font name="Arial Black" size="14.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="switchR1" layoutX="1424.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
-                              <Button fx:id="switchL1" layoutX="45.0" layoutY="366.0" mnemonicParsing="false" onAction="#hh" prefHeight="30.0" prefWidth="36.0" styleClass="btnswi" stylesheets="@../css/style.css" />
-                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="26.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../icons/switch.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1447.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../icons/switchR.png" />
-                                 </image>
-                              </ImageView>
+                              <Label fx:id="dureeP_home" ellipsisString="" layoutX="713.0" layoutY="459.0" prefHeight="30.0" prefWidth="108.0" text="Durée">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="budgetP_home" ellipsisString="" layoutX="548.0" layoutY="459.0" prefHeight="30.0" prefWidth="108.0" text="Budget">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="descP_home" alignment="TOP_LEFT" ellipsisString="" layoutX="548.0" layoutY="350.0" prefHeight="87.0" prefWidth="390.0" text="Description&#10;*a">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="l8" ellipsisString="" layoutX="634.0" layoutY="459.0" prefHeight="30.0" prefWidth="44.0" text="dans">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label ellipsisString="" layoutX="767.0" layoutY="459.0" prefHeight="30.0" prefWidth="108.0" text="jours">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="npProj" ellipsisString="" layoutX="711.0" layoutY="231.0" prefHeight="26.0" prefWidth="146.0" text="nnp">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="profProjet" layoutX="669.0" layoutY="231.0" prefHeight="18.0" prefWidth="34.0" text="Drt.">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>
