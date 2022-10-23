@@ -242,7 +242,7 @@ public class dr_controller implements Initializable {
         }else {
             String query = "INSERT INTO public.respo(\n" +
                     "\tresp_id, respo, desc_respo, dr_id_fk)\n" +
-                    "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+javaPostreSql.addApos(desc_resp.getText().trim())+"', '"+usrinfo.get("DR_ID")+"');";
+                    "\tVALUES (DEFAULT, '"+resp.getValue()+"', '"+javaPostreSql.addApos(desc_resp.getText().trim())+"', "+usrinfo.get("DR_ID")+");";
             try (Connection con = DriverManager.getConnection(url, user, password);
                  PreparedStatement pst = con.prepareStatement(query)) {
                 pst.executeUpdate();

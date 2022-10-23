@@ -433,6 +433,11 @@ public class ens_controller implements Initializable {
             newActivEns.refreshManif(natureManif,natureParticip,dateManif,lieuManif,l4,l5,Integer.parseInt(usrinfo.get("ENS_ID")));
             newActivEns.refreshRespo(respoLabel,respoDesc,Integer.parseInt(usrinfo.get("ENS_ID")));
             newActivEns.refreshSout(soutLabel,intitule_sout_Label,npl_sout_label,dateSout,lieuSout,l2,l3,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Encad(encadLabel11,encadLabel12,encadLabel13,encadLabel14,typeEncadLabel11,typeEncadLabel12,typeEncadLabel13,typeEncadLabel14,npl_enc_label11,npl_enc_label12,npl_enc_label13,npl_enc_label14,l11,l12,l13,l14,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Sout(soutLabel11,soutLabel12,soutLabel13,soutLabel14,intitule_sout_Label11,intitule_sout_Label12,intitule_sout_Label13,intitule_sout_Label14,npl_sout_label11,npl_sout_label12,npl_sout_label13,npl_sout_label14,dateSout11,dateSout12,dateSout13,dateSout14,lieuSout11,lieuSout12,lieuSout13,lieuSout14,l31,l32,l33,l34,l35,l36,l37,l38,l39,l310,l311,l312,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Resp(respoLabel1,respoLabel2,respoLabel3,respoLabel4,respoDesc1,respoDesc2,respoDesc3,respoDesc4,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Manif(natureManif1,natureManif2,natureManif3,natureManif4,natureParticip1,natureParticip2,natureParticip3,natureParticip4,dateManif1,dateManif2,dateManif3,dateManif4,lieuManif1,lieuManif2,lieuManif3,lieuManif4,l41,l42,l43,l44,l45,l46,l47,l48,Integer.parseInt(usrinfo.get("ENS_ID")));
+            newActivEns.refresh4Proj(titreP1,titreP2,titreP3,titreP4,descP1,descP2,descP3,descP4,dureeP1,dureeP2,dureeP3,dureeP4,budgetP1,budgetP2,budgetP3,budgetP4,Integer.parseInt(usrinfo.get("ENS_ID")));
 
         }else  if (event.getSource() == btnresp){
             respgrid.toFront();
